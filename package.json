@@ -9,6 +9,7 @@
     "build": "nuxt build",
     "start": "nuxt start",
     "generate": "nuxt generate",
+    "lint": "eslint --ext .ts,.js,.vue .",
     "test": "jest"
   },
   "dependencies": {
@@ -19,9 +20,11 @@
   },
   "devDependencies": {
     "@nuxt/typescript": "^2.8.1",
+    "@nuxtjs/eslint-config-typescript": "^0.1.2",
     "@vue/test-utils": "^1.0.0-beta.27",
     "babel-jest": "^24.1.0",
-    "jest": "^24.1.0",
+    "eslint": "^5.0.0",
+    "jest": "^24.0.0",
     "vue-jest": "^4.0.0-0"
   }
 }

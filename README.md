@@ -1,10 +1,12 @@
-# website
+Website
+==
 
-> My exceptional Nuxt.js project
+https://shiokaze.net/
 
-## Build Setup
+Build Setup
+--
 
-``` bash
+```sh
 # install dependencies
 $ npm run install
 
@@ -18,5 +20,3 @@ $ npm run start
 # generate static project
 $ npm run generate
 ```
-
-For detailed explanation on how things work, check out [Nuxt.js docs](https://nuxtjs.org).

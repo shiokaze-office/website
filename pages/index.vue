@@ -1,9 +1,10 @@
 <template>
   <div class="container">
     <div>
-      <h1 class="title"><logo /></h1>
-      <h2 class="subtitle">福岡市西区にある行政書士事務所です</h2>
-      <p>〒819-0001 福岡市西区小戸5-10-20<br> Tel/Fax 092-843-8843 </p>
+      <h1><logo /></h1>
+      <!-- <h2 class="subtitle">福岡市西区にある行政書士事務所です</h2> -->
+      <p>〒819-0001 福岡市西区小戸5-10-20<br> TEL/FAX:  <a href="tel:0928348834">092-834-8834</a> </p>
+      <p class="contact"><a class="button is-medium" href="https://docs.google.com/forms/d/e/1FAIpQLSfQNI2nAEvKfKxmx8We5KT10foX48iAH18bsh0182Ew4N-J3g/viewform">お問い合わせ</a></p>
     </div>
   </div>
 </template>
@@ -31,19 +32,13 @@ export default class PageIndex extends Vue {
   text-align: center;
 }
 
-.title {
-  font-family: 'Quicksand', 'Source Sans Pro', -apple-system, BlinkMacSystemFont,
-    'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-  display: block;
-  font-weight: 300;
-  font-size: 100px;
-  color: #35495e;
-  letter-spacing: 1px;
-}
-
 .subtitle {
   font-weight: 300;
   word-spacing: 5px;
   padding-bottom: 15px;
+}
+
+.contact {
+  margin-top: 2em;
 }
 </style>

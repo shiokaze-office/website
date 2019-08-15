@@ -21,7 +21,7 @@ const config: NuxtConfiguration = {
   devModules: [
   ],
   modules: [
-    '@nuxtjs/bulma',
+    '@nuxtjs/bulma'
   ],
   build: {
     postcss: {
@@ -30,8 +30,6 @@ const config: NuxtConfiguration = {
           customProperties: false
         }
       }
-    },
-    extend (config, ctx) {
     }
   }
 }

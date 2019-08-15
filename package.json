@@ -1,7 +1,8 @@
 {
-  "name": "website",
+  "name": "shiokaze-office",
+  "fullname": "行政書士 しおかぜ事務所",
+  "description": "福岡市西区にある行政書士事務所のウェブサイトです。",
   "version": "1.0.0",
-  "description": "My exceptional Nuxt.js project",
   "author": "linyows",
   "private": true,
   "scripts": {

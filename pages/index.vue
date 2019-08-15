@@ -1,29 +1,9 @@
 <template>
   <div class="container">
     <div>
-      <logo />
-      <h1 class="title">
-        website
-      </h1>
-      <h2 class="subtitle">
-        My exceptional Nuxt.js project
-      </h2>
-      <div class="links">
-        <a
-          href="https://nuxtjs.org/"
-          target="_blank"
-          class="button--green"
-        >
-          Documentation
-        </a>
-        <a
-          href="https://github.com/nuxt/nuxt.js"
-          target="_blank"
-          class="button--grey"
-        >
-          GitHub
-        </a>
-      </div>
+      <h1 class="title"><logo /></h1>
+      <h2 class="subtitle">福岡市西区にある行政書士事務所です</h2>
+      <p>〒819-0001 福岡市西区小戸5-10-20<br> Tel/Fax 092-843-8843 </p>
     </div>
   </div>
 </template>
@@ -63,13 +43,7 @@ export default class PageIndex extends Vue {
 
 .subtitle {
   font-weight: 300;
-  font-size: 42px;
-  color: #526488;
   word-spacing: 5px;
   padding-bottom: 15px;
-}
-
-.links {
-  padding-top: 15px;
 }
 </style>

@@ -11,7 +11,8 @@
     "start": "nuxt start",
     "generate": "nuxt generate",
     "lint": "eslint --ext .ts,.js,.vue .",
-    "test": "jest"
+    "test": "jest",
+    "ci": "npm i && npm run lint && npm run test"
   },
   "dependencies": {
     "@nuxtjs/bulma": "^1.2.1",

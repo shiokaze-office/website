@@ -18,6 +18,7 @@ const config: NuxtConfiguration = {
   css: [
   ],
   plugins: [
+    { src: '~plugins/googlemap', ssr: false }
   ],
   devModules: [
   ],
@@ -25,6 +26,7 @@ const config: NuxtConfiguration = {
     ['@nuxtjs/google-analytics', { id: 'UA-10693153-3' }],
     '@nuxtjs/bulma'
   ],
+  transpile: [/^vue2-google-maps($|\/)/],
   build: {
     postcss: {
       preset: {

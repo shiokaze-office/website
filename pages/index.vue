@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="container">
-      <Logo />
+      <Logo tag="h1" vh="vertical" />
       <About />
     </div>
     <Map />

@@ -1,6 +1,6 @@
 <template>
   <footer class="thefooter">
-    <p>&copy; 2019 shiokaze.net</p>
+    <p>&copy; 2014-2019 行政書士 しおかぜ事務所</p>
   </footer>
 </template>
 
@@ -14,8 +14,7 @@ export default class TheFooter extends Vue {
 <style scoped>
 .thefooter {
   text-align: center;
-  font-weight: bold;
-  font-size: .85em;
+  font-size: .7em;
   margin: 2em 0;
 }
 </style>

@@ -17,11 +17,12 @@ export default class About extends Vue {
 
 <style scoped>
 .body {
-  font-size: 1.5em;
-  margin: 1em 0 1.5em;
+  margin: 1em 0 1em;
 }
 
 .address {
+  font-size: 1em;
+  line-height: 2;
   margin: 0 0 2em;
 }
 

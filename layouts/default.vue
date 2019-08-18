@@ -19,27 +19,35 @@ export default class LayoutDefault extends Vue {
 </script>
 
 <style>
-html {
-  font-family: 'Source Sans Pro', -apple-system, BlinkMacSystemFont, 'Segoe UI',
-    Roboto, 'Helvetica Neue', Arial, sans-serif;
-  font-size: 16px;
-  word-spacing: 1px;
-  -ms-text-size-adjust: 100%;
-  -webkit-text-size-adjust: 100%;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-  box-sizing: border-box;
+.container {
+  margin: 1em auto 0;
+  padding: 0 1em;
 }
 
-*,
-*:before,
-*:after {
-  box-sizing: border-box;
-  margin: 0;
+a {
+  color: #CEC0D9;
+  border-bottom: 1px solid #CEC0D9;
+}
+
+a:hover {
+  color: #CEC0D9;
+  border-bottom: 1px solid #E6E0ED;
+}
+
+p {
+  font-family: 'Noto Sans JP', sans-serif;
+  font-size: 1.5em;
+  line-height: 1.5;
+  padding-bottom: 1em;
 }
 
 h1 {
   margin: 0;
   padding: 0;
+}
+
+h2 {
+  color: #CEC0D9;
+  font-weight: bold;
 }
 </style>

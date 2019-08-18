@@ -15,7 +15,7 @@ const config: NuxtConfiguration = {
       { rel: 'stylesheet', href: 'fonts.googleapis.com/css?family=Noto+Sans+JP:100,400,900&display=swap' }
     ]
   },
-  loading: { color: '#fff' },
+  loading: { color: '#D5C9DE' },
   css: [
     '~/assets/css/style.css'
   ],

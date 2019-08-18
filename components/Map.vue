@@ -87,8 +87,17 @@ export default class Map extends Vue {
   height: 500px;
 }
 .gmap--infowin {
-  font-size: 1.2em;
+  font-size: 1em;
   padding: 1em;
   font-weight: bold;
+}
+.gmap--infotext {
+  padding-bottom: 0;
+}
+
+@media (max-width: 600px) {
+  .vue-map-container {
+    height: 300px;
+  }
 }
 </style>

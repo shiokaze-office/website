@@ -11,7 +11,8 @@ const config: NuxtConfiguration = {
       { hid: 'description', name: 'description', content: process.env.npm_package_description || '' }
     ],
     link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
+      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+      { rel: 'stylesheet', href: 'fonts.googleapis.com/css?family=Noto+Sans+JP:100,400,900&display=swap' }
     ]
   },
   loading: { color: '#fff' },

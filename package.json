@@ -16,6 +16,7 @@
   },
   "dependencies": {
     "@nuxtjs/bulma": "^1.2.1",
+    "@nuxtjs/google-analytics": "^2.2.0",
     "nuxt": "^2.0.0",
     "nuxt-property-decorator": "^2.3.0",
     "ts-node": "^8.3.0"
@@ -44,13 +45,22 @@
       "^@/(.*)$": "<rootDir>/$1",
       "^~/(.*)$": "<rootDir>/$1"
     },
-    "moduleFileExtensions": ["js", "vue", "json", "ts"],
+    "moduleFileExtensions": [
+      "js",
+      "vue",
+      "json",
+      "ts"
+    ],
     "transform": {
       "^.+\\.vue$": "vue-jest",
       "^.+\\.ts$": "ts-jest"
     },
-    "moduleDirectories": ["node_modules"],
-    "modulePathIgnorePatterns": ["/node_modules/"],
+    "moduleDirectories": [
+      "node_modules"
+    ],
+    "modulePathIgnorePatterns": [
+      "/node_modules/"
+    ],
     "testMatch": [
       "**/test/**/*.(spec|test).(js|ts)|**/__tests__/*.(js|ts)"
     ],

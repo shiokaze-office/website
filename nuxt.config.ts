@@ -22,6 +22,7 @@ const config: NuxtConfiguration = {
   devModules: [
   ],
   modules: [
+    ['@nuxtjs/google-analytics', { id: 'UA-10693153-3' }],
     '@nuxtjs/bulma'
   ],
   build: {

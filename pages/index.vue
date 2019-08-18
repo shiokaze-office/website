@@ -21,6 +21,12 @@ import Logo from '~/components/Logo.vue'
   }
 })
 export default class PageIndex extends Vue {
+  private head() {
+    return {
+      title: '行政書士 しおかぜ事務所',
+      titleTemplate: '%s'
+    }
+  }
 }
 </script>
 

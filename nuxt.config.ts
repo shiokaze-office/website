@@ -16,6 +16,7 @@ const config: NuxtConfiguration = {
   },
   loading: { color: '#fff' },
   css: [
+    '~/assets/css/style.css'
   ],
   plugins: [
     { src: '~plugins/googlemap', ssr: false }

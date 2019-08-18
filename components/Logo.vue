@@ -6,8 +6,14 @@
 
 <style scoped>
 .logo {
-  width: 400px;
+  width: 100%;
   max-height: 290px;
   margin: 0 auto;
+}
+@media (max-width: 600px) {
+  .logo {
+    width: 300px;
+    height: auto;
+  }
 }
 </style>

@@ -1,8 +1,22 @@
 <template>
   <div>
     <nuxt />
+    <TheFooter />
   </div>
 </template>
+
+<script lang="ts">
+import { Component, Vue } from 'nuxt-property-decorator'
+import TheFooter from '~/components/TheFooter.vue'
+
+@Component({
+  components: {
+    TheFooter
+  }
+})
+export default class LayoutDefault extends Vue {
+}
+</script>
 
 <style>
 html {

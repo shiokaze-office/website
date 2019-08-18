@@ -1,13 +1,13 @@
 <template>
-  <span class="logo"> <img src="~/assets/shiokaze-logo-vertical.svg" alt="行政書士 しおかぜ事務所"> </span>
+  <div>
+    <h1 class="logo"><img src="~/assets/shiokaze-logo-vertical.svg" alt="行政書士 しおかぜ事務所"> </h1>
+  </div>
 </template>
 
 <style scoped>
 .logo {
-  display: inline-block;
-  position: relative;
-  overflow: hidden;
-  width: 100%;
+  width: 400px;
   max-height: 290px;
+  margin: 0 auto;
 }
 </style>

@@ -4,7 +4,7 @@ Website
 https://shiokaze.net/
 
 <a href="https://travis-ci.org/shiokaze-office/website" title="travis"><img src="https://img.shields.io/travis/shiokaze-office/website.svg?style=for-the-badge"></a>
-<a href="https://app.netlify.com/sites/shiokaze/deploys" title="netlify"><img src="https://img.shields.io/endpoint.svg?style=for-the-badge&url=https%3A%2F%2Fshiokaze.net%2Fnetlify-status%2F6b1ee9a4-c07b-466d-b5d0-eb1ae57b1468"></a>
+<a href="https://app.netlify.com/sites/shiokaze/deploys" title="netlify"><img src="https://img.shields.io/endpoint.svg?url=https%3A%2F%2Fdeveloper.oswaldlabs.com%2Fnetlify-status%2F6b1ee9a4-c07b-466d-b5d0-eb1ae57b1468&style=for-the-badge"></a>
 
 Build Setup
 --

@@ -1,5 +1,7 @@
 <template>
-  <component v-bind:is="computedTag" class="logo"> <img :src="computedImage" :alt="imgAlt"> </component>
+  <component :is="computedTag" class="logo">
+    <img :src="computedImage" :alt="imgAlt">
+  </component>
 </template>
 
 <script lang="ts">
@@ -12,14 +14,14 @@ export default class Logo extends Vue {
   @Prop() public vh!: string
   @Prop() public tag!: string
 
-  public get computedImage() {
+  public get computedImage () {
     if (this.vh === undefined) {
       this.vh = 'horizontal'
     }
     return require(`~/assets/img/shiokaze-logo-${this.vh}.svg`)
   }
 
-  public get computedTag() {
+  public get computedTag () {
     if (this.tag === undefined) {
       this.tag = 'span'
     }

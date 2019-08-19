@@ -3,11 +3,19 @@
     <GmapMap map-type-id="roadmap" :center="center" :zoom="zoom" :options="options">
       <GmapInfoWindow :options="infoOptions" :position="infoWindowPos" opened="infoWinOpen" @closeclick="infoWinOpen=false">
         <div class="gmap--infowin">
-          <p class="gmap--infotext">{{infoContent.title}}</p>
+          <p class="gmap--infotext">
+            {{ infoContent.title }}
+          </p>
         </div>
       </GmapInfoWindow>
-      <GmapMarker v-for="(m, index) in markers" @click="toggleInfoWindow(m, index)"
-        :key="index" :position="m.position" :clickable="true" :draggable="false"></GmapMarker>
+      <GmapMarker
+        v-for="(m, index) in markers"
+        :key="index"
+        :position="m.position"
+        :clickable="true"
+        :draggable="false"
+        @click="toggleInfoWindow(m)"
+      />
     </GmapMap>
   </section>
 </template>
@@ -45,7 +53,7 @@ export default class Map extends Vue {
     rotateControl: true,
     fullscreenControl: true,
     disableDefaultUi: true,
-    styles: styles
+    styles
   }
   public infoWinOpen = false
   public infoWindowPos = office
@@ -54,14 +62,14 @@ export default class Map extends Vue {
     pixelOffset: { width: 0, height: -50 }
   }
 
-  public toggleInfoWindow(marker: Marker, id: number) {
+  public toggleInfoWindow (marker: Marker) {
     this.infoWinOpen = false
     this.infoWindowPos = marker.position
     this.infoContent = marker.content
     this.infoWinOpen = true
   }
 
-  public data() {
+  public data () {
     return {
       center: office,
       markers: [
@@ -70,11 +78,11 @@ export default class Map extends Vue {
     }
   }
 
-  public getMarkerIcon() {
+  public getMarkerIcon () {
     return {
       url: require(`~/static/googlemap-marker.svg`),
-      size: {width: 100, height: 100, f: 'px', b: 'px'},
-      scaledSize: {width: 100, height: 100, f: 'px', b: 'px'}
+      size: { width: 100, height: 100, f: 'px', b: 'px' },
+      scaledSize: { width: 100, height: 100, f: 'px', b: 'px' }
     }
   }
 }

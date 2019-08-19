@@ -1,7 +1,6 @@
 <template>
   <div>
     <div class="container">
-      <Logo tag="h1" vh="vertical" />
       <About />
     </div>
     <Map />
@@ -10,13 +9,11 @@
 
 <script lang="ts">
 import { Component, Vue } from 'nuxt-property-decorator'
-import Logo from '~/components/Logo.vue'
 import About from '~/components/About.vue'
 import Map from '~/components/Map.vue'
 
 @Component({
   components: {
-    Logo,
     About,
     Map
   }

@@ -1,6 +1,7 @@
 <template>
   <component :is="computedTag" class="logo">
-    <img :src="computedImage" :alt="imgAlt">
+    <img v-if="vh === 'horizontal'" src="~/assets/img/shiokaze-logo-horizontal.svg" :alt="imgAlt">
+    <img v-else src="~/assets/img/shiokaze-logo-vertical.svg" :alt="imgAlt">
   </component>
 </template>
 
@@ -14,18 +15,8 @@ export default class Logo extends Vue {
   @Prop() public vh!: string
   @Prop() public tag!: string
 
-  public get computedImage () {
-    if (this.vh === undefined) {
-      this.vh = 'horizontal'
-    }
-    return require(`~/assets/img/shiokaze-logo-${this.vh}.svg`)
-  }
-
   public get computedTag () {
-    if (this.tag === undefined) {
-      this.tag = 'span'
-    }
-    return `${this.tag}`
+    return (this.tag === undefined) ? 'span' : this.tag
   }
 }
 </script>

@@ -8,24 +8,19 @@
 </template>
 
 <script lang="ts">
-import { Component, Vue } from 'nuxt-property-decorator'
+import { createComponent } from '@vue/composition-api'
 import About from '~/components/About.vue'
 import Map from '~/components/Map.vue'
 
-@Component({
+export default createComponent({
   components: {
     About,
     Map
+  },
+  setup () {
+    return { }
   }
 })
-export default class PageIndex extends Vue {
-  private head () {
-    return {
-      title: '行政書士 しおかぜ事務所',
-      titleTemplate: '%s'
-    }
-  }
-}
 </script>
 
 <style>

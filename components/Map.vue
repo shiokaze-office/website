@@ -21,71 +21,116 @@
 </template>
 
 <script lang="ts">
-import { Component, Vue } from 'nuxt-property-decorator'
+import { createComponent } from '@vue/composition-api'
 
 interface Info {
   title: string
 }
 
 interface Location {
-  lat: number
+  lat: number,
   lng: number
 }
 
 interface Marker {
-  position: Location
+  position: Location,
   content: Info
 }
 
-const styles = require('~/static/googlemap-style.json')
-const office: Location = { lat: 33.5863496, lng: 130.3116807 }
+interface Position {
+  width: number,
+  height: number
+}
+
+interface Options {
+  zoomControl: boolean,
+  mapTypeControl: boolean,
+  scaleControl: boolean,
+  streetViewControl: boolean,
+  rotateControl: boolean,
+  fullscreenControl: boolean,
+  disableDefaultUi: boolean,
+  styles: Object
+}
+
+interface InfoOptionsOffset {
+  width: number,
+  height: number
+}
+
+interface InfoOptions {
+  pixelOffset: InfoOptionsOffset
+}
+
+const styles: any = require('~/static/googlemap-style.json')
+const office: Location = {
+  lat: 33.5863496,
+  lng: 130.3116807
+}
 const info: Info = { title: 'しおかぜ事務所' }
 
-@Component
-export default class Map extends Vue {
-  public center = office
-  public zoom = 15
-  public options = {
-    zoomControl: true,
-    mapTypeControl: false,
-    scaleControl: true,
-    streetViewControl: false,
-    rotateControl: true,
-    fullscreenControl: true,
-    disableDefaultUi: true,
-    styles
-  }
-  public infoWinOpen = false
-  public infoWindowPos = office
-  public infoContent = info
-  public infoOptions = {
-    pixelOffset: { width: 0, height: -50 }
-  }
+export default createComponent({
+  props: {
+    center: {
+      type: Object as () => Location,
+      default: office
+    },
+    zoom: {
+      type: Object as () => number,
+      default: 15
+    },
+    options: {
+      type: Object as () => Options,
+      default: {
+        zoomControl: true,
+        mapTypeControl: false,
+        scaleControl: true,
+        streetViewControl: false,
+        rotateControl: true,
+        fullscreenControl: true,
+        disableDefaultUi: true,
+        styles
+      }
+    },
+    infoOptions: {
+      type: Object as () => InfoOptions,
+      default: {
+        pixelOffset: { width: 0, height: -50 }
+      }
+    },
+    infoWindowPos: {
+      type: Object as () => Location,
+      default: office
+    },
+    infoWinOpen: {
+      type: Object as () => boolean,
+      default: false
+    },
+    infoContent: {
+      type: Object as () => Info,
+      default: info
+    }
+  },
+  setup ({ infoWindowPos, infoWinOpen, infoContent, infoOptions }) {
+    function toggleInfoWindow (m: Marker) {
+      infoWinOpen = false
+      infoWindowPos = m.position
+      infoContent = m.content
+      infoWinOpen = true
+    }
 
-  public toggleInfoWindow (marker: Marker) {
-    this.infoWinOpen = false
-    this.infoWindowPos = marker.position
-    this.infoContent = marker.content
-    this.infoWinOpen = true
-  }
-
-  public data () {
     return {
       center: office,
       markers: [
-        { position: office, content: this.infoContent }
-      ]
+        { position: office, content: infoContent }
+      ],
+      toggleInfoWindow,
+      infoWindowPos,
+      infoWinOpen,
+      infoOptions
     }
   }
-
-  public getMarkerIcon () {
-    return {
-      url: require(`~/static/googlemap-marker.svg`),
-      size: { width: 100, height: 100, f: 'px', b: 'px' },
-      scaledSize: { width: 100, height: 100, f: 'px', b: 'px' }
-    }
-  }
-}
+})
 </script>
 
 <style scoped>

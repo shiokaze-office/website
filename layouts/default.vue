@@ -7,18 +7,19 @@
 </template>
 
 <script lang="ts">
-import { Component, Vue } from 'nuxt-property-decorator'
+import { createComponent } from '@vue/composition-api'
 import TheHeader from '~/components/TheHeader.vue'
 import TheFooter from '~/components/TheFooter.vue'
 
-@Component({
+export default createComponent({
   components: {
     TheHeader,
     TheFooter
+  },
+  setup () {
+    return { }
   }
 })
-export default class LayoutDefault extends Vue {
-}
 </script>
 
 <style>

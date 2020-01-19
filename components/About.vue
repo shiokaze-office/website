@@ -12,13 +12,6 @@
   </section>
 </template>
 
-<script lang="ts">
-import { Component, Vue } from 'nuxt-property-decorator'
-@Component
-export default class About extends Vue {
-}
-</script>
-
 <style scoped>
 .body {
   margin: 1em 0 1em;

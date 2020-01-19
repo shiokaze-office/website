@@ -5,16 +5,18 @@
 </template>
 
 <script lang="ts">
-import { Component, Vue } from 'nuxt-property-decorator'
+import { createComponent } from '@vue/composition-api'
 import Logo from '~/components/Logo.vue'
 
-@Component({
+export default createComponent({
   components: {
     Logo
+  },
+  setup () {
+    return { }
   }
 })
-export default class TheHeader extends Vue {
-}
+
 </script>
 
 <style scoped>

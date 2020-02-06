@@ -1,16 +1,16 @@
 <template>
   <header>
-    <Logo tag="h1" vh="vertical" />
+    <TheNav />
   </header>
 </template>
 
 <script lang="ts">
 import { createComponent } from '@vue/composition-api'
-import Logo from '~/components/Logo.vue'
+import TheNav from '~/components/TheNav.vue'
 
 export default createComponent({
   components: {
-    Logo
+    TheNav
   },
   setup () {
     return { }

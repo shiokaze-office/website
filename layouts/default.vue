@@ -30,12 +30,10 @@ export default createComponent({
 
 a {
   color: #CEC0D9;
-  border-bottom: 1px solid #CEC0D9;
 }
 
 a:hover {
   color: #CEC0D9;
-  border-bottom: 1px solid #E6E0ED;
 }
 
 p {

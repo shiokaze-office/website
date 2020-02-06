@@ -13,7 +13,7 @@ export default createComponent({
   props: {
     vh: {
       type: String,
-      default: 'horizontal'
+      default: 'vertical'
     },
     tag: {
       type: String,
@@ -29,10 +29,11 @@ export default createComponent({
 
 <style scoped>
 .logo {
-  width: 300px;
-  max-height: 290px;
-  margin: 0 auto;
+  width: 200px;
+  height: 70px;
+  margin: 0 auto 1em;
   display: block;
+  overflow: hidden;
 }
 @media (max-width: 600px) {
   .logo {

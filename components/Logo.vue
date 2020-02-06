@@ -1,7 +1,8 @@
 <template>
   <component :is="tag" class="logo">
-    <img v-if="vh === 'horizontal'" src="~/assets/img/shiokaze-logo-horizontal.svg" :alt="imgAlt">
-    <img v-else src="~/assets/img/shiokaze-logo-vertical.svg" :alt="imgAlt">
+    <nuxt-link to="/">
+      <img :src="imageUrl" alt="行政書士 しおかぜ事務所">
+    </nuxt-link>
   </component>
 </template>
 
@@ -19,18 +20,16 @@ export default createComponent({
       default: 'span'
     }
   },
-  setup () {
-    const imgAlt: string = '行政書士 しおかぜ事務所'
-    return {
-      imgAlt
-    }
+  setup ({ vh }) {
+    const imageUrl = require(`~/assets/img/shiokaze-logo-${vh}.svg`)
+    return { imageUrl }
   }
 })
 </script>
 
 <style scoped>
 .logo {
-  width: 400px;
+  width: 300px;
   max-height: 290px;
   margin: 0 auto;
   display: block;

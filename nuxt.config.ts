@@ -17,9 +17,7 @@ const config: Configuration = {
     ]
   },
   loading: { color: '#D5C9DE' },
-  css: [
-    '~/assets/css/style.css'
-  ],
+  css: [],
   plugins: [
     '@/plugins/composition-api',
     { src: '~plugins/googlemap', ssr: false }

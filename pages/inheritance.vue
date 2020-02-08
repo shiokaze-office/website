@@ -1,22 +1,16 @@
 <template>
-  <div>
-    <div class="container">
-      <h2>事務所アクセス</h2>
-      <Office />
-    </div>
-    <Map />
+  <div class="container">
+    <Inheritance />
   </div>
 </template>
 
 <script lang="ts">
 import { createComponent } from '@vue/composition-api'
-import Office from '~/components/Office.vue'
-import Map from '~/components/Map.vue'
+import Inheritance from '~/components/Inheritance.vue'
 
 export default createComponent({
   components: {
-    Office,
-    Map
+    Inheritance
   },
   setup () {
     return { }

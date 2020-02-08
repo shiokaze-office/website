@@ -1,22 +1,16 @@
 <template>
-  <div>
-    <div class="container">
-      <h2>事務所アクセス</h2>
-      <Office />
-    </div>
-    <Map />
+  <div class="container">
+    <NotarialDeed />
   </div>
 </template>
 
 <script lang="ts">
 import { createComponent } from '@vue/composition-api'
-import Office from '~/components/Office.vue'
-import Map from '~/components/Map.vue'
+import NotarialDeed from '~/components/NotarialDeed.vue'
 
 export default createComponent({
   components: {
-    Office,
-    Map
+    NotarialDeed
   },
   setup () {
     return { }

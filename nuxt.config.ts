@@ -29,7 +29,17 @@ const config: Configuration = {
   ],
   modules: [
     ['@nuxtjs/google-analytics', { id: 'UA-10693153-3' }],
-    '@nuxtjs/bulma'
+    '@nuxtjs/bulma',
+    ['nuxt-fontawesome', {
+      component: 'Fa',
+      imports: [{
+        set: '@fortawesome/free-solid-svg-icons',
+        icons: ['fas']
+      }, {
+        set: '@fortawesome/free-regular-svg-icons',
+        icons: ['far']
+      }]
+    }]
   ],
   transpile: [/^vue2-google-maps($|\/)/],
   build: {

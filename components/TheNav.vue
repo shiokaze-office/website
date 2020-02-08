@@ -33,7 +33,7 @@
         <nuxt-link class="navbar-item" to="notarial-deed">
           その他の公正証書作成
         </nuxt-link>
-        <nuxt-link class="navbar-item" to="notarial-deed">
+        <nuxt-link class="navbar-item" to="blog">
           ブログ
         </nuxt-link>
       </div>

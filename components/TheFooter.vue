@@ -1,7 +1,9 @@
 <template>
-  <footer class="thefooter">
-    <Logo />
-    <p><Fa :icon="['far', 'copyright']" /> 2014-{{ currentYear }} 行政書士 しおかぜ事務所</p>
+  <footer class="footer">
+    <div class="content has-text-centered">
+      <Logo />
+      <p><Fa :icon="['far', 'copyright']" /> 2014-{{ currentYear }} 行政書士 しおかぜ事務所</p>
+    </div>
   </footer>
 </template>
 
@@ -22,9 +24,8 @@ export default createComponent({
 </script>
 
 <style scoped>
-.thefooter {
-  text-align: center;
+.footer {
+  background-color: #fff;
   font-size: .7em;
-  margin: 2em 0 1em;
 }
 </style>

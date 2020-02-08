@@ -10,16 +10,31 @@
     </div>
     <div class="navbar-menu">
       <div class="navbar-start">
-        <a class="navbar-item">遺言・相続</a>
-        <a class="navbar-item">任意後見契約</a>
-        <a class="navbar-item">家族信託</a>
-        <a class="navbar-item">その他の公正証書作成</a>
+        <nuxt-link class="navbar-item" to="inheritance">
+          遺言・相続
+        </nuxt-link>
+        <nuxt-link class="navbar-item" to="guardianship">
+          任意後見契約
+        </nuxt-link>
+        <nuxt-link class="navbar-item" to="family-trust">
+          家族信託
+        </nuxt-link>
+        <nuxt-link class="navbar-item" to="notarial-deed">
+          その他の公正証書作成
+        </nuxt-link>
+        <nuxt-link class="navbar-item" to="notarial-deed">
+          ブログ
+        </nuxt-link>
       </div>
       <div class="navbar-end">
         <div class="navbar-item">
           <div class="buttons">
-            <a class="button is-outlined">行政書士紹介</a>
-            <a class="button is-outlined">事務所アクセス</a>
+            <nuxt-link class="button is-outlined" to="hello">
+              行政書士紹介
+            </nuxt-link>
+            <nuxt-link class="button is-outlined" to="office">
+              事務所アクセス
+            </nuxt-link>
           </div>
         </div>
       </div>

@@ -26,6 +26,8 @@ export default createComponent({
 .container {
   margin: 1em auto 0;
   padding: 0 1em;
+  color: var(--text);
+  min-height: 30em;
 }
 
 a {
@@ -36,20 +38,26 @@ a:hover {
   color: #CEC0D9;
 }
 
-p {
+h1, h2, h3, h4, h5, header, footer {
   font-family: 'Noto Sans JP', sans-serif;
-  font-size: 1.5em;
-  line-height: 1.5;
-  padding-bottom: 1em;
-}
-
-h1 {
-  margin: 0;
-  padding: 0;
 }
 
 h2 {
-  color: #CEC0D9;
+  color: var(--primary);
   font-weight: bold;
+  padding-top: .7em;
+  font-size: 2.2em;
+}
+
+h3 {
+  color: var(--secondary);
+  font-weight: normal;
+  font-size: 1.8em;
+}
+
+p {
+  font-size: 1.5em;
+  line-height: 1.5;
+  padding-bottom: 1em;
 }
 </style>

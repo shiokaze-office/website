@@ -1,24 +1,31 @@
 <template>
-  <component :is="computedTag" class="logo">
+  <component :is="tag" class="logo">
     <img v-if="vh === 'horizontal'" src="~/assets/img/shiokaze-logo-horizontal.svg" :alt="imgAlt">
     <img v-else src="~/assets/img/shiokaze-logo-vertical.svg" :alt="imgAlt">
   </component>
 </template>
 
 <script lang="ts">
-import { Component, Vue, Prop } from 'nuxt-property-decorator'
+import { createComponent } from '@vue/composition-api'
 
-@Component
-export default class Logo extends Vue {
-  public imgAlt: string = '行政書士 しおかぜ事務所'
-
-  @Prop() public vh!: string
-  @Prop() public tag!: string
-
-  public get computedTag () {
-    return (this.tag === undefined) ? 'span' : this.tag
+export default createComponent({
+  props: {
+    vh: {
+      type: String,
+      default: 'horizontal'
+    },
+    tag: {
+      type: String,
+      default: 'span'
+    }
+  },
+  setup () {
+    const imgAlt: string = '行政書士 しおかぜ事務所'
+    return {
+      imgAlt
+    }
   }
-}
+})
 </script>
 
 <style scoped>

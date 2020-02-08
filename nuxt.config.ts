@@ -1,6 +1,6 @@
-import NuxtConfiguration from '@nuxt/config'
+import { Configuration } from '@nuxt/types'
 
-const config: NuxtConfiguration = {
+const config: Configuration = {
   mode: 'spa',
   head: {
     title: process.env.npm_package_fullname || '',
@@ -20,9 +20,12 @@ const config: NuxtConfiguration = {
     '~/assets/css/style.css'
   ],
   plugins: [
+    '@/plugins/composition-api',
     { src: '~plugins/googlemap', ssr: false }
   ],
-  devModules: [
+  buildModules: [
+    '@nuxt/typescript-build',
+    '@nuxtjs/eslint-module'
   ],
   modules: [
     ['@nuxtjs/google-analytics', { id: 'UA-10693153-3' }],
@@ -36,6 +39,8 @@ const config: NuxtConfiguration = {
           customProperties: false
         }
       }
+    },
+    extend (config, ctx) {
     }
   }
 }

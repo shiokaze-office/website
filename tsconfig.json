@@ -1,6 +1,6 @@
 {
   "compilerOptions": {
-    "target": "esnext",
+    "target": "es2018",
     "module": "esnext",
     "moduleResolution": "node",
     "lib": [
@@ -9,22 +9,25 @@
       "dom"
     ],
     "esModuleInterop": true,
-    "experimentalDecorators": true,
+    "allowJs": true,
     "sourceMap": true,
     "strict": true,
-    "allowSyntheticDefaultImports": true,
     "noEmit": true,
     "baseUrl": ".",
-    "resolveJsonModule": true,
     "paths": {
-      "~/*": ["*"],
-      "@/*": ["*"]
-    }
+      "~/*": [
+        "./*"
+      ],
+      "@/*": [
+        "./*"
+      ]
+    },
+    "types": [
+      "@types/node",
+      "@nuxt/types",
+      "@types/jest"
+    ]
   },
-  "include": [
-    "**/*.ts",
-    "**/*.vue"
-  ],
   "exclude": [
     "node_modules"
   ]

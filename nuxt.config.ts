@@ -1,4 +1,5 @@
 import { Configuration } from '@nuxt/types'
+import customProperties from './assets/postcss/custom-properties'
 
 const config: Configuration = {
   mode: 'spa',
@@ -44,6 +45,12 @@ const config: Configuration = {
   transpile: [/^vue2-google-maps($|\/)/],
   build: {
     postcss: {
+      plugins: {
+        'postcss-custom-properties': {
+          preserve: false,
+          importFrom: [ { customProperties } ],
+        },
+      },
       preset: {
         features: {
           customProperties: false

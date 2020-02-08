@@ -75,15 +75,17 @@ export default createComponent({
 </script>
 
 <style scoped>
-.navbar-menu {
-  width: 100%;
-  position: absolute;
-}
 .navbar-start .navbar-item.nuxt-link-active {
   color: var(--primary);
 }
 .button:hover {
   border-color: var(--primary);
   color: var(--primary);
+}
+@media (max-width: 1024px) {
+  .navbar-menu.is-active {
+    width: 100%;
+    position: absolute;
+  }
 }
 </style>

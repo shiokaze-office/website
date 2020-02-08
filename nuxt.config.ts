@@ -13,7 +13,7 @@ const config: Configuration = {
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
-      { rel: 'stylesheet', href: 'fonts.googleapis.com/css?family=Noto+Sans+JP:100,400,900&display=swap' }
+      { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css?family=Noto+Sans+JP:100,400,900&display=swap' }
     ]
   },
   loading: { color: '#D5C9DE' },

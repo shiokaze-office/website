@@ -1,7 +1,7 @@
 <template>
   <component :is="tag" class="logo">
     <nuxt-link to="/">
-      <img :src="imageUrl" alt="行政書士 しおかぜ事務所">
+      <img :class="vh" :src="imageUrl" alt="行政書士 しおかぜ事務所">
     </nuxt-link>
   </component>
 </template>
@@ -13,7 +13,7 @@ export default createComponent({
   props: {
     vh: {
       type: String,
-      default: 'vertical'
+      default: 'weave'
     },
     tag: {
       type: String,
@@ -28,17 +28,8 @@ export default createComponent({
 </script>
 
 <style scoped>
-.logo {
-  width: 200px;
-  height: 70px;
-  margin: 0 auto 1em;
-  display: block;
-  overflow: hidden;
-}
-@media (max-width: 600px) {
-  .logo {
-    width: 300px;
-    height: auto;
-  }
+.weave {
+  margin: 0.5rem 0.75rem;
+  width: 8rem;
 }
 </style>

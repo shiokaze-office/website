@@ -32,4 +32,11 @@ export default createComponent({
   margin: 0.5rem 0.75rem;
   width: 8rem;
 }
+@media (max-width: 1024px) {
+  .weave {
+    margin: 5px 5px 0;
+    width: auto;
+    height: 42px;
+  }
+}
 </style>

@@ -2,13 +2,24 @@
   <nav class="navbar is-light" role="navigation" aria-label="main navigation">
     <div class="navbar-brand">
       <Logo />
-      <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
-        <span aria-hidden="true">aaa</span>
-        <span aria-hidden="true">bbb</span>
-        <span aria-hidden="true">ccc</span>
+      <a
+        role="button"
+        :class="[{'navbar-burger': true}, {'is-active': state.isActive}]"
+        aria-label="menu"
+        aria-expanded="false"
+        @click="toggle"
+      >
+        {{ /* eslint-disable */ }}
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        {{ /* eslint-enable */ }}
       </a>
     </div>
-    <div class="navbar-menu">
+    <div
+      :class="[{'navbar-menu': true}, {'is-active': state.isActive}]"
+      @click="toggle"
+    >
       <div class="navbar-start">
         <nuxt-link class="navbar-item" to="inheritance">
           遺言・相続
@@ -43,7 +54,7 @@
 </template>
 
 <script lang="ts">
-import { createComponent } from '@vue/composition-api'
+import { createComponent, reactive } from '@vue/composition-api'
 import Logo from '~/components/Logo.vue'
 
 export default createComponent({
@@ -51,11 +62,28 @@ export default createComponent({
     Logo
   },
   setup () {
-    return { }
+    const state = reactive({
+      isActive: false
+    })
+    function toggle () {
+      state.isActive = !state.isActive
+    }
+    return { toggle, state }
   }
 })
 
 </script>
 
 <style scoped>
+.navbar-menu {
+  width: 100%;
+  position: absolute;
+}
+.navbar-start .navbar-item.nuxt-link-active {
+  color: var(--primary);
+}
+.button:hover {
+  border-color: var(--primary);
+  color: var(--primary);
+}
 </style>

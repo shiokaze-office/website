@@ -1,5 +1,4 @@
 import { Configuration } from '@nuxt/types'
-import customProperties from './assets/postcss/custom-properties'
 
 const config: Configuration = {
   mode: 'spa',
@@ -46,7 +45,7 @@ const config: Configuration = {
       plugins: {
         'postcss-custom-properties': {
           preserve: false,
-          importFrom: [ { customProperties } ],
+          importFrom: ['assets/styles/custom-properties.css']
         },
       },
       preset: {

@@ -54,7 +54,19 @@ const config: Configuration = {
         }
       }
     },
-    extend (config, ctx) {
+    extend (conf: any, ctx): void{
+      conf.module.rules.push(
+        {
+          test: /\.md$/,
+          loader: "frontmatter-markdown-loader",
+          options: {
+            mode: ['html', 'vue-component'],
+            vue: {
+              root: 'dynamicContent'
+            }
+          }
+        }
+      )
     }
   }
 }

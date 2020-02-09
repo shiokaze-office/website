@@ -19,7 +19,7 @@ export default createComponent({
     }
   },
   setup ({ vh }) {
-    const imageUrl = require(`~/assets/img/shiokaze-logo-${vh}.svg`)
+    const imageUrl = require(`~/assets/images/logo-${vh}.svg`)
     return { imageUrl }
   }
 })

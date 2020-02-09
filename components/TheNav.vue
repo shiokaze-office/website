@@ -1,7 +1,9 @@
 <template>
   <nav class="navbar is-light" role="navigation" aria-label="main navigation">
     <div class="navbar-brand">
-      <Logo />
+      <nuxt-link to="/" @click.native="toggle">
+        <Logo />
+      </nuxt-link>
       <a
         role="button"
         :class="[{'navbar-burger': true}, {'is-active': state.isActive}]"
@@ -16,34 +18,31 @@
         {{ /* eslint-enable */ }}
       </a>
     </div>
-    <div
-      :class="[{'navbar-menu': true}, {'is-active': state.isActive}]"
-      @click="toggle"
-    >
+    <div :class="[{'navbar-menu': true}, {'is-active': state.isActive}]">
       <div class="navbar-start">
-        <nuxt-link class="navbar-item" to="inheritance">
+        <nuxt-link class="navbar-item" to="inheritance" @click.native="toggle">
           遺言・相続
         </nuxt-link>
-        <nuxt-link class="navbar-item" to="guardianship">
+        <nuxt-link class="navbar-item" to="guardianship" @click.native="toggle">
           任意後見契約
         </nuxt-link>
-        <nuxt-link class="navbar-item" to="family-trust">
+        <nuxt-link class="navbar-item" to="family-trust" @click.native="toggle">
           家族信託
         </nuxt-link>
-        <nuxt-link class="navbar-item" to="notarial-deed">
+        <nuxt-link class="navbar-item" to="notarial-deed" @click.native="toggle">
           その他の公正証書作成
         </nuxt-link>
-        <nuxt-link class="navbar-item" to="blog">
+        <nuxt-link class="navbar-item" to="blog" @click.native="toggle">
           ブログ
         </nuxt-link>
       </div>
       <div class="navbar-end">
         <div class="navbar-item">
           <div class="buttons">
-            <nuxt-link class="button is-outlined" to="hello">
+            <nuxt-link class="button is-outlined" to="hello" @click.native="toggle">
               行政書士紹介
             </nuxt-link>
-            <nuxt-link class="button is-outlined" to="office">
+            <nuxt-link class="button is-outlined" to="office" @click.native="toggle">
               事務所アクセス
             </nuxt-link>
           </div>

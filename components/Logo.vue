@@ -1,8 +1,6 @@
 <template>
   <component :is="tag" class="logo">
-    <nuxt-link to="/">
-      <img :class="vh" :src="imageUrl" alt="行政書士 しおかぜ事務所">
-    </nuxt-link>
+    <img :class="vh" :src="imageUrl" alt="行政書士 しおかぜ事務所">
   </component>
 </template>
 

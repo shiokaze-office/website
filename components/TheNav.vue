@@ -30,7 +30,7 @@
           家族信託
         </nuxt-link>
         <nuxt-link class="navbar-item" to="notarial-deed" @click.native="toggle">
-          その他の公正証書作成
+          公正証書作成
         </nuxt-link>
         <nuxt-link class="navbar-item" to="blog" @click.native="toggle">
           ブログ

@@ -2,26 +2,42 @@
   <div class="container">
     <About />
 
-    <h3>ご提案</h3>
-    <div v-for="(attr, key) in proposalMdAttrs" :key="key" class="card">
-      <p> <img :src="attr.image" :alt="attr.title"></p>
-      <p>
-        <nuxt-link :to="`/proposals/${attr.name}`">
-          {{ attr.title }}
-        </nuxt-link>
-      </p>
-      <p> {{ attr.date }} </p>
+    <div v-for="(attr, key) in proposalMdAttrs" :key="key" class="">
+      <article>
+        <div class="">
+          <img :src="attr.image" :alt="attr.title">
+        </div>
+        <div class="">
+          <h3 class="title">
+            <nuxt-link :to="`/proposals/${attr.name}`">
+              {{ attr.title }}
+            </nuxt-link>
+          </h3>
+          <p class="description">
+            {{ attr.description }}
+          </p>
+        </div>
+      </article>
     </div>
 
     <h3>ブログ</h3>
-    <div v-for="(attr, key) in blogMdAttrs" :key="key" class="card">
-      <p> <img :src="attr.image" :alt="attr.title"></p>
-      <p>
-        <nuxt-link :to="`/blog/${attr.name}`">
-          {{ attr.title }}
-        </nuxt-link>
-      </p>
-      <p> {{ attr.date }} </p>
+    <div v-for="(attr, key) in blogMdAttrs" :key="key" class="">
+      <article>
+        <div class="">
+          <img :src="attr.image" :alt="attr.title">
+        </div>
+        <div class="">
+          <p class="title">
+            <nuxt-link :to="`/blog/${attr.name}`">
+              {{ attr.title }}
+            </nuxt-link>
+          </p>
+          <p> {{ attr.date }} </p>
+          <p class="description">
+            {{ attr.description }}
+          </p>
+        </div>
+      </article>
     </div>
   </div>
 </template>
@@ -57,5 +73,5 @@ export default createComponent({
 })
 </script>
 
-<style>
+<style scoped>
 </style>

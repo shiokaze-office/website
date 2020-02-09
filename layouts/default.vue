@@ -42,8 +42,15 @@ h1, h2, h3, h4, h5, header, footer {
   font-family: 'Noto Sans JP', sans-serif;
 }
 
-h2 {
+h1 {
   color: var(--primary);
+  font-weight: bold;
+  padding-top: 1em;
+  font-size: 3em;
+}
+
+h2 {
+  color: var(--analogous);
   font-weight: bold;
   padding-top: .7em;
   font-size: 2.2em;

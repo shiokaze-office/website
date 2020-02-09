@@ -2,11 +2,10 @@
   <article>
     <header>
       <h1>{{ attr.title }}</h1>
-      <p>{{ attr.date }}</p>
       <p>{{ attr.description }}</p>
       <ul>
         <li v-for="(v, k) in attr.keywords" :key="k">
-          {{ k }}
+          {{ v }}
         </li>
       </ul>
     </header>

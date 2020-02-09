@@ -1,7 +1,7 @@
 <template>
   <nav class="navbar is-light" role="navigation" aria-label="main navigation">
     <div class="navbar-brand">
-      <nuxt-link to="/" @click.native="toggle">
+      <nuxt-link to="/" @click.native="hide">
         <Logo />
       </nuxt-link>
       <a
@@ -67,7 +67,10 @@ export default createComponent({
     function toggle () {
       state.isActive = !state.isActive
     }
-    return { toggle, state }
+    function hide () {
+      state.isActive = false
+    }
+    return { toggle, hide, state }
   }
 })
 

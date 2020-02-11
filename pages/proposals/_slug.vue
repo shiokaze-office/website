@@ -1,22 +1,40 @@
 <template>
   <div class="container">
-    <Proposal :name="slug" />
+    <article>
+      <header>
+        <h1>{{ attr.title }}</h1>
+        <p>{{ attr.description }}</p>
+        <ul>
+          <li v-for="(v, k) in attr.keywords" :key="k">
+            {{ v }}
+          </li>
+        </ul>
+      </header>
+      <component :is="dynamicComponent" />
+    </article>
   </div>
 </template>
 
 <script lang="ts">
 import { createComponent, SetupContext } from '@vue/composition-api'
-import Proposal from '~/components/Proposal.vue'
+import TheMedia from '~/components/TheMedia.vue'
+
 export default createComponent({
   components: {
-    Proposal
   },
   setup (_, context: SetupContext) {
     const slug = context.root.$root.$route.params.slug
-    return { slug }
+    // https://hmsk.github.io/frontmatter-markdown-loader/vue.html
+    const md = require(`~/contents/proposals/${slug}.md`)
+    const attr: MarkdownAttr = md.attributes
+    const dynamicComponent = {
+      extends: md.vue.component,
+      components: { TheMedia }
+    }
+    return { attr, dynamicComponent }
   }
 })
 </script>
 
-<style module>
+<style scoped>
 </style>

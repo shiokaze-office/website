@@ -30,5 +30,5 @@ export default createComponent({
 })
 </script>
 
-<style lang="postcss" scoped>
+<style scoped>
 </style>

@@ -1,6 +1,6 @@
 <template>
   <component :is="tag" class="logo">
-    <img :class="vh" :src="imageUrl" alt="行政書士 しおかぜ事務所">
+    <img :class="type" :src="imageUrl" alt="行政書士 しおかぜ事務所">
   </component>
 </template>
 
@@ -9,7 +9,7 @@ import { createComponent } from '@vue/composition-api'
 
 export default createComponent({
   props: {
-    vh: {
+    type: {
       type: String,
       default: 'weave'
     },
@@ -18,8 +18,8 @@ export default createComponent({
       default: 'span'
     }
   },
-  setup ({ vh }) {
-    const imageUrl = require(`~/assets/images/logo-${vh}.svg`)
+  setup ({ type }) {
+    const imageUrl = require(`~/assets/images/logo-${type}.svg`)
     return { imageUrl }
   }
 })

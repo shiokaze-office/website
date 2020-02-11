@@ -1,22 +1,18 @@
 <template>
   <div class="container">
-    <NotarialDeed />
+    <h1>公正証書作成</h1>
   </div>
 </template>
 
 <script lang="ts">
 import { createComponent } from '@vue/composition-api'
-import NotarialDeed from '~/components/NotarialDeed.vue'
 
 export default createComponent({
-  components: {
-    NotarialDeed
-  },
   setup () {
     return { }
   }
 })
 </script>
 
-<style>
+<style scoped>
 </style>

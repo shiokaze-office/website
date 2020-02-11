@@ -1,22 +1,37 @@
 <template>
   <div class="container">
-    <Blog :name="slug" />
+    <article>
+      <header>
+        <h1>{{ attr.title }}</h1>
+        <p>{{ attr.date }}</p>
+        <p>{{ attr.description }}</p>
+        <ul>
+          <li v-for="(v, k) in attr.keywords" :key="k">
+            {{ v }}
+          </li>
+        </ul>
+      </header>
+      <component :is="dynamicComponent" />
+    </article>
   </div>
 </template>
 
 <script lang="ts">
 import { createComponent, SetupContext } from '@vue/composition-api'
-import Blog from '~/components/Blog.vue'
+
 export default createComponent({
   components: {
-    Blog
   },
   setup (_, context: SetupContext) {
     const slug = context.root.$root.$route.params.slug
-    return { slug }
+    // https://hmsk.github.io/frontmatter-markdown-loader/vue.html
+    const md = require(`~/contents/blog/${slug}.md`)
+    const attr: MarkdownAttr = md.attributes
+    const dynamicComponent = md.vue.component
+    return { attr, dynamicComponent }
   }
 })
 </script>
 
-<style module>
+<style scoped>
 </style>

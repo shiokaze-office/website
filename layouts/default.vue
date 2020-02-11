@@ -28,37 +28,46 @@ export default createComponent({
   padding: 0 1em;
   color: var(--text);
   min-height: 30em;
+  color: #221822;
 }
 
 a {
-  color: #CEC0D9;
+  color: #CC9999;
 }
 
 a:hover {
-  color: #CEC0D9;
+  color: #FF9999;
 }
 
 h1, h2, h3, h4, h5, header, footer {
   font-family: 'Noto Sans JP', sans-serif;
 }
 
+h1 a, h2 a, h3 a {
+  color: #666699;
+}
+
+h1 a:hover, h2 a:hover, h3 a:hover {
+  color: #6666CC;
+}
+
 h1 {
-  color: var(--primary);
   font-weight: bold;
-  padding-top: 1em;
+  padding-top: 1.2em;
+  padding-bottom: .5em;
   font-size: 3em;
 }
 
 h2 {
-  color: var(--analogous);
   font-weight: bold;
-  padding-top: .7em;
+  padding-top: 1em;
+  padding-bottom: .3em;
   font-size: 2.2em;
 }
 
 h3 {
-  color: var(--secondary);
-  font-weight: normal;
+  padding-top: .8em;
+  padding-bottom: .2em;
   font-size: 1.8em;
 }
 

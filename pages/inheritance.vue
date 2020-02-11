@@ -1,22 +1,18 @@
 <template>
   <div class="container">
-    <Inheritance />
+    <h1>遺言・相続</h1>
   </div>
 </template>
 
 <script lang="ts">
 import { createComponent } from '@vue/composition-api'
-import Inheritance from '~/components/Inheritance.vue'
 
 export default createComponent({
-  components: {
-    Inheritance
-  },
   setup () {
     return { }
   }
 })
 </script>
 
-<style>
+<style scoped>
 </style>

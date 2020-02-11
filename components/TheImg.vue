@@ -33,7 +33,7 @@ export default createComponent({
 })
 </script>
 
-<style lang="postcss" scoped>
+<style scoped>
   .the-img {
     padding: 1em 0 5em;
   }

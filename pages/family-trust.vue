@@ -1,17 +1,13 @@
 <template>
   <div class="container">
-    <FamilyTrust />
+    <h1>家族信託</h1>
   </div>
 </template>
 
 <script lang="ts">
 import { createComponent } from '@vue/composition-api'
-import FamilyTrust from '~/components/FamilyTrust.vue'
 
 export default createComponent({
-  components: {
-    FamilyTrust
-  },
   setup () {
     return { }
   }

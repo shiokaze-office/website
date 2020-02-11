@@ -1,6 +1,8 @@
 <template>
   <div class="container">
-    <About />
+    <p>
+      しおかぜ事務所は、成年後見、遺言、生前・死後事務委任、信託を利用して、人生の終わりをサポートする行政書士事務所です。
+    </p>
 
     <div v-for="(attr, key) in proposalMdAttrs" :key="key" class="">
       <article>
@@ -16,6 +18,9 @@
           <p class="description">
             {{ attr.description }}
           </p>
+          <nuxt-link :to="`/proposals/${attr.name}`" class="button">
+            続きを読む
+          </nuxt-link>
         </div>
       </article>
     </div>
@@ -44,7 +49,6 @@
 
 <script lang="ts">
 import { createComponent } from '@vue/composition-api'
-import About from '~/components/About.vue'
 
 interface MarkdownAttrWithName extends MarkdownAttr {
   name: string
@@ -52,7 +56,6 @@ interface MarkdownAttrWithName extends MarkdownAttr {
 
 export default createComponent({
   components: {
-    About
   },
   setup () {
     const proposalMdAttrs: MarkdownAttrWithName[] = []

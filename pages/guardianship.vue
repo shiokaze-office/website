@@ -1,22 +1,18 @@
 <template>
   <div class="container">
-    <Guardianship />
+    <h1>任意後見契約</h1>
   </div>
 </template>
 
 <script lang="ts">
 import { createComponent } from '@vue/composition-api'
-import Guardianship from '~/components/Guardianship.vue'
 
 export default createComponent({
-  components: {
-    Guardianship
-  },
   setup () {
     return { }
   }
 })
 </script>
 
-<style>
+<style scoped>
 </style>

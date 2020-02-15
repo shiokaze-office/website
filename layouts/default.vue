@@ -66,14 +66,36 @@ h2 {
 }
 
 h3 {
+  font-weight: bold;
   padding-top: .8em;
   padding-bottom: .2em;
   font-size: 1.8em;
 }
 
+h4 {
+  font-weight: bold;
+  padding-top: .7em;
+  padding-bottom: .2em;
+  font-size: 1.3em;
+}
+
 p {
   font-size: 1.5em;
-  line-height: 1.5;
+  line-height: 1.7;
   padding-bottom: 1em;
+}
+
+ul {
+  list-style-type: circle;
+  padding: 1em 0 1.5em 1.5em;
+  font-size: 1.3em;
+}
+ul ul {
+  list-style-type: disc;
+  padding: 1em 0 0 1em;
+  font-size: .8em;
+}
+li {
+  padding: 0 0 .8em .5em;
 }
 </style>

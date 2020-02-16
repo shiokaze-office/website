@@ -1,10 +1,10 @@
 <template>
-  <div class="the-img">
-    <img alt="alt || caption" :src="getImage()" class="the-img--image">
-    <span v-if="caption" class="the-img--caption">
+  <figure class="the-img">
+    <img :alt="alt || caption" :src="getImage()" class="the-img--image">
+    <figcaption v-if="caption" class="the-img--caption">
       {{ caption }}
-    </span>
-  </div>
+    </figcaption>
+  </figure>
 </template>
 
 <script lang="ts">

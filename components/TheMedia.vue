@@ -34,14 +34,16 @@ export default createComponent({
 })
 </script>
 
-<style scoped>
+<style>
 .the-media-left {
-  width: 50%;
+  width: 75%;
+  margin-left: -25%;
   float: left;
   clear: left;
 }
 .the-media-right {
-  width: 50%;
+  width: 75%;
+  margin-right: -25%;
   float: right;
   clear: right;
 }

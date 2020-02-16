@@ -1,29 +1,29 @@
 <template>
-  <div class="container">
-    <p>
+  <div class="container index">
+    <p class="index--copy">
       しおかぜ事務所は、成年後見、遺言、生前・死後事務委任、信託を利用して、人生の終わりをサポートする行政書士事務所です。
     </p>
 
-    <div v-for="(attr, key) in proposalMdAttrs" :key="key" class="">
-      <article>
+    <section class="index--proposals is-clearfix">
+      <div v-for="(attr, key) in proposalMdAttrs" :key="key" class="index--proposal">
         <div class="">
           <img :src="attr.image" :alt="attr.title">
         </div>
         <div class="">
-          <h3 class="title">
+          <h3 class="index--proposal--title">
             <nuxt-link :to="`/proposals/${attr.name}`">
               {{ attr.title }}
             </nuxt-link>
           </h3>
-          <p class="description">
+          <p class="index--proposal--description">
             {{ attr.description }}
           </p>
-          <nuxt-link :to="`/proposals/${attr.name}`" class="button">
+          <nuxt-link :to="`/proposals/${attr.name}`" class="index--proposal--button button">
             続きを読む
           </nuxt-link>
         </div>
-      </article>
-    </div>
+      </div>
+    </section>
 
     <h3>ブログ</h3>
     <div v-for="(attr, key) in blogMdAttrs" :key="key" class="">
@@ -77,4 +77,17 @@ export default createComponent({
 </script>
 
 <style scoped>
+.index--copy {
+  width: 480px;
+  margin: 3em auto 2em;
+}
+.index--proposal {
+  width: 640px;
+  margin: 0 0 2em auto;
+}
+.index--proposal--description {
+  font-size: 1.2em;
+}
+.index--proposal--button {
+}
 </style>

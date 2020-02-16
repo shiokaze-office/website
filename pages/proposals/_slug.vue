@@ -1,16 +1,22 @@
 <template>
   <div class="container proposal">
     <article>
-      <header>
-        <h1>{{ attr.title }}</h1>
-        <p>{{ attr.description }}</p>
-        <ul>
+      <header class="proposal--header">
+        <h1 class="proposal--title">
+          {{ attr.title }}
+        </h1>
+        <p class="proposal--description">
+          {{ attr.description }}
+        </p>
+      </header>
+      <div class="proposal--body">
+        <ul class="proposal--tags">
           <li v-for="(v, k) in attr.keywords" :key="k">
             {{ v }}
           </li>
         </ul>
-      </header>
-      <component :is="dynamicComponent" />
+        <component :is="dynamicComponent" />
+      </div>
     </article>
   </div>
 </template>
@@ -39,4 +45,20 @@ export default createComponent({
 </script>
 
 <style scoped>
+.proposal--header {
+}
+.proposal--tags {
+  position: absolute;
+  top: 1em;
+  left: -320px;
+  color: var(--secondary);
+}
+.proposal--body {
+  position: relative;
+  width: 760px;
+  margin: 0 auto;
+}
+.the-media-right {
+  margin-right: -25%;
+}
 </style>

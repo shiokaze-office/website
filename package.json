@@ -15,12 +15,15 @@
     "ci": "npm i && npm run lint && npm run test"
   },
   "dependencies": {
+    "@fortawesome/free-regular-svg-icons": "^5.12.1",
+    "@fortawesome/free-solid-svg-icons": "^5.12.1",
     "@nuxt/typescript-runtime": "^0.3.6",
     "@nuxtjs/bulma": "^1.2.1",
     "@nuxtjs/google-analytics": "^2.2.2",
     "@vue/composition-api": "^0.3.4",
     "node-gyp": "^6.1.0",
     "nuxt": "latest",
+    "nuxt-fontawesome": "^0.4.0",
     "vue2-google-maps": "^0.10.7"
   },
   "devDependencies": {
@@ -34,7 +37,11 @@
     "babel-jest": "^25.1.0",
     "eslint": "^6.1.0",
     "eslint-plugin-nuxt": ">=0.4.2",
+    "@types/webpack-env": "^1.15.1",
+    "frontmatter-markdown-loader": "^3.1.0",
     "jest": "^24.9.0",
+    "postcss-calc": "^7.0.1",
+    "postcss-custom-properties": "^9.0.2",
     "ts-jest": "^25.2.0",
     "vue-jest": "^4.0.0-beta.2"
   }

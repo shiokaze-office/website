@@ -12,13 +12,11 @@ const config: Configuration = {
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
-      { rel: 'stylesheet', href: 'fonts.googleapis.com/css?family=Noto+Sans+JP:100,400,900&display=swap' }
+      { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css?family=Noto+Sans+JP:100,400,900&display=swap' }
     ]
   },
   loading: { color: '#D5C9DE' },
-  css: [
-    '~/assets/css/style.css'
-  ],
+  css: [],
   plugins: [
     '@/plugins/composition-api',
     { src: '~plugins/googlemap', ssr: false }
@@ -29,18 +27,46 @@ const config: Configuration = {
   ],
   modules: [
     ['@nuxtjs/google-analytics', { id: 'UA-10693153-3' }],
-    '@nuxtjs/bulma'
+    '@nuxtjs/bulma',
+    ['nuxt-fontawesome', {
+      component: 'Fa',
+      imports: [{
+        set: '@fortawesome/free-solid-svg-icons',
+        icons: ['fas']
+      }, {
+        set: '@fortawesome/free-regular-svg-icons',
+        icons: ['far']
+      }]
+    }]
   ],
   transpile: [/^vue2-google-maps($|\/)/],
   build: {
     postcss: {
+      plugins: {
+        'postcss-custom-properties': {
+          preserve: false,
+          importFrom: ['assets/styles/custom-properties.css']
+        },
+      },
       preset: {
         features: {
           customProperties: false
         }
       }
     },
-    extend (config, ctx) {
+    extend (conf: any, ctx): void{
+      conf.module.rules.push(
+        {
+          test: /\.md$/,
+          loader: "frontmatter-markdown-loader",
+          options: {
+            mode: ['html', 'vue-component'],
+            vue: {
+              root: 'dynamicContent'
+            }
+          }
+        }
+      )
     }
   }
 }

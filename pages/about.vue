@@ -1,22 +1,18 @@
 <template>
-  <header>
-    <TheNav />
-  </header>
+  <div class="container">
+    <h1>行政書士紹介</h1>
+    <p>小田博子</p>
+  </div>
 </template>
 
 <script lang="ts">
 import { createComponent } from '@vue/composition-api'
-import TheNav from '~/components/TheNav.vue'
 
 export default createComponent({
-  components: {
-    TheNav
-  },
   setup () {
     return { }
   }
 })
-
 </script>
 
 <style scoped>

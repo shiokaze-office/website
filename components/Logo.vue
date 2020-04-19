@@ -1,7 +1,6 @@
 <template>
   <component :is="tag" class="logo">
-    <img v-if="vh === 'horizontal'" src="~/assets/img/shiokaze-logo-horizontal.svg" :alt="imgAlt">
-    <img v-else src="~/assets/img/shiokaze-logo-vertical.svg" :alt="imgAlt">
+    <img :class="type" :src="imageUrl" alt="行政書士 しおかぜ事務所">
   </component>
 </template>
 
@@ -10,35 +9,32 @@ import { createComponent } from '@vue/composition-api'
 
 export default createComponent({
   props: {
-    vh: {
+    type: {
       type: String,
-      default: 'horizontal'
+      default: 'weave'
     },
     tag: {
       type: String,
       default: 'span'
     }
   },
-  setup () {
-    const imgAlt: string = '行政書士 しおかぜ事務所'
-    return {
-      imgAlt
-    }
+  setup ({ type }) {
+    const imageUrl = require(`~/assets/images/logo-${type}.svg`)
+    return { imageUrl }
   }
 })
 </script>
 
 <style scoped>
-.logo {
-  width: 400px;
-  max-height: 290px;
-  margin: 0 auto;
-  display: block;
+.weave {
+  margin: 0.5rem 0.75rem;
+  width: 8rem;
 }
-@media (max-width: 600px) {
-  .logo {
-    width: 300px;
-    height: auto;
+@media (max-width: 1024px) {
+  .weave {
+    margin: 5px 5px 0;
+    width: auto;
+    height: 42px;
   }
 }
 </style>

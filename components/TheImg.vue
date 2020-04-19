@@ -39,6 +39,7 @@ export default createComponent({
   }
   .the-img, .the-img--image {
     width: 100%;
+    margin-left: -5%;
   }
   .the-img--caption {
     margin-top: 20px;

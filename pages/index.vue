@@ -1,13 +1,20 @@
 <template>
   <div class="container index">
-    <p class="index--copy">
-      しおかぜ事務所は、成年後見、遺言、生前・死後事務委任、信託を利用して、人生の終わりをサポートする行政書士事務所です。
-    </p>
+    <div class="index--first columns is-vcentered">
+      <div class="column is-two-thirds">
+        <img src="~/assets/images/top.png" alt="しおかぜ事務所">
+      </div>
+      <div class="column">
+        <p class="index--copy">
+          しおかぜ事務所は、成年後見、遺言、生前・死後事務委任、信託を利用して、人生の終わりをサポートする行政書士事務所です。
+        </p>
+      </div>
+    </div>
 
-    <section class="index--proposals is-clearfix">
-      <div v-for="(attr, key) in proposalMdAttrs" :key="key" class="index--proposal">
+    <section class="index--proposals is-clearfix columns is-desktop">
+      <div v-for="(attr, key) in proposalMdAttrs" :key="key" class="index--proposal column">
         <div class="">
-          <img :src="attr.image" :alt="attr.title">
+          <img :src="getCover(attr.image)" :alt="attr.title">
         </div>
         <div class="">
           <h3 class="index--proposal--title">
@@ -68,22 +75,21 @@ export default createComponent({
       })
     }
 
+    function getCover(path: string) {
+      return require(`~/assets/images/${path}`)
+    }
+
     importAll(require.context('~/contents/proposals', true, /\.md$/), proposalMdAttrs)
     importAll(require.context('~/contents/blog', true, /\.md$/), blogMdAttrs)
 
-    return { proposalMdAttrs, blogMdAttrs }
+    return { proposalMdAttrs, blogMdAttrs, getCover }
   }
 })
 </script>
 
 <style scoped>
-.index--copy {
-  width: 480px;
-  margin: 3em auto 2em;
-}
-.index--proposal {
-  width: 640px;
-  margin: 0 0 2em auto;
+.index--first {
+  padding-bottom: 2em;
 }
 .index--proposal--description {
   font-size: 1.2em;

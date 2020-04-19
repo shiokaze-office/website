@@ -9,8 +9,8 @@
           {{ attr.description }}
         </p>
       </header>
-      <div class="proposal--body">
-        <ul class="proposal--tags">
+      <div class="proposal--body columns">
+        <ul class="proposal--tags column is-one-fifth">
           <li v-for="(v, k) in attr.keywords" :key="k">
             {{ v }}
           </li>
@@ -48,14 +48,11 @@ export default createComponent({
 .proposal--header {
 }
 .proposal--tags {
-  position: absolute;
   top: 1em;
-  left: -320px;
   color: var(--secondary);
 }
 .proposal--body {
   position: relative;
-  width: 760px;
   margin: 0 auto;
 }
 .the-media-right {

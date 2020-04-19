@@ -1,7 +1,7 @@
 ---
 title: 子供のいないご夫婦
 description: 人生を共に歩むパートナーがいることは、とても素敵なことですね。二人で築いてきた財産で残されたパートナーが最後まで安心して生活できるよう、子供のいないご夫婦はとくに相続や死後事務に関してご夫婦で話し合って備えることをおすすめします。
-image: proposals/dinks/cover.png
+image: proposals/dinks/cover.jpg
 keywords:
   - DINKs
   - 遺言書

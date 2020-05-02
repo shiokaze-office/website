@@ -27,5 +27,7 @@ export default createComponent({
 .footer {
   background-color: #fff;
   font-size: .7em;
+  margin: 2em 0;
+  padding: 0;
 }
 </style>

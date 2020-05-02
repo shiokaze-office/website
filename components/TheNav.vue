@@ -2,7 +2,7 @@
   <nav class="navbar is-light" role="navigation" aria-label="main navigation">
     <div class="navbar-brand">
       <nuxt-link to="/" @click.native="hide">
-        <Logo />
+        <Logo type="horizontal" />
       </nuxt-link>
       <a
         role="button"

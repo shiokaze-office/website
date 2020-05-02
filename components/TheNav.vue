@@ -39,7 +39,7 @@
       <div class="navbar-end">
         <div class="navbar-item">
           <div class="buttons">
-            <nuxt-link class="button is-outlined" to="hello" @click.native="toggle">
+            <nuxt-link class="button is-outlined" to="about" @click.native="toggle">
               行政書士紹介
             </nuxt-link>
             <nuxt-link class="button is-outlined" to="office" @click.native="toggle">

@@ -1,5 +1,5 @@
 <template>
-  <nav class="navbar is-light" role="navigation" aria-label="main navigation">
+  <nav class="navbar" role="navigation" aria-label="main navigation">
     <div class="navbar-brand">
       <nuxt-link to="/" @click.native="hide">
         <Logo type="horizontal" />
@@ -80,9 +80,12 @@ export default createComponent({
 .navbar-start .navbar-item.nuxt-link-active {
   color: var(--primary);
 }
-.button:hover {
-  border-color: var(--primary);
-  color: var(--primary);
+.navbar {
+  padding: 0 .2rem;
+}
+.navbar-burger {
+  width: 6rem;
+  height: 6rem;
 }
 @media (max-width: 1024px) {
   .navbar-menu.is-active {

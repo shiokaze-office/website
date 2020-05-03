@@ -12,22 +12,27 @@ const config: Configuration = {
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
-      { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css?family=Noto+Sans+JP:100,400,900&display=swap' }
+      { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;900&family=Noto+Serif+JP:wght@900&display=swap' }
     ]
   },
   loading: { color: '#D5C9DE' },
-  css: [],
+  css: [
+    '@/assets/styles/base.scss'
+  ],
   plugins: [
     '@/plugins/composition-api',
-    { src: '~plugins/googlemap', ssr: false }
+    { src: '@/plugins/googlemap', ssr: false }
   ],
   buildModules: [
     '@nuxt/typescript-build',
+    '@nuxtjs/style-resources',
     '@nuxtjs/eslint-module'
   ],
+  styleResources: {
+    scss: ['@/assets/styles/variables.scss']
+  },
   modules: [
     ['@nuxtjs/google-analytics', { id: 'UA-10693153-3' }],
-    '@nuxtjs/bulma',
     ['nuxt-fontawesome', {
       component: 'Fa',
       imports: [{

@@ -1,15 +1,21 @@
 <template>
   <div class="container index">
     <div class="index--first">
-      <h1 class="index--title">人生の終わりをサポート</h1>
+      <h1 class="index--title">
+        人生の終わりをサポートする
+      </h1>
+      <p class="index--image">
+        <img src="~/assets/images/top.png" alt="しおかぜ事務所">
+      </p>
       <p class="index--desc">
         しおかぜ事務所は、<span class="marker">成年後見</span>、<span class="marker">遺言</span>、<span class="marker">生前・死後事務委任</span>、<span class="marker">信託</span>を利用して、人生の終わりをサポートする行政書士事務所です。
       </p>
-      <img src="~/assets/images/top.png" alt="しおかぜ事務所">
     </div>
 
     <section class="index--proposals">
-      <h2 class="index--proposals--title">ご提案</h2>
+      <h2 class="index--proposals--title">
+        ご提案
+      </h2>
       <p class="index--proposals--desc">
         さまざまな方へ私たちからのご提案です。
       </p>
@@ -36,7 +42,12 @@
     </section>
 
     <section class="index--blog">
-      <h2 class="index--blog--title">ブログ</h2>
+      <h2 class="index--blog--title">
+        ブログ
+      </h2>
+      <p class="index--proposals--desc">
+        随時、有益な情報をお届けします。
+      </p>
       <div v-for="(attr, key) in blogMdAttrs" :key="key" class="">
         <article>
           <div>
@@ -80,7 +91,7 @@ export default createComponent({
       })
     }
 
-    function getCover(path: string) {
+    function getCover (path: string) {
       return require(`~/assets/images/${path}`)
     }
 
@@ -94,18 +105,18 @@ export default createComponent({
 
 <style scoped>
 .index--first {
-  padding-bottom: 2em;
+  padding: 2rem 0;
 }
 .index--title {
+  text-align: center;
   font-weight: 900;
-  font-size: 3em;
 }
-.index--proposal--description {
-  font-size: 1.2em;
+.index--image {
+  max-width: 800px;
+  margin: .5rem auto 1rem;
 }
-.index--proposal--button {
-}
-.marker {
-  background: linear-gradient(transparent 50%, #E6E0ED 0%);
+.index--desc {
+  max-width: 720px;
+  margin: 0 auto;
 }
 </style>

@@ -1,0 +1,34 @@
+@import "~bulma/sass/utilities/initial-variables";
+@import "~bulma/sass/utilities/functions";
+
+// Initial variables
+$purple: #CEC0D9;
+$blue: $purple;
+$purple-light: #E6E0ED;
+$purple-invert: #fff;
+$family-serif: 'Noto Sans JP', sans-serif;
+
+// The derived variables
+$primary: $purple;
+$primary-light: $purple-light;
+$primary-invert: $purple-invert;
+$konai: #4a488e;
+$keshizumi: #524e4d;
+// https://www.colordic.org/w
+$link: $konai;
+$text: $keshizumi;
+$danger: $orange;
+$family-primary: $family-serif;
+
+$navbar-background-color: $grey-lightest;
+$navbar-item-hover-background-color: $white-bis;
+
+$button-color: $konai;
+$button-border-color: $konai;
+$button-hover-color: #5c2ab1;
+$button-hover-border-color: #5c2ab1;
+
+$footer-background-color: #fff;
+$footer-padding: 3rem 1.5rem 2rem;
+
+@import "~bulma";

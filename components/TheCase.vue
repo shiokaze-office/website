@@ -27,7 +27,7 @@ export default createComponent({
 })
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
   .the-case {
     padding: 0 0 0 2.2em;
     position: relative;
@@ -40,7 +40,7 @@ export default createComponent({
     top: 10px;
     left: 1px;
     border-radius: 10px;
-    background-color: var(--secondary);
+    background-color: $primary;
     width: 20px;
     height: 20px;
   }

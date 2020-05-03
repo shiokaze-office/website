@@ -2,7 +2,7 @@
   <footer class="footer">
     <div class="content has-text-centered">
       <Logo />
-      <p><Fa :icon="['far', 'copyright']" /> 2014-{{ currentYear }} 行政書士 しおかぜ事務所</p>
+      <small class="copyright"><Fa :icon="['far', 'copyright']" /> 2014-{{ currentYear }} 行政書士 しおかぜ事務所</small>
     </div>
   </footer>
 </template>
@@ -25,9 +25,9 @@ export default createComponent({
 
 <style scoped>
 .footer {
-  background-color: #fff;
-  font-size: .7em;
-  margin: 2em 0;
-  padding: 0;
+  font-size: .9rem;
+}
+.copyright {
+  display: block;
 }
 </style>

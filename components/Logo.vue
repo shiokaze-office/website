@@ -27,22 +27,21 @@ export default createComponent({
 
 <style scoped>
 .weave {
-  margin: 0.5rem 0.75rem;
+  margin: .5rem .75rem .3rem;
   width: 8rem;
 }
 .horizontal {
   margin: 0;
-  padding: 5px 3em 0 0;
-  height: 60px;
+  padding: .2rem 3rem 0 0;
+  height: 3rem;
 }
 .horizontal:hover {
   opacity: 0.6;
 }
 @media (max-width: 1024px) {
-  .weave {
-    margin: 5px 5px 0;
-    width: auto;
-    height: 42px;
+  .horizontal {
+    padding: .7rem 0 0;
+    height: 5rem;
   }
 }
 </style>

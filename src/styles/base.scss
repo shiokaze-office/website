@@ -1,0 +1,114 @@
+@charset "utf-8";
+
+h1, h2, h3, h4, h5, header, footer {
+  font-family: 'Noto Sans JP', sans-serif;
+}
+h1, h2, h3, h4, h5 {
+  font-weight: 900;
+  letter-spacing: -.1rem;
+}
+header, footer {
+  font-weight: 400;
+}
+h1 {
+  color: #555;
+  padding: 1.2rem 0 .7rem;
+  font-size: 3rem;
+}
+h2 {
+  color: #333;
+  padding: 1rem 0 .3rem;
+  font-size: 2.2rem;
+}
+h3 {
+  padding: .8rem 0 .3rem;
+  font-size: 1.8rem;
+}
+h4 {
+  padding: .7rem 0 .2rem;
+  font-size: 1.3rem;
+}
+p {
+  font-size: 1.5rem;
+  line-height: 1.85;
+  padding-bottom: 1em;
+}
+ul {
+  list-style-type: circle;
+  padding: 1rem 0 1.5rem 1.5rem;
+  font-size: 1.3rem;
+}
+ul ul {
+  list-style-type: disc;
+  padding: 1rem 0 0 1rem;
+  font-size: .8rem;
+}
+li {
+  padding: 0 0 .8rem .5rem;
+}
+
+em {
+  font-style: normal;
+  background: linear-gradient(transparent 50%, $primary-light 0%);
+}
+footer,
+footer a {
+  color: #555;
+}
+.footer-nav {
+  border-top: 1px solid $primary-light;
+  border-bottom: 1px solid $primary-light;
+  padding: 1rem 0 2rem;
+  margin: 0 0 1.5rem;
+}
+footer li {
+  font-weight: bold;
+}
+
+.container {
+  margin: 1rem auto 0;
+  padding: 0 1rem;
+  min-height: 30rem;
+  color: #221822;
+}
+
+.logo {
+  width: 300px;
+  padding: 0 2rem 0 0;
+  border-right: 1px solid $primary-light;
+}
+.logomark {
+  margin: 0;
+  height: 3rem;
+}
+.logomark:hover {
+  opacity: 0.8;
+}
+
+header {
+  padding: 0 1rem 1rem;
+}
+.navbar {
+  border-bottom: 1px solid $primary-light;
+}
+.navbar-brand {
+  padding: 1rem 0;
+}
+.navbar-menu {
+  margin-left: 2rem;
+}
+.navbar-item {
+  padding-left: 1rem;
+}
+
+@media (max-width: 480px) {
+  html {
+    font-size: 11px;
+  }
+}
+
+@media (min-width: 481px) and (max-width: 1024px) {
+  html {
+    font-size: 13px;
+  }
+}

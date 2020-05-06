@@ -1,25 +1,53 @@
-Website
-==
+# Gatsby Markdown Starter
 
-https://shiokaze.net/
+Boilerplate for markdown-based website (Documentation, Blog, etc.).  Based on [gatsby-default-starter](https://github.com/gatsbyjs/gatsby-starter-default).
 
-<a href="https://travis-ci.org/shiokaze-office/website" title="travis"><img src="https://img.shields.io/travis/shiokaze-office/website.svg?style=for-the-badge"></a>
-<a href="https://app.netlify.com/sites/shiokaze/deploys" title="netlify"><img src="https://img.shields.io/netlify/6b1ee9a4-c07b-466d-b5d0-eb1ae57b1468?style=for-the-badge"></a>
+[live demo](https://cvluca.github.io/gatsby-starter-markdown)
 
-Build Setup
---
+## Features
+* Responsive Web Design
+* Sidebar
+* Anchor
 
-```sh
-# install dependencies
-$ npm run install
+## TODO
+* Footer
+* Search Funtionality
+* More examples
 
-# serve with hot reload at localhost:3000
-$ npm run dev
+## Plugins
+* gatsby-image
+* gatsby-plugin-manifest
+* gatsby-plugin-offline
+* gatsby-plugin-react-helmet
+* gatsby-plugin-sharp
+* gatsby-remark-images
+* gatsby-remark-autolink-headers
+* gatsby-remark-katex
+* gatsby-source-filesystem
+* gatsby-transformer-json
+* gatsby-transformer-remark
+* gatsby-transformer-sharp
 
-# build for production and launch server
-$ npm run build
-$ npm run start
+## Quick Start
 
-# generate static project
-$ npm run generate
-```
+1.  **Create a Gatsby site.**
+
+    Use the Gatsby CLI to create a new site, specifying the default starter.
+
+    ```sh
+    gatsby new gatsby-starter-markdown https://github.com/cvluca/gatsby-starter-markdown
+    ```
+1.  **Start developing.**
+
+    Navigate into your new site’s directory and start it up.
+
+    ```sh
+    cd gatsby-starter-markdown/
+    gatsby develop
+    ```
+
+1.  **Open the source code and start editing!**
+
+    Your site is now running at `http://localhost:8000`!
+    
+    *Note: You'll also see a second link: `http://localhost:8000/___graphql`. This is a tool you can use to experiment with querying your data. Learn more about using this tool in the [Gatsby tutorial](https://www.gatsbyjs.org/tutorial/part-five/#introducing-graphiql).*

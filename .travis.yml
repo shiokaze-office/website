@@ -1,9 +1,0 @@
-language: node_js
-sudo: false
-node_js:
-  - stable
-script:
-  - npm run -- ci
-notifications:
-  slack: linyows:2oeZ2qcLnaMjbnEYodwEXKTr
-  email: false

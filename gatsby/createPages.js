@@ -5,8 +5,8 @@ const path = require("path")
 module.exports = exports.createPages = ({ actions, graphql }) => {
   const { createPage } = actions
 
-  const pageTemplate = path.resolve(`src/templates/page.jsx`)
-  const postTemplate = path.resolve(`src/templates/post.jsx`)
+  const page = path.resolve(`src/templates/page.jsx`)
+  const post = path.resolve(`src/templates/post.jsx`)
 
   return graphql(`
     {
@@ -31,7 +31,7 @@ module.exports = exports.createPages = ({ actions, graphql }) => {
     result.data.allMarkdownRemark.edges.forEach(({ node }) => {
       createPage({
         path: replacePath(node.fields.slug),
-        component: (node.fields.slug.match("/proposals/") ? pageTemplate : postTemplate),
+        component: node.fields.slug.match("/blog/") ? post : page,
         context: {}, // additional data can be passed via context
       })
     })

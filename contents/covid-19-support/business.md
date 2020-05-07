@@ -87,7 +87,7 @@ tags:
 
 金利引き下げ／中小企業庁
 
-<panel text="実質的に" note="無利子・無担保"></panel>
+<panel text="実質的に" raw="無利子<br>無担保"></panel>
 
 - 対象者：新型コロナの影響による資金繰りに悩む中小企業と個人事業主
 - 制度の概要：[新型コロナウイルス感染症特別貸付](https://seido-navi.mirasapo-plus.go.jp/supports/149) 、 [危機対応融資](https://seido-navi.mirasapo-plus.go.jp/supports/282) 、 [特別利子補給制度](https://seido-navi.mirasapo-plus.go.jp/supports/150) 、[新型コロナウイルス対策マル経融資](https://seido-navi.mirasapo-plus.go.jp/supports/151) を併用することで実質的な無利子化が実現します。

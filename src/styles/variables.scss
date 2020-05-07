@@ -14,6 +14,9 @@ $primary-light: $purple-light;
 $primary-invert: $purple-invert;
 $konai: #4a488e;
 $keshizumi: #524e4d;
+$jinzamomi: #ee827c;
+$momoiro: #f09199;
+$mura: #5c2ab1;
 // https://www.colordic.org/w
 $link: $konai;
 $text: $keshizumi;
@@ -21,13 +24,13 @@ $danger: $orange;
 $family-primary: $family-serif;
 
 $navbar-background-color: none;
-$navbar-item-hover-color: #000;
-$navbar-item-hover-background-color: $primary-light;
+$navbar-item-hover-color: $purple-invert;
+$navbar-item-hover-background-color: $purple;
 
 $button-color: $konai;
 $button-border-color: $konai;
-$button-hover-color: #5c2ab1;
-$button-hover-border-color: #5c2ab1;
+$button-hover-color: $keshizumi;
+$button-hover-border-color: $keshizumi;
 
 $footer-background-color: #fff;
 $footer-padding: 3rem 1.5rem 2rem;

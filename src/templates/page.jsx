@@ -5,32 +5,62 @@ import Layout from '../components/layout'
 import rehypeReact from "rehype-react"
 import Case from "../components/case"
 import Callout from "../components/callout"
+import Panel from "../components/panel"
 
 const renderAst = new rehypeReact({
   createElement: React.createElement,
-  components: { "case": Case, "callout": Callout },
+  components: { "case": Case, "callout": Callout, "panel": Panel },
 }).Compiler
 
 const Container = styled.article`
+  margin: 0 0 3rem;
 `
+
 const Header = styled.div`
+  margin: 0 1rem 2rem;
+  padding: 1rem 0;
+  border-bottom: 1px solid #E6E0ED;
+  h1 {
+    padding-top: 0;
+  }
+`
+
+const Category = styled.article`
+  margin: 0;
+  padding: 0;
+  font-weight: bold;
+  color: #999;
 `
 
 const Meta = styled.div`
+  position: absolute;
   top: 1rem;
+  right: -300px;
+  width: 260px;
   color: #ddd;
+  margin: 0;
+  padding: 0;
+  p {
+    font-weight: bold;
+    margin: 0;
+    padding: 0;
+  }
   ul {
-    padding: .5rem 0 1.5rem .5rem; 
+    margin: 0;
+    padding: .5rem 0 1.5rem 1.2rem;
     color: #999;
+    line-height: 1.85;
   }
   li {
-    padding: 0 0 .8rem .5rem;
+    padding: 0;
+    font-size: 1rem;
   }
 `
 
 const Body = styled.div`
   position: relative;
   margin: 0 auto;
+  width: 760px;
 `
 
 export const query = graphql`
@@ -44,6 +74,7 @@ export const query = graphql`
       timeToRead
       frontmatter {
         title
+        category
         lead
         tags
       }
@@ -53,24 +84,31 @@ export const query = graphql`
 
 const Component = ({ data }) => {
   const { markdownRemark } = data
-  const { frontmatter, htmlAst } = markdownRemark
-  const { title, lead, tags } = frontmatter
+  const { frontmatter, htmlAst, fields: { slug } } = markdownRemark
+  const { title, lead, tags, category } = frontmatter
+  const categoryName = slug.match(/covid-19/) ? `COVID-19 Support` :
+    (slug.match(/proposals/) ? 'Proposals' :
+    (category === null ? 'Services' : category))
 
   return (
     <Layout>
-      <Container className="container">
+      <Container>
         <Header>
-          <h1>{title}</h1>
-          <p>{lead}</p>
+          <div className="container">
+            <Category>{categoryName}</Category>
+            <h1>{title}</h1>
+            <p>{lead}</p>
+          </div>
         </Header>
-        <Body className="columns">
-          <Meta className="column is-one-fifth">
+        <Body>
+          {tags !== null && <Meta>
+            <p>Tags:</p>
             <ul>
               {tags.map(tag => (
                 <li key={tag}>{tag}</li>
               ))}
             </ul>
-          </Meta>
+          </Meta>}
           {renderAst(htmlAst)}
         </Body>
       </Container>
@@ -79,4 +117,3 @@ const Component = ({ data }) => {
 }
 
 export default Component
-

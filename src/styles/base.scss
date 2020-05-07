@@ -31,11 +31,15 @@ h4 {
 p {
   font-size: 1.5rem;
   line-height: 1.85;
-  padding-bottom: 1em;
+  padding-bottom: 1rem;
 }
 ul {
   list-style-type: circle;
   padding: 1rem 0 1.5rem 1.5rem;
+  font-size: 1.3rem;
+}
+ol {
+  padding: 1rem 0 1.5rem 2.6rem;
   font-size: 1.3rem;
 }
 ul ul {
@@ -68,7 +72,7 @@ footer li {
 .container {
   margin: 1rem auto 0;
   padding: 0 1rem;
-  min-height: 30rem;
+  /* min-height: 30rem; */
   color: #221822;
 }
 

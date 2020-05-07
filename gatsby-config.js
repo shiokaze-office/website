@@ -27,13 +27,12 @@ module.exports = {
         background_color: '#663399',
         theme_color: '#663399',
         display: 'minimal-ui',
-        icon: 'src/images/gatsby-icon.png',
+        icon: 'src/images/shiokaze-icon.png',
       },
     },
     {
       resolve: `gatsby-transformer-remark`,
       options: {
-        excerpt_separator: `<!-- end -->`,
         plugins: [
           `gatsby-remark-component`,
           {
@@ -45,7 +44,7 @@ module.exports = {
           {
             resolve: `gatsby-remark-images`,
             options: {
-              maxWidth: 590,
+              maxWidth: 860,
             },
           },
         ],

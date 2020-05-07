@@ -104,7 +104,7 @@ const Component = ({ data: { file, allMarkdownRemark: { edges }}}) => {
           <Img fluid={file.childImageSharp.fluid} />
           <FVText>
             しおかぜ事務所は、<em>成年後見</em>、<em>遺言</em>、<em>事務委任</em>、
-            <em>信託</em>などを利用して、安心できる老後へとサポートする行政書士事務所です
+            <em>信託</em>などを利用して、安心できる老後へサポートする行政書士事務所です
           </FVText>
         </FV>
 

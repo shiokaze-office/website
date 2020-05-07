@@ -103,16 +103,16 @@ const Component = ({ data: { file, allMarkdownRemark: { edges }}}) => {
           <h1>安心できる老後へ</h1>
           <Img fluid={file.childImageSharp.fluid} />
           <FVText>
-            しおかぜ事務所は、<em>成年後見</em>、<em>遺言</em>、<em>生前・死後事務委任</em>、
-            <em>信託</em>を利用して、安心できる老後へサポートする行政書士事務所です。
+            しおかぜ事務所は、<em>成年後見</em>、<em>遺言</em>、<em>事務委任</em>、
+            <em>信託</em>を利用して、安心できる老後へサポートする行政書士事務所です
           </FVText>
         </FV>
 
         <Container className="container">
           <h2>新型コロナ対応支援</h2>
           <p>
-            新型コロナウイルスによって影響を受けている方々へ、各省庁や地方自治体が支援を行っています。
-            それぞれの管轄で告知されていることを、「個人」と「個人事業者・企業」で分けた上で網羅的にまとめています。
+            新型コロナウイルスによって影響を受けている方々に向けて、各省庁や地方自治体が支援を行って支援を
+            「個人」と「個人事業者・企業」に分け、まとめました。
           </p>
 
           <div className="columns">
@@ -163,7 +163,7 @@ const Component = ({ data: { file, allMarkdownRemark: { edges }}}) => {
 
         <Container className="container">
           <h2>ブログ</h2>
-          <p>随時、有益な情報をお届けします。</p>
+          <p>日常業務でのちょっとした気づきなどを中心に書きます</p>
 
           <div className="columns">
             {posts.map(post => (

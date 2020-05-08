@@ -77,7 +77,6 @@ export const query = graphql`
             slug
           }
           id
-          excerpt
           timeToRead
           frontmatter {
             date(formatString: "YYYY年MM月DD日")
@@ -178,7 +177,7 @@ const Component = ({ data: { file, allMarkdownRemark: { edges }}}) => {
                   <li><span>{post.node.timeToRead} min read</span></li>
                 </PostMeta>
                 <p className="post-excerpt">
-                  {post.node.excerpt}
+                  {post.node.frontmatter.lead}
                 </p>
                 <p className="post-permalink">
                   <Link className="button" to={post.node.fields.slug}>

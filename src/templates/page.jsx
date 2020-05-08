@@ -6,10 +6,16 @@ import rehypeReact from "rehype-react"
 import Case from "../components/case"
 import Callout from "../components/callout"
 import Panel from "../components/panel"
+import Button from "../components/button"
 
 const renderAst = new rehypeReact({
   createElement: React.createElement,
-  components: { "case": Case, "callout": Callout, "panel": Panel },
+  components: {
+    "case": Case,
+    "callout": Callout,
+    "panel": Panel,
+    "button": Button,
+  },
 }).Compiler
 
 const Container = styled.article`

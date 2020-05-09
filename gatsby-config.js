@@ -1,6 +1,8 @@
 module.exports = {
   siteMetadata: {
-    title: `行政書士 しおかぜ事務所`
+    title: `行政書士 しおかぜ事務所`,
+    siteUrl: `https://shiokaze.net`,
+    description: `しおかぜ事務所は、成年後見、遺言、事務委任、信託などを利用して、安心できる老後へサポートする行政書士事務所です。`,
   },
   plugins: [
     `gatsby-plugin-sass`,

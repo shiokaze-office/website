@@ -32,6 +32,9 @@ const Header = styled.div`
   h1 {
     padding-top: 0;
   }
+  .container {
+    margin-top: 0;
+  }
 `
 
 const Category = styled.article`

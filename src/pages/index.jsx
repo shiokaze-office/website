@@ -38,7 +38,7 @@ const Container = styled.div`
 `
 
 const PostMeta = styled.ul`
-  margin: 0;
+  margin: -.5rem 0 .5rem;
   padding: 0;
   list-style-type: none;
   li {

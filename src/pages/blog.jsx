@@ -1,6 +1,7 @@
 import React from 'react'
 import { Link, graphql } from 'gatsby'
 import Layout from '../components/layout'
+import Head from "../components/head"
 
 export const query = graphql`
   query {
@@ -28,9 +29,12 @@ export const query = graphql`
 
 const Component = ({ data: { allMarkdownRemark: { edges }}}) => {
   const posts = edges.filter(edge => !!edge.node.frontmatter.date)
+  const title = `ブログ`
+  const description = `日常業務でのちょっとした気づきなどを中心に書きます`
 
   return (
     <Layout>
+      <Head title={title} description={description} />
       <div>
         {posts.map(post => (
           <div className="column">

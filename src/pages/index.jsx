@@ -1,6 +1,7 @@
 import React from 'react'
 import { Link, graphql } from 'gatsby'
 import Layout from '../components/layout'
+import Head from '../components/head'
 import styled from "styled-components"
 import Img from "gatsby-image"
 
@@ -97,6 +98,7 @@ const Component = ({ data: { file, allMarkdownRemark: { edges }}}) => {
 
   return (
     <Layout>
+      <Head />
       <>
         <FV className="container">
           <FVSub>頼れる街の法律家</FVSub>

@@ -8,6 +8,7 @@ import Callout from "../components/callout"
 import Panel from "../components/panel"
 import Button from "../components/button"
 import Map from "../components/map"
+import Head from "../components/head"
 
 const renderAst = new rehypeReact({
   createElement: React.createElement,
@@ -112,6 +113,7 @@ const Component = ({ data }) => {
 
   return (
     <Layout>
+      <Head title={title} description={lead} keywords={tags} />
       <Container>
         <Header>
           <div className="container">

@@ -5,6 +5,7 @@ import rehypeReact from "rehype-react"
 import Case from "../components/case"
 import Callout from "../components/callout"
 import Panel from "../components/panel"
+import Head from "../components/head"
 
 const renderAst = new rehypeReact({
   createElement: React.createElement,
@@ -20,9 +21,11 @@ export const query = graphql`
       id
       htmlAst
       timeToRead
+      excerpt(truncate: true, pruneLength: 100)
       frontmatter {
         date(formatString: "MMMM DD, YYYY")
         title
+        tags
       }
     }
   }
@@ -30,10 +33,12 @@ export const query = graphql`
 
 const Component = ({ data }) => {
   const { markdownRemark } = data
-  const { frontmatter, htmlAst } = markdownRemark
+  const { frontmatter, htmlAst, excerpt } = markdownRemark
+  const { title, tags } = frontmatter
 
   return (
     <Layout>
+      <Head title={title} description={excerpt} keywords={tags} />
       <div className="container">
         <div className="blog-post">
           <h1 align="center">{frontmatter.title}</h1>

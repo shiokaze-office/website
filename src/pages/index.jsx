@@ -59,6 +59,15 @@ const PostMeta = styled.ul`
   }
 `
 
+const FeaturedImage = styled.p`
+  margin: 1rem 0 2rem;
+  max-height: 300px;
+  img {
+    max-height: 300px;
+    border-radius: .5rem;
+  }
+`
+
 export const query = graphql`
   query {
     file(relativePath: { eq: "images/top.png" }) {
@@ -84,6 +93,13 @@ export const query = graphql`
             date(formatString: "YYYY年MM月DD日")
             title
             lead
+            featuredImage {
+              childImageSharp {
+                fluid(maxWidth: 800) {
+                  ...GatsbyImageSharpFluid
+                }
+              }
+            }
           }
         }
       }
@@ -150,6 +166,7 @@ const Component = ({ data: { file, allMarkdownRemark: { edges }}}) => {
                     {proposal.node.frontmatter.title}
                   </Link>
                 </h3>
+                {proposal.node.frontmatter.featuredImage && <FeaturedImage><Img fluid={proposal.node.frontmatter.featuredImage.childImageSharp.fluid} /></FeaturedImage>}
                 <p>
                   {proposal.node.frontmatter.lead}
                 </p>

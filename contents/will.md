@@ -23,7 +23,7 @@ tags:
 
 子供がいないご夫婦で配偶者が亡くなると、義理の親や義理の兄弟が相続人になることがあります。
 
-<button href="/proposals/dinks" align="left">📚 詳しく読む</button>
+<button href="/proposals/dinks">📚 詳しく読む</button>
 
 </case>
 

@@ -5,11 +5,11 @@ import styled from "styled-components"
 
 const Component = ({ href, size, align, children }) => {
   const Button = styled.p`
-    text-align: ${align};
+    text-align: ${size === 'large' ? 'center' : align};
     .large {
       font-size: 1.3rem;
-      margin-top: 1rem;
-      margin-bottom: 2rem;
+      margin-top: .5rem;
+      margin-bottom: 1rem;
     }
     .medium {
       font-size: 1rem;
@@ -28,7 +28,7 @@ const Component = ({ href, size, align, children }) => {
 
 Component.defaultProps = {
   size: `medium`,
-  align: `center`,
+  align: `left`,
 }
 
 Component.propTypes = {

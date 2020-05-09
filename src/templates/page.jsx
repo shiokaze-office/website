@@ -7,6 +7,7 @@ import Case from "../components/case"
 import Callout from "../components/callout"
 import Panel from "../components/panel"
 import Button from "../components/button"
+import Map from "../components/map"
 
 const renderAst = new rehypeReact({
   createElement: React.createElement,
@@ -15,6 +16,7 @@ const renderAst = new rehypeReact({
     "callout": Callout,
     "panel": Panel,
     "button": Button,
+    "map": Map,
   },
 }).Compiler
 
@@ -23,7 +25,7 @@ const Container = styled.article`
 `
 
 const Header = styled.div`
-  margin: 0 1rem 2rem;
+  margin: 0 1rem;
   padding: 1rem 0;
   border-bottom: 1px solid #E6E0ED;
   h1 {
@@ -67,23 +69,35 @@ const Body = styled.div`
   position: relative;
   margin: 0 auto;
   width: 760px;
+  h2 {
+    padding-top: 2rem;
+  }
+  h3 {
+    padding-top: 1.2rem;
+  }
 `
 
 export const query = graphql`
   query($path: String!) {
     markdownRemark(fields: { slug: { eq: $path } }) {
-      fields {
-        slug
-      }
       id
       htmlAst
       timeToRead
+      fields {
+        slug
+      }
       frontmatter {
         title
         category
         lead
         tags
       }
+      tableOfContents(
+        absolute: true
+        pathToSlugField: "frontmatter.path"
+        heading: "only show toc from this heading onwards"
+        maxDepth: 2
+      )
     }
   }
 `

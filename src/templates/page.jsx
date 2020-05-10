@@ -9,6 +9,7 @@ import Panel from "../components/panel"
 import Button from "../components/button"
 import Map from "../components/map"
 import Head from "../components/head"
+import Media from "../components/media"
 
 const renderAst = new rehypeReact({
   createElement: React.createElement,
@@ -18,6 +19,7 @@ const renderAst = new rehypeReact({
     "panel": Panel,
     "button": Button,
     "map": Map,
+    "media": Media,
   },
 }).Compiler
 

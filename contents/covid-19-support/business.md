@@ -2,21 +2,12 @@
 title: 個人事業者・企業向け新型コロナ対応支援まとめ
 lead: |-
     新型コロナウイルスにより影響を受けている個人事業者や企業が受けられる支援や対策をまとめました。
+    日本にはたくさんの行政支援がありますが、待っているだけでは届きません。自ら動きましょう！
 tags:
   - 新型コロナウィルス対応支援
   - 個人事業者
   - 企業
 ---
-新型コロナウイルスにより影響を受けている個人事業者や企業が受けられる支援や対策をまとめました。
-
-1. 持続化給付金
-1. 雇用調整助成金
-1. 小学校等休業対応助成金
-1. 働き方改革推進支援助成金　（テレワークコース）
-1. 働き方改革推進支援助成金　（コロナ対策テレワークコース）
-1. 新型コロナ特例リスケジュール
-1. 無利子無担保融資
-
 ## 持続化給付金
 
 もらえる／経済産業省
@@ -25,9 +16,7 @@ tags:
 
 <panel text="法人" number="200" unit="万円" note="最大"></panel>
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/r2h035U4lcI" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-
-[https://youtu.be/r2h035U4lcI](https://youtu.be/r2h035U4lcI)
+<media href="https://www.youtube.com/watch?v=r2h035U4lcI"></media>
 
 - 対象者：ひと月の売上が前年の同月と比べて50%以上減少している事業者
 - 申請期間：令和２年５月１日より

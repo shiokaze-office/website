@@ -1,5 +1,5 @@
 ---
-title: 事務所アクセス
+title: 事務所案内
 category: About
 lead: |-
   屋号の「しおかぜ」は、事務所が海まで目と鼻の先に位置し、年中潮風が吹いている環境から付けられています。
@@ -38,3 +38,7 @@ lead: |-
 - 石丸
 
 <button href="https://www.fk-tosikou.or.jp/guide/deiriguchi/fukuoka.shtml" size="large">🚗 福岡北九州高速道路公社の環状線図</button>
+
+## お問い合わせ
+
+<iframe src="https://docs.google.com/forms/d/e/1FAIpQLSfQNI2nAEvKfKxmx8We5KT10foX48iAH18bsh0182Ew4N-J3g/viewform?embedded=true" width="760" height="980" frameborder="0" marginheight="0" marginwidth="0">読み込んでいます…</iframe>

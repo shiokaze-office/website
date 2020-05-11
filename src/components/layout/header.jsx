@@ -56,10 +56,10 @@ const Component = () => {
             <div className="navbar-item">
               <div className="buttons">
                 <Link className="button is-outlined" to="/about">
-                  行政書士紹介
+                  <span role="img" aria-label="Woman Office Worker">👩‍💼</span> 行政書士紹介
                 </Link>
                 <Link className="button is-outlined" to="/office">
-                  事務所アクセス
+                  <span role="img" aria-label="Office Building">🏢</span> 事務所案内
                 </Link>
               </div>
             </div>

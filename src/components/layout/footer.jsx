@@ -1,6 +1,7 @@
 import React from 'react'
 import { Link, useStaticQuery, graphql } from 'gatsby'
 import styled from "styled-components"
+import Truncate from "./truncate"
 import logo from "./shiokaze-icon.svg"
 
 const Logo = styled.p`
@@ -18,6 +19,7 @@ const Sitemap = styled.ul`
   margin: 0;
   padding: 0;
   li {
+    width: 12.5rem;
     display: block;
     float: left;
     padding: 1rem 0 0 2rem;
@@ -92,7 +94,7 @@ const Component = () => {
           <li>コロナ対策支援
             <ul>{covid.map(v => (
               <li key={v.node.id}><Link to={v.node.fields.slug}>
-                {v.node.frontmatter.title}
+                {<Truncate>{v.node.frontmatter.title}</Truncate>}
               </Link></li>
             ))}</ul>
           </li>
@@ -106,14 +108,14 @@ const Component = () => {
           <li><Link to="/blog">ブログ</Link>
             <ul>{posts.map(v => (
               <li key={v.node.id}><Link to={v.node.fields.slug}>
-                {v.node.frontmatter.title}
+                {<Truncate>{v.node.frontmatter.title}</Truncate>}
               </Link></li>
             ))}</ul>
           </li>
-          <li>当事務所について
+          <li>私たち
             <ul>
               <li><Link to="/about">行政書士紹介</Link></li>
-              <li><Link to="/office">事務所アクセス</Link></li>
+              <li><Link to="/office">事務所案内</Link></li>
             </ul>
           </li>
         </Sitemap>

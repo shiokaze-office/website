@@ -115,100 +115,98 @@ const Component = ({ data: { file, allMarkdownRemark: { edges }}}) => {
   return (
     <Layout>
       <Head />
-      <>
-        <FV className="container">
-          <FVSub>頼れる街の法律家</FVSub>
-          <h1>安心できる老後へ</h1>
-          <Img fluid={file.childImageSharp.fluid} />
-          <FVText>
-            しおかぜ事務所は、<em>成年後見</em>、<em>遺言</em>、<em>事務委任</em>、
-            <em>信託</em>などを利用して、安心できる老後へサポートする行政書士事務所です
-          </FVText>
-        </FV>
+      <FV className="container">
+        <FVSub>頼れる街の法律家</FVSub>
+        <h1>安心できる老後へ</h1>
+        <Img fluid={file.childImageSharp.fluid} />
+        <FVText>
+          しおかぜ事務所は、<em>成年後見</em>、<em>遺言</em>、<em>事務委任</em>、
+          <em>信託</em>などを利用して、安心できる老後へサポートする行政書士事務所です
+        </FVText>
+      </FV>
 
-        <Container className="container">
-          <h2>新型コロナ対応支援</h2>
-          <p>
-            新型コロナウイルスによって影響を受けている方々に向けて、各省庁や地方自治体が支援を行って支援を
-            「個人事業者・企業」と「個人」に分けてまとめました。
-          </p>
+      <Container className="container">
+        <h2>新型コロナ対応支援</h2>
+        <p>
+          新型コロナウイルスによって影響を受けている方々に向けて、各省庁や地方自治体が支援を行って支援を
+          「個人事業者・企業」と「個人」に分けてまとめました。
+        </p>
 
-          <div className="columns">
-            {covid.map(entry => (
-              <div key={entry.node.id} className="column">
-                <h3>
-                  <Link to={entry.node.fields.slug}>
-                    {entry.node.frontmatter.title}
-                  </Link>
-                </h3>
-                <p>
-                  {entry.node.frontmatter.lead}
-                </p>
-                <p>
-                  <Link className="button" to={entry.node.fields.slug}>
-                    続きを読む
-                  </Link>
-                </p>
-              </div>
-            ))}
-          </div>
-        </Container>
+        <div className="columns">
+          {covid.map(entry => (
+            <div key={entry.node.id} className="column">
+              <h3>
+                <Link to={entry.node.fields.slug}>
+                  {entry.node.frontmatter.title}
+                </Link>
+              </h3>
+              <p>
+                {entry.node.frontmatter.lead}
+              </p>
+              <p>
+                <Link className="button" to={entry.node.fields.slug}>
+                  続きを読む
+                </Link>
+              </p>
+            </div>
+          ))}
+        </div>
+      </Container>
 
-        <Container className="container">
-          <h2>私たちからのご提案</h2>
-          <p>老後の生活に不安や不便を感じるすべての方へ、お客様にあったご提案をします。</p>
+      <Container className="container">
+        <h2>私たちからのご提案</h2>
+        <p>老後の生活に不安や不便を感じるすべての方へ、お客様にあったご提案をします。</p>
 
-          <div className="columns">
-            {proposals.map(proposal => (
-              <div key={proposal.node.id} className="column">
-                <h3>
-                  <Link to={proposal.node.fields.slug}>
-                    {proposal.node.frontmatter.title}
-                  </Link>
-                </h3>
-                {proposal.node.frontmatter.featuredImage && <FeaturedImage><Img fluid={proposal.node.frontmatter.featuredImage.childImageSharp.fluid} /></FeaturedImage>}
-                <p>
-                  {proposal.node.frontmatter.lead}
-                </p>
-                <p>
-                  <Link className="button" to={proposal.node.fields.slug}>
-                    続きを読む
-                  </Link>
-                </p>
-              </div>
-            ))}
-          </div>
-        </Container>
+        <div className="columns">
+          {proposals.map(proposal => (
+            <div key={proposal.node.id} className="column">
+              <h3>
+                <Link to={proposal.node.fields.slug}>
+                  {proposal.node.frontmatter.title}
+                </Link>
+              </h3>
+              {proposal.node.frontmatter.featuredImage && <FeaturedImage><Img fluid={proposal.node.frontmatter.featuredImage.childImageSharp.fluid} /></FeaturedImage>}
+              <p>
+                {proposal.node.frontmatter.lead}
+              </p>
+              <p>
+                <Link className="button" to={proposal.node.fields.slug}>
+                  続きを読む
+                </Link>
+              </p>
+            </div>
+          ))}
+        </div>
+      </Container>
 
-        <Container className="container">
-          <h2>ブログ</h2>
-          <p>日常業務でのちょっとした気づきなどを中心に書きます</p>
+      <Container className="container">
+        <h2>ブログ</h2>
+        <p>日常業務でのちょっとした気づきなどを中心に書きます</p>
 
-          <div className="columns">
-            {posts.map(post => (
-              <div key={post.node.id} className="column">
-                <h3 className="post-title">
-                  <Link to={post.node.fields.slug}>
-                    {post.node.frontmatter.title}
-                  </Link>
-                </h3>
-                <PostMeta>
-                  <li>{post.node.frontmatter.date}</li>
-                  <li><span>{post.node.timeToRead} min read</span></li>
-                </PostMeta>
-                <p className="post-excerpt">
-                  {post.node.excerpt}
-                </p>
-                <p className="post-permalink">
-                  <Link className="button" to={post.node.fields.slug}>
-                    続きを読む
-                  </Link>
-                </p>
-              </div>
-            ))}
-          </div>
-        </Container>
-      </>
+        <div className="columns">
+          {posts.map(post => (
+            <div key={post.node.id} className="column">
+              <h3 className="post-title">
+                <Link to={post.node.fields.slug}>
+                  {post.node.frontmatter.title}
+                </Link>
+              </h3>
+              <PostMeta>
+                <li>{post.node.frontmatter.date}</li>
+                <li><span>{post.node.timeToRead} min read</span></li>
+              </PostMeta>
+              <p className="post-excerpt">
+                {post.node.excerpt}
+              </p>
+              <p className="post-permalink">
+                <Link className="button" to={post.node.fields.slug}>
+                  続きを読む
+                </Link>
+              </p>
+            </div>
+          ))}
+        </div>
+      </Container>
     </Layout>
   )
 }

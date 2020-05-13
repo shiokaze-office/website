@@ -5,8 +5,8 @@ const path = require("path")
 module.exports = exports.createPages = ({ actions, graphql }) => {
   const { createPage } = actions
 
-  const page = path.resolve(`src/templates/page.jsx`)
-  const post = path.resolve(`src/templates/post.jsx`)
+  const page = path.resolve(`src/templates/page.tsx`)
+  const post = path.resolve(`src/templates/post.tsx`)
 
   return graphql(`
     {

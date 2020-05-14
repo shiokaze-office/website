@@ -19,7 +19,7 @@ const Component = ({ href, size, align, children }) => {
     }
   `
 
-  if (href.match("/^https?:\/\//")) {
+  if (href.match(/^https:\/\//) !== null) {
     return (
       <Button>
         <a className={"button " + size} href={href}>{children}</a>

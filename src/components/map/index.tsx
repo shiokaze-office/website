@@ -1,5 +1,4 @@
 import React from 'react'
-import PropTypes from 'prop-types'
 import styled from 'styled-components'
 import GoogleMapReact from 'google-map-react'
 import Marker from './marker'
@@ -19,7 +18,14 @@ const GoogleMapWrapper = styled.div`
 
 const key = `AIzaSyCxWeezNfUlaG2bDgvDpwpf3K_hsbzk5oA`
 
-const Component = ({ lat, lng, zoom, name }) => (
+type Props = {
+  lat?: number
+  lng?: number
+  zoom?: number
+  name?: string
+}
+
+const Component: React.FC<Props> = ({ lat, lng, zoom, name }) => (
   <Wrapper>
     <GoogleMapWrapper>
       <GoogleMapReact
@@ -38,13 +44,6 @@ Component.defaultProps = {
   lng: 130.3116807,
   zoom: 15,
   name: ``,
-}
-
-Component.propTypes = {
-  lat: PropTypes.number,
-  lng: PropTypes.number,
-  zoom: PropTypes.number,
-  name: PropTypes.string,
 }
 
 export default Component

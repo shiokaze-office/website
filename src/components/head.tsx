@@ -1,10 +1,17 @@
 import React from 'react'
 import Helmet from 'react-helmet'
 import { useStaticQuery, graphql } from 'gatsby'
+import { HeadQuery } from "../../types/graphql-types"
 
-const Component = ({ title, description, keywords }) => {
-  const data = useStaticQuery(graphql`
-    query SiteMetadataQuery {
+type Props = {
+  title?: string
+  description?: string
+  keywords?: string
+}
+
+const Component: React.FC<Props> = ({ title, description, keywords }) => {
+  const data = useStaticQuery<HeadQuery>(graphql`
+    query Head {
       site {
         siteMetadata {
           title

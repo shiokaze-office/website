@@ -1,9 +1,14 @@
 import React from 'react'
 import { Link } from 'gatsby'
-import PropTypes from 'prop-types'
 import styled from 'styled-components'
 
-const Component = ({ href, size, align, children }) => {
+type Props = {
+  href: string
+  size?: string
+  align?: string
+}
+
+const Component: React.FC<Props> = ({ href, size, align, children }) => {
   const Button = styled.p`
     text-align: ${size === 'large' ? 'center' : align};
     .large {
@@ -31,12 +36,6 @@ const Component = ({ href, size, align, children }) => {
 Component.defaultProps = {
   size: `medium`,
   align: `left`,
-}
-
-Component.propTypes = {
-  href: PropTypes.string.isRequired,
-  size: PropTypes.string,
-  align: PropTypes.string,
 }
 
 export default Component

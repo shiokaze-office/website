@@ -4,9 +4,9 @@
  * See: https://www.gatsbyjs.org/docs/node-apis/
  */
 
-const replacePath = path => (path === `/` ? path : path.replace(/\/$/, ``))
-const { createFilePath } = require(`gatsby-source-filesystem`)
+const { createFilePath } = require('gatsby-source-filesystem')
 const path = require('path')
+const replacePath = path => (path === `/` ? path : path.replace(/\/$/, ``))
 
 exports.onCreateNode = ({ node, getNode, actions }) => {
   const { createNodeField } = actions

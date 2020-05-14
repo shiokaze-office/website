@@ -1,5 +1,4 @@
 import React from 'react'
-import PropTypes from 'prop-types'
 import styled from 'styled-components'
 
 const Panel = styled.div`
@@ -53,7 +52,15 @@ const Unit = styled.span`
   line-height: 1.5;
 `
 
-const Component = ({ number, unit, text, note, raw }) => {
+type Props = {
+  number?: string
+  unit?: string
+  text?: string
+  note?: string
+  raw?: string
+}
+
+const Component: React.FC<Props> = ({ number, unit, text, note, raw }) => {
   return (
     <Panel>
       <Text>{text}</Text>
@@ -71,14 +78,6 @@ Component.defaultProps = {
   text: ``,
   note: ``,
   raw: ``,
-}
-
-Component.propTypes = {
-  number: PropTypes.string,
-  unit: PropTypes.string,
-  text: PropTypes.string,
-  note: PropTypes.string,
-  raw: PropTypes.string,
 }
 
 export default Component

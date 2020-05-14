@@ -1,9 +1,12 @@
 import React from 'react'
 import { Link } from 'gatsby'
-import PropTypes from 'prop-types'
 import styled from 'styled-components'
 
-const Component = ({ href }) => {
+type Props = {
+  href: string
+}
+
+const Component: React.FC<Props> = ({ href }) => {
   const Container = styled.div`
     width: 140%;
     margin: 2rem 0;
@@ -42,10 +45,6 @@ const Component = ({ href }) => {
       </p>
     </Container>
   )
-}
-
-Component.propTypes = {
-  href: PropTypes.string.isRequired,
 }
 
 export default Component

@@ -3000,36 +3000,36 @@ export type StringQueryOperatorInput = {
   glob?: Maybe<Scalars['String']>;
 };
 
-export type SiteMetadataQueryQueryVariables = {};
+export type HeadQueryVariables = {};
 
 
-export type SiteMetadataQueryQuery = { site?: Maybe<{ siteMetadata?: Maybe<Pick<SiteSiteMetadata, 'title' | 'description' | 'keywords' | 'author'>> }> };
+export type HeadQuery = { site?: Maybe<{ siteMetadata?: Maybe<Pick<SiteSiteMetadata, 'title' | 'description' | 'keywords' | 'author'>> }> };
 
-export type FooterQueryQueryVariables = {};
+export type FooterQueryVariables = {};
 
 
-export type FooterQueryQuery = { site?: Maybe<{ siteMetadata?: Maybe<Pick<SiteSiteMetadata, 'title'>> }>, allMarkdownRemark: { edges: Array<{ node: (
+export type FooterQuery = { site?: Maybe<{ siteMetadata?: Maybe<Pick<SiteSiteMetadata, 'title'>> }>, allMarkdownRemark: { edges: Array<{ node: (
         Pick<MarkdownRemark, 'id'>
         & { fields?: Maybe<Pick<MarkdownRemarkFields, 'slug'>>, frontmatter?: Maybe<Pick<MarkdownRemarkFrontmatter, 'title'>> }
       ) }> } };
 
-export type HeaderTitleQueryQueryVariables = {};
+export type HeaderQueryVariables = {};
 
 
-export type HeaderTitleQueryQuery = { site?: Maybe<{ siteMetadata?: Maybe<Pick<SiteSiteMetadata, 'title'>> }> };
+export type HeaderQuery = { site?: Maybe<{ siteMetadata?: Maybe<Pick<SiteSiteMetadata, 'title'>> }> };
 
-export type Unnamed_1_QueryVariables = {};
+export type BlogPageQueryVariables = {};
 
 
-export type Unnamed_1_Query = { allMarkdownRemark: { edges: Array<{ node: (
+export type BlogPageQuery = { allMarkdownRemark: { edges: Array<{ node: (
         Pick<MarkdownRemark, 'id' | 'timeToRead' | 'excerpt'>
         & { fields?: Maybe<Pick<MarkdownRemarkFields, 'slug'>>, frontmatter?: Maybe<Pick<MarkdownRemarkFrontmatter, 'date' | 'title' | 'tags'>> }
       ) }> } };
 
-export type Unnamed_2_QueryVariables = {};
+export type IndexPageQueryVariables = {};
 
 
-export type Unnamed_2_Query = { file?: Maybe<{ childImageSharp?: Maybe<{ fluid?: Maybe<GatsbyImageSharpFluidFragment> }> }>, allMarkdownRemark: { edges: Array<{ node: (
+export type IndexPageQuery = { file?: Maybe<{ childImageSharp?: Maybe<{ fluid?: Maybe<GatsbyImageSharpFluidFragment> }> }>, allMarkdownRemark: { edges: Array<{ node: (
         Pick<MarkdownRemark, 'id' | 'timeToRead' | 'excerpt'>
         & { fields?: Maybe<Pick<MarkdownRemarkFields, 'slug'>>, frontmatter?: Maybe<(
           Pick<MarkdownRemarkFrontmatter, 'date' | 'title' | 'lead'>
@@ -3037,22 +3037,22 @@ export type Unnamed_2_Query = { file?: Maybe<{ childImageSharp?: Maybe<{ fluid?:
         )> }
       ) }> } };
 
-export type Unnamed_3_QueryVariables = {
+export type PageTemplateQueryVariables = {
   path: Scalars['String'];
 };
 
 
-export type Unnamed_3_Query = { markdownRemark?: Maybe<(
+export type PageTemplateQuery = { markdownRemark?: Maybe<(
     Pick<MarkdownRemark, 'id' | 'htmlAst' | 'timeToRead' | 'tableOfContents'>
     & { fields?: Maybe<Pick<MarkdownRemarkFields, 'slug'>>, frontmatter?: Maybe<Pick<MarkdownRemarkFrontmatter, 'title' | 'category' | 'lead' | 'tags'>> }
   )> };
 
-export type Unnamed_4_QueryVariables = {
+export type PostTemplateQueryVariables = {
   path: Scalars['String'];
 };
 
 
-export type Unnamed_4_Query = { markdownRemark?: Maybe<(
+export type PostTemplateQuery = { markdownRemark?: Maybe<(
     Pick<MarkdownRemark, 'id' | 'htmlAst' | 'timeToRead' | 'excerpt'>
     & { fields?: Maybe<Pick<MarkdownRemarkFields, 'slug'>>, frontmatter?: Maybe<Pick<MarkdownRemarkFrontmatter, 'date' | 'title' | 'tags'>> }
   )> };

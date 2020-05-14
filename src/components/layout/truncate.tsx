@@ -1,7 +1,12 @@
-import React from 'react'
-import PropTypes from 'prop-types'
+import React, { ReactNode } from 'react'
 
-const Component = ({ length, omission, children }) => {
+type Props = {
+  length?: number
+  omission?: string
+  children?: ReactNode
+}
+
+const Component: React.FC<Props> = ({ length, omission, children }) => {
   const s = `${children}`
   return <>{s.length > length ? `${s.substr(0, length)}${omission}` : s}</>
 }
@@ -9,11 +14,6 @@ const Component = ({ length, omission, children }) => {
 Component.defaultProps = {
   length: 12,
   omission: `...`,
-}
-
-Component.propTypes = {
-  length: PropTypes.number,
-  omission: PropTypes.string,
 }
 
 export default Component

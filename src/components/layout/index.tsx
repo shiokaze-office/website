@@ -1,9 +1,13 @@
-import React from 'react'
+import React, { ReactNode } from 'react'
 import '../../styles/main.scss'
 import Header from './header'
 import Footer from './footer'
 
-const Component = ({ children }) => {
+type Props = {
+  children: ReactNode
+}
+
+const Component: React.FC = ({ children }) => {
   return (
     <>
       <Header />

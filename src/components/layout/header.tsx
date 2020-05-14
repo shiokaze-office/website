@@ -2,14 +2,15 @@ import React from 'react'
 import { Link, useStaticQuery, graphql } from 'gatsby'
 import styled from 'styled-components'
 import logo from './shiokaze.svg'
+import { HeaderQuery } from '../../../types/graphql-types'
 
 const Logo = styled.p`
   padding: 0;
 `
 
-const Component = () => {
-  const data = useStaticQuery(graphql`
-    query HeaderTitleQuery {
+const Component: React.FC = () => {
+  const data = useStaticQuery<HeaderQuery>(graphql`
+    query Header {
       site {
         siteMetadata {
           title

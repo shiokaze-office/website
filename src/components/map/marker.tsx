@@ -1,5 +1,4 @@
 import React from 'react'
-import PropTypes from 'prop-types'
 import styled from 'styled-components'
 
 const Wrapper = styled.div`
@@ -93,15 +92,15 @@ const Pulse = styled.div`
   }
 `
 
-const Component = props => (
+type Props = {
+  text: string
+}
+
+const Component: React.FC<Props> = ({ text }) => (
   <Wrapper>
-    <BouncedPin alt={props.text} />
+    <BouncedPin alt={text} />
     <Pulse />
   </Wrapper>
 )
-
-Component.propTypes = {
-  text: PropTypes.string.isRequired,
-}
 
 export default Component

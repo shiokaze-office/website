@@ -4,6 +4,7 @@ import Layout from '../components/layout'
 import Head from '../components/head'
 import styled from 'styled-components'
 import Img from 'gatsby-image'
+import { IndexPageQuery } from '../../types/graphql-types'
 
 const FV = styled.div`
   padding: 0 0 2rem;
@@ -69,7 +70,7 @@ const FeaturedImage = styled.p`
 `
 
 export const query = graphql`
-  query {
+  query IndexPage {
     file(relativePath: { eq: "images/top.png" }) {
       childImageSharp {
         fluid(maxWidth: 1024) {
@@ -107,7 +108,11 @@ export const query = graphql`
   }
 `
 
-const Component = ({
+type Props = {
+  data: IndexPageQuery
+}
+
+const Component: React.FC<Props> = ({
   data: {
     file,
     allMarkdownRemark: { edges },

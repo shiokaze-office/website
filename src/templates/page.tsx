@@ -10,6 +10,7 @@ import Button from '../components/button'
 import Map from '../components/map'
 import Head from '../components/head'
 import Media from '../components/media'
+import { PageTemplateQuery } from '../../types/graphql-types'
 
 const renderAst = new rehypeReact({
   createElement: React.createElement,
@@ -84,7 +85,7 @@ const Body = styled.div`
 `
 
 export const query = graphql`
-  query($path: String!) {
+  query PageTemplate($path: String!) {
     markdownRemark(fields: { slug: { eq: $path } }) {
       id
       htmlAst
@@ -108,7 +109,11 @@ export const query = graphql`
   }
 `
 
-const Component = ({ data }) => {
+type Props = {
+  data: PageTemplateQuery
+}
+
+const Component: React.FC<Props> = ({ data }) => {
   const { markdownRemark } = data
   const {
     frontmatter,

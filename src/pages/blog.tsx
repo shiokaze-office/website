@@ -3,6 +3,7 @@ import { Link, graphql } from 'gatsby'
 import styled from 'styled-components'
 import Layout from '../components/layout'
 import Head from '../components/head'
+import { BlogPageQuery } from '../../types/graphql-types'
 
 const Container = styled.article`
   margin: 0 0 3rem;
@@ -63,7 +64,7 @@ const Body = styled.div`
 const Card = styled.div``
 
 export const query = graphql`
-  query {
+  query BlogPage {
     allMarkdownRemark(
       sort: { order: DESC, fields: [frontmatter___date] }
       filter: { fields: { slug: { regex: "/blog/" } } }
@@ -87,7 +88,11 @@ export const query = graphql`
   }
 `
 
-const Component = ({
+type Props = {
+  data: BlogPageQuery
+}
+
+const Component: React.FC<Props> = ({
   data: {
     allMarkdownRemark: { edges },
   },

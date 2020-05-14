@@ -1,5 +1,4 @@
 import React from 'react'
-import PropTypes from 'prop-types'
 import styled from 'styled-components'
 
 const Case = styled.div`
@@ -41,7 +40,11 @@ const Content = styled.div`
   font-size: 1.2rem;
 `
 
-const Component = ({ name, children }) => {
+type Props = {
+  name?: string
+}
+
+const Component: React.FC<Props> = ({ name, children }) => {
   return (
     <Case>
       <Bar />
@@ -54,10 +57,6 @@ const Component = ({ name, children }) => {
 
 Component.defaultProps = {
   name: `This is a case.`,
-}
-
-Component.propTypes = {
-  name: PropTypes.string,
 }
 
 export default Component

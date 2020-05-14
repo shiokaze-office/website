@@ -9,6 +9,7 @@ import Panel from '../components/panel'
 import Button from '../components/button'
 import Map from '../components/map'
 import Head from '../components/head'
+import { PostTemplateQuery } from '../../types/graphql-types'
 
 const renderAst = new rehypeReact({
   createElement: React.createElement,
@@ -99,7 +100,7 @@ const Meta = styled.div`
 `
 
 export const query = graphql`
-  query($path: String!) {
+  query PostTemplate($path: String!) {
     markdownRemark(fields: { slug: { eq: $path } }) {
       id
       htmlAst
@@ -117,7 +118,11 @@ export const query = graphql`
   }
 `
 
-const Component = ({ data }) => {
+type Props = {
+  data: PostTemplateQuery
+}
+
+const Component: React.FC<Props> = ({ data }) => {
   const { markdownRemark } = data
   const { timeToRead, frontmatter, htmlAst, excerpt } = markdownRemark
   const { title, date, tags } = frontmatter

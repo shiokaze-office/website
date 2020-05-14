@@ -18,6 +18,7 @@ module.exports = {
   ignorePatterns: ['types/', 'node_modules/'],
   rules: {
     'react/prop-types': 'off',
+    '@typescript-eslint/no-var-requires': 'off',
   },
   overrides: [
     {

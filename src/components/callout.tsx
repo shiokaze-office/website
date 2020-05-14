@@ -1,5 +1,4 @@
 import React from 'react'
-import PropTypes from 'prop-types'
 import styled from 'styled-components'
 
 const Callout = styled.p`
@@ -21,7 +20,12 @@ const Emoji = styled.span`
   top: 1.3rem;
 `
 
-const Component = ({ emoji, text }) => {
+type Props = {
+  emoji?: string
+  text?: string
+}
+
+const Component: React.FC<Props> = ({ emoji, text }) => {
   return (
     <Callout>
       <Emoji>{emoji}</Emoji> {text}
@@ -32,11 +36,6 @@ const Component = ({ emoji, text }) => {
 Component.defaultProps = {
   emoji: `💡`,
   text: `This is a callout.`,
-}
-
-Component.propTypes = {
-  emoji: PropTypes.string,
-  text: PropTypes.string,
 }
 
 export default Component

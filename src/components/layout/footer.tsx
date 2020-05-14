@@ -3,6 +3,7 @@ import { Link, useStaticQuery, graphql } from 'gatsby'
 import styled from 'styled-components'
 import Truncate from './truncate'
 import logo from './shiokaze-icon.svg'
+import { FooterQuery } from '../../types/graphql-types'
 
 const Logo = styled.p`
   display: block;
@@ -39,9 +40,9 @@ const Sitemap = styled.ul`
 
 const Copy = styled.small``
 
-const Component = () => {
-  const data = useStaticQuery(graphql`
-    query FooterQuery {
+const Component: React.FC = () => {
+  const data = useStaticQuery<FooterQuery>(graphql`
+    query Footer {
       site {
         siteMetadata {
           title

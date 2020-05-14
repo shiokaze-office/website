@@ -29,6 +29,12 @@ module.exports = {
       },
     },
     {
+      resolve: "gatsby-plugin-graphql-codegen",
+      options: {
+        fileName: `types/graphql-types.d.ts`,
+      },
+    },
+    {
       resolve: `gatsby-plugin-manifest`,
       options: {
         name: `行政書士 しおかぜ事務所`,

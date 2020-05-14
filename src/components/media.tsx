@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'gatsby'
-import PropTypes from "prop-types"
-import styled from "styled-components"
+import PropTypes from 'prop-types'
+import styled from 'styled-components'
 
 const Component = ({ href }) => {
   const Container = styled.div`
@@ -13,8 +13,8 @@ const Component = ({ href }) => {
     left: 50%;
     transform: translateX(-50%);
     p {
-      padding-top: .5rem;
-      font-size: .85rem;
+      padding-top: 0.5rem;
+      font-size: 0.85rem;
       text-align: center;
     }
     a {
@@ -26,11 +26,20 @@ const Component = ({ href }) => {
 
   return (
     <Container>
-      {matched && <iframe width="100%" height="600px" src={`https://www.youtube.com/embed/${matched[1]}`}
-        title={href} frameborder="0"
-        allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-        allowfullscreen></iframe>}
-      <p><Link to={href}>{href}</Link></p>
+      {matched && (
+        <iframe
+          width="100%"
+          height="600px"
+          src={`https://www.youtube.com/embed/${matched[1]}`}
+          title={href}
+          frameBorder="0"
+          allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+          allowFullScreen
+        ></iframe>
+      )}
+      <p>
+        <Link to={href}>{href}</Link>
+      </p>
     </Container>
   )
 }

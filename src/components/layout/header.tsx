@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link, useStaticQuery, graphql } from 'gatsby'
-import styled from "styled-components"
-import logo from "./shiokaze.svg"
+import styled from 'styled-components'
+import logo from './shiokaze.svg'
 
 const Logo = styled.p`
   padding: 0;
@@ -56,10 +56,16 @@ const Component = () => {
             <div className="navbar-item">
               <div className="buttons">
                 <Link className="button is-outlined" to="/about">
-                  <span role="img" aria-label="Woman Office Worker">👩‍💼</span> 行政書士紹介
+                  <span role="img" aria-label="Woman Office Worker">
+                    👩‍💼
+                  </span>{' '}
+                  行政書士紹介
                 </Link>
                 <Link className="button is-outlined" to="/office">
-                  <span role="img" aria-label="Office Building">🏢</span> 事務所案内
+                  <span role="img" aria-label="Office Building">
+                    🏢
+                  </span>{' '}
+                  事務所案内
                 </Link>
               </div>
             </div>

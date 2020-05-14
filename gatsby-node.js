@@ -6,7 +6,7 @@
 
 const replacePath = path => (path === `/` ? path : path.replace(/\/$/, ``))
 const { createFilePath } = require(`gatsby-source-filesystem`)
-const path = require("path")
+const path = require('path')
 
 exports.onCreateNode = ({ node, getNode, actions }) => {
   const { createNodeField } = actions
@@ -49,7 +49,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   result.data.allMarkdownRemark.edges.forEach(({ node }) => {
     createPage({
       path: replacePath(node.fields.slug),
-      component: node.fields.slug.match("/blog/") ? post : page,
+      component: node.fields.slug.match('/blog/') ? post : page,
       context: {}, // additional data can be passed via context
     })
   })

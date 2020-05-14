@@ -1,6 +1,6 @@
 import React from 'react'
-import PropTypes from "prop-types"
-import styled from "styled-components"
+import PropTypes from 'prop-types'
+import styled from 'styled-components'
 
 const Case = styled.div`
   padding: 0 0 0 2.2rem;
@@ -12,7 +12,7 @@ const Circle = styled.span`
   display: block;
   content: ' ';
   position: absolute;
-  top: .7rem;
+  top: 0.7rem;
   left: 1px;
   border-radius: 10px;
   background-color: #cec0d9;
@@ -27,14 +27,14 @@ const Bar = styled.span`
   top: -1.5rem;
   left: 7px;
   border-radius: 5px;
-  background-color: #E6E0ED;
+  background-color: #e6e0ed;
   width: 8px;
   height: 100%;
 `
 
 const Title = styled.p`
   font-weight: bold;
-  padding-bottom: .2rem;
+  padding-bottom: 0.2rem;
 `
 
 const Content = styled.div`
@@ -47,9 +47,7 @@ const Component = ({ name, children }) => {
       <Bar />
       <Circle />
       <Title>{name}</Title>
-      <Content>
-        {children}
-      </Content>
+      <Content>{children}</Content>
     </Case>
   )
 }

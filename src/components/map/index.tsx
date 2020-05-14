@@ -1,6 +1,6 @@
 import React from 'react'
-import PropTypes from "prop-types"
-import styled from "styled-components"
+import PropTypes from 'prop-types'
+import styled from 'styled-components'
 import GoogleMapReact from 'google-map-react'
 import Marker from './marker'
 
@@ -22,9 +22,13 @@ const key = `AIzaSyCxWeezNfUlaG2bDgvDpwpf3K_hsbzk5oA`
 const Component = ({ lat, lng, zoom, name }) => (
   <Wrapper>
     <GoogleMapWrapper>
-    <GoogleMapReact bootstrapURLKeys={{ key }} defaultCenter={{ lat, lng }} defaultZoom={zoom}>
-      <Marker text={name} lat={lat} lng={lng} />
-    </GoogleMapReact>
+      <GoogleMapReact
+        bootstrapURLKeys={{ key }}
+        defaultCenter={{ lat, lng }}
+        defaultZoom={zoom}
+      >
+        <Marker text={name} lat={lat} lng={lng} />
+      </GoogleMapReact>
     </GoogleMapWrapper>
   </Wrapper>
 )

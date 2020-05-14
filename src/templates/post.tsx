@@ -1,23 +1,23 @@
 import React from 'react'
 import { graphql } from 'gatsby'
-import styled from "styled-components"
+import styled from 'styled-components'
 import Layout from '../components/layout'
-import rehypeReact from "rehype-react"
-import Case from "../components/case"
-import Callout from "../components/callout"
-import Panel from "../components/panel"
-import Button from "../components/button"
-import Map from "../components/map"
-import Head from "../components/head"
+import rehypeReact from 'rehype-react'
+import Case from '../components/case'
+import Callout from '../components/callout'
+import Panel from '../components/panel'
+import Button from '../components/button'
+import Map from '../components/map'
+import Head from '../components/head'
 
 const renderAst = new rehypeReact({
   createElement: React.createElement,
   components: {
-    "case": Case,
-    "callout": Callout,
-    "panel": Panel,
-    "button": Button,
-    "map": Map,
+    case: Case,
+    callout: Callout,
+    panel: Panel,
+    button: Button,
+    map: Map,
   },
 }).Compiler
 
@@ -39,13 +39,13 @@ const Category = styled.article`
 `
 
 const PostMeta = styled.ul`
-  margin: -.5rem 0 2rem;
+  margin: -0.5rem 0 2rem;
   padding: 0;
   list-style-type: none;
   li {
-    font-size: .85rem;
+    font-size: 0.85rem;
     color: #999;
-    margin: 0 .5rem 0 0;
+    margin: 0 0.5rem 0 0;
     padding: 0;
     font-family: 'Noto Sans JP', sans-serif;
     display: inline-block;
@@ -56,7 +56,7 @@ const PostMeta = styled.ul`
   }
   span:before {
     content: '-';
-    padding-right: .5rem;
+    padding-right: 0.5rem;
   }
 `
 
@@ -131,26 +131,29 @@ const Component = ({ data }) => {
           <h1>{title}</h1>
           <PostMeta>
             <li>{date}</li>
-            <li><span>{timeToRead} min read</span></li>
+            <li>
+              <span>{timeToRead} min read</span>
+            </li>
           </PostMeta>
         </Header>
-        <Body>
-          {renderAst(htmlAst)}
-        </Body>
-        {tags !== null && <Footer>
-          <Meta>
-            <p>Tags:</p>
-            <ul>
-              {tags.map(tag => (
-                <li className="button" key={tag}>{tag}</li>
-              ))}
-            </ul>
-          </Meta>
-        </Footer>}
+        <Body>{renderAst(htmlAst)}</Body>
+        {tags !== null && (
+          <Footer>
+            <Meta>
+              <p>Tags:</p>
+              <ul>
+                {tags.map(tag => (
+                  <li className="button" key={tag}>
+                    {tag}
+                  </li>
+                ))}
+              </ul>
+            </Meta>
+          </Footer>
+        )}
       </Container>
     </Layout>
   )
 }
 
 export default Component
-

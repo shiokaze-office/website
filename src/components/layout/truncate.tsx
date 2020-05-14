@@ -1,13 +1,9 @@
 import React from 'react'
-import PropTypes from "prop-types"
+import PropTypes from 'prop-types'
 
 const Component = ({ length, omission, children }) => {
   const s = `${children}`
-  return (
-    <>
-      {s.length > length ? `${s.substr(0, length)}${omission}` : s}
-    </>
-  )
+  return <>{s.length > length ? `${s.substr(0, length)}${omission}` : s}</>
 }
 
 Component.defaultProps = {

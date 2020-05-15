@@ -3,7 +3,7 @@ import { Link, useStaticQuery, graphql } from 'gatsby'
 import styled from 'styled-components'
 import Truncate from './truncate'
 import logo from './shiokaze-icon.svg'
-import { FooterQuery } from '../../types/graphql-types'
+import { FooterQuery } from '../../../types/graphql-types'
 
 const Logo = styled.p`
   display: block;

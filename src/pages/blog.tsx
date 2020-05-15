@@ -1,8 +1,9 @@
 import React from 'react'
 import { Link, graphql } from 'gatsby'
-import styled from "styled-components"
+import styled from 'styled-components'
 import Layout from '../components/layout'
-import Head from "../components/head"
+import Head from '../components/head'
+import { BlogPageQuery } from '../../types/graphql-types'
 
 const Container = styled.article`
   margin: 0 0 3rem;
@@ -11,7 +12,7 @@ const Container = styled.article`
 const Header = styled.div`
   margin: 0 1rem;
   padding: 1rem 0;
-  border-bottom: 1px solid #E6E0ED;
+  border-bottom: 1px solid #e6e0ed;
   h1 {
     padding-top: 0;
   }
@@ -28,13 +29,13 @@ const Category = styled.article`
 `
 
 const PostMeta = styled.ul`
-  margin: -.5rem 0 1rem;
+  margin: -0.5rem 0 1rem;
   padding: 0;
   list-style-type: none;
   li {
-    font-size: .85rem;
+    font-size: 0.85rem;
     color: #999;
-    margin: 0 .5rem 0 0;
+    margin: 0 0.5rem 0 0;
     padding: 0;
     font-family: 'Noto Sans JP', sans-serif;
     display: inline-block;
@@ -45,7 +46,7 @@ const PostMeta = styled.ul`
   }
   span:before {
     content: '-';
-    padding-right: .5rem;
+    padding-right: 0.5rem;
   }
 `
 
@@ -60,11 +61,10 @@ const Body = styled.div`
   }
 `
 
-const Card = styled.div`
-`
+const Card = styled.div``
 
 export const query = graphql`
-  query {
+  query BlogPage {
     allMarkdownRemark(
       sort: { order: DESC, fields: [frontmatter___date] }
       filter: { fields: { slug: { regex: "/blog/" } } }
@@ -88,7 +88,15 @@ export const query = graphql`
   }
 `
 
-const Component = ({ data: { allMarkdownRemark: { edges }}}) => {
+type Props = {
+  data: BlogPageQuery
+}
+
+const Component: React.FC<Props> = ({
+  data: {
+    allMarkdownRemark: { edges },
+  },
+}) => {
   const posts = edges.filter(edge => !!edge.node.frontmatter.date)
   const title = `ブログ`
   const description = `日常業務でのちょっとした気づきなどを中心に書きます`
@@ -106,27 +114,27 @@ const Component = ({ data: { allMarkdownRemark: { edges }}}) => {
         </Header>
         <Body>
           <div className="container">
-          {posts.map(post => (
-            <Card key={post.node.id}>
-              <h3 className="post-title">
-                <Link to={post.node.fields.slug}>
-                  {post.node.frontmatter.title}
-                </Link>
-              </h3>
-              <PostMeta>
-                <li>{post.node.frontmatter.date}</li>
-                <li><span>{post.node.timeToRead} min read</span></li>
-              </PostMeta>
-              <p className="post-excerpt">
-                {post.node.excerpt}
-              </p>
-              <p className="post-permalink">
-                <Link className="button" to={post.node.fields.slug}>
-                  続きを読む
-                </Link>
-              </p>
-            </Card>
-          ))}
+            {posts.map(post => (
+              <Card key={post.node.id}>
+                <h3 className="post-title">
+                  <Link to={post.node.fields.slug}>
+                    {post.node.frontmatter.title}
+                  </Link>
+                </h3>
+                <PostMeta>
+                  <li>{post.node.frontmatter.date}</li>
+                  <li>
+                    <span>{post.node.timeToRead} min read</span>
+                  </li>
+                </PostMeta>
+                <p className="post-excerpt">{post.node.excerpt}</p>
+                <p className="post-permalink">
+                  <Link className="button" to={post.node.fields.slug}>
+                    続きを読む
+                  </Link>
+                </p>
+              </Card>
+            ))}
           </div>
         </Body>
       </Container>

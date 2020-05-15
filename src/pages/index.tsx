@@ -2,8 +2,9 @@ import React from 'react'
 import { Link, graphql } from 'gatsby'
 import Layout from '../components/layout'
 import Head from '../components/head'
-import styled from "styled-components"
-import Img from "gatsby-image"
+import styled from 'styled-components'
+import Img from 'gatsby-image'
+import { IndexPageQuery } from '../../types/graphql-types'
 
 const FV = styled.div`
   padding: 0 0 2rem;
@@ -17,13 +18,13 @@ const FV = styled.div`
   }
 `
 
-const FVSub =  styled.p`
+const FVSub = styled.p`
   text-align: center;
   margin: 0;
   padding: 1.2rem 0 0;
   font-family: 'Noto Serif JP', serif;
   color: #999;
-  letter-spacing: .5rem;
+  letter-spacing: 0.5rem;
   font-size: 1rem;
 `
 const FVText = styled.p`
@@ -38,13 +39,13 @@ const Container = styled.div`
 `
 
 const PostMeta = styled.ul`
-  margin: -.5rem 0 .5rem;
+  margin: -0.5rem 0 0.5rem;
   padding: 0;
   list-style-type: none;
   li {
-    font-size: .85rem;
+    font-size: 0.85rem;
     color: #999;
-    margin: 0 .5rem 0 0;
+    margin: 0 0.5rem 0 0;
     padding: 0;
     font-family: 'Noto Sans JP', sans-serif;
     display: inline-block;
@@ -55,7 +56,7 @@ const PostMeta = styled.ul`
   }
   span:before {
     content: '-';
-    padding-right: .5rem;
+    padding-right: 0.5rem;
   }
 `
 
@@ -64,12 +65,12 @@ const FeaturedImage = styled.p`
   max-height: 300px;
   img {
     max-height: 300px;
-    border-radius: .5rem;
+    border-radius: 0.5rem;
   }
 `
 
 export const query = graphql`
-  query {
+  query IndexPage {
     file(relativePath: { eq: "images/top.png" }) {
       childImageSharp {
         fluid(maxWidth: 1024) {
@@ -78,7 +79,7 @@ export const query = graphql`
       }
     }
     allMarkdownRemark(
-      filter: { fields: { slug: { regex: "/(proposals|blog|covid)/" }}}
+      filter: { fields: { slug: { regex: "/(proposals|blog|covid)/" } } }
       sort: { order: DESC, fields: [frontmatter___date] }
     ) {
       edges {
@@ -107,10 +108,23 @@ export const query = graphql`
   }
 `
 
-const Component = ({ data: { file, allMarkdownRemark: { edges }}}) => {
-  const proposals = edges.filter(edge => edge.node.fields.slug.match("/proposals/"))
-  const posts = edges.filter(edge => edge.node.fields.slug.match("/blog/"))
-  const covid = edges.filter(edge => edge.node.fields.slug.match("/covid-19-support/"))
+type Props = {
+  data: IndexPageQuery
+}
+
+const Component: React.FC<Props> = ({
+  data: {
+    file,
+    allMarkdownRemark: { edges },
+  },
+}) => {
+  const proposals = edges.filter(edge =>
+    edge.node.fields.slug.match('/proposals/')
+  )
+  const posts = edges.filter(edge => edge.node.fields.slug.match('/blog/'))
+  const covid = edges.filter(edge =>
+    edge.node.fields.slug.match('/covid-19-support/')
+  )
 
   return (
     <Layout>
@@ -120,8 +134,9 @@ const Component = ({ data: { file, allMarkdownRemark: { edges }}}) => {
         <h1>安心できる老後へ</h1>
         <Img fluid={file.childImageSharp.fluid} />
         <FVText>
-          しおかぜ事務所は、<em>成年後見</em>、<em>遺言</em>、<em>事務委任</em>、
-          <em>信託</em>などを利用して、安心できる老後へサポートする行政書士事務所です
+          しおかぜ事務所は、<em>成年後見</em>、<em>遺言</em>、<em>事務委任</em>
+          、<em>信託</em>
+          などを利用して、安心できる老後へサポートする行政書士事務所です
         </FVText>
       </FV>
 
@@ -140,9 +155,7 @@ const Component = ({ data: { file, allMarkdownRemark: { edges }}}) => {
                   {entry.node.frontmatter.title}
                 </Link>
               </h3>
-              <p>
-                {entry.node.frontmatter.lead}
-              </p>
+              <p>{entry.node.frontmatter.lead}</p>
               <p>
                 <Link className="button" to={entry.node.fields.slug}>
                   続きを読む
@@ -155,7 +168,9 @@ const Component = ({ data: { file, allMarkdownRemark: { edges }}}) => {
 
       <Container className="container">
         <h2>私たちからのご提案</h2>
-        <p>老後の生活に不安や不便を感じるすべての方へ、お客様にあったご提案をします。</p>
+        <p>
+          老後の生活に不安や不便を感じるすべての方へ、お客様にあったご提案をします。
+        </p>
 
         <div className="columns">
           {proposals.map(proposal => (
@@ -165,10 +180,17 @@ const Component = ({ data: { file, allMarkdownRemark: { edges }}}) => {
                   {proposal.node.frontmatter.title}
                 </Link>
               </h3>
-              {proposal.node.frontmatter.featuredImage && <FeaturedImage><Img fluid={proposal.node.frontmatter.featuredImage.childImageSharp.fluid} /></FeaturedImage>}
-              <p>
-                {proposal.node.frontmatter.lead}
-              </p>
+              {proposal.node.frontmatter.featuredImage && (
+                <FeaturedImage>
+                  <Img
+                    fluid={
+                      proposal.node.frontmatter.featuredImage.childImageSharp
+                        .fluid
+                    }
+                  />
+                </FeaturedImage>
+              )}
+              <p>{proposal.node.frontmatter.lead}</p>
               <p>
                 <Link className="button" to={proposal.node.fields.slug}>
                   続きを読む
@@ -193,11 +215,11 @@ const Component = ({ data: { file, allMarkdownRemark: { edges }}}) => {
               </h3>
               <PostMeta>
                 <li>{post.node.frontmatter.date}</li>
-                <li><span>{post.node.timeToRead} min read</span></li>
+                <li>
+                  <span>{post.node.timeToRead} min read</span>
+                </li>
               </PostMeta>
-              <p className="post-excerpt">
-                {post.node.excerpt}
-              </p>
+              <p className="post-excerpt">{post.node.excerpt}</p>
               <p className="post-permalink">
                 <Link className="button" to={post.node.fields.slug}>
                   続きを読む

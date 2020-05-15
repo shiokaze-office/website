@@ -1,5 +1,4 @@
 import React from 'react'
-import PropTypes from 'prop-types'
 import styled from 'styled-components'
 
 const Wrapper = styled.div`
@@ -10,7 +9,7 @@ const BouncedPin = styled.div`
   width: 30px;
   height: 30px;
   border-radius: 50% 50% 50% 0;
-  background: #CEC0D9;
+  background: #cec0d9;
   position: absolute;
   transform: rotate(-45deg);
   left: 50%;
@@ -55,7 +54,7 @@ const BouncedPin = styled.div`
 
 const Pulse = styled.div`
   background: #d6d4d4;
-  background: #E6E0ED;
+  background: #e6e0ed;
   border-radius: 50%;
   height: 14px;
   width: 14px;
@@ -66,7 +65,7 @@ const Pulse = styled.div`
   transform: rotateX(55deg);
   z-index: -2;
   &:after {
-    content: "";
+    content: '';
     border-radius: 50%;
     height: 40px;
     width: 40px;
@@ -75,7 +74,7 @@ const Pulse = styled.div`
     animation: pulsate 1s ease-out;
     animation-iteration-count: infinite;
     opacity: 0;
-    box-shadow: 0 0 1px 2px #CEC0D9;
+    box-shadow: 0 0 1px 2px #cec0d9;
     animation-delay: 1.1s;
   }
   @keyframes pulsate {
@@ -93,15 +92,15 @@ const Pulse = styled.div`
   }
 `
 
-const Component = props => (
+type Props = {
+  text: string
+}
+
+const Component: React.FC<Props> = ({ text }) => (
   <Wrapper>
-    <BouncedPin alt={props.text} />
+    <BouncedPin alt={text} />
     <Pulse />
   </Wrapper>
-);
+)
 
-Component.propTypes = {
-  text: PropTypes.string.isRequired,
-};
-
-export default Component;
+export default Component

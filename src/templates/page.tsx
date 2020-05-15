@@ -1,25 +1,26 @@
 import React from 'react'
 import { graphql } from 'gatsby'
-import styled from "styled-components"
+import styled from 'styled-components'
 import Layout from '../components/layout'
-import rehypeReact from "rehype-react"
-import Case from "../components/case"
-import Callout from "../components/callout"
-import Panel from "../components/panel"
-import Button from "../components/button"
-import Map from "../components/map"
-import Head from "../components/head"
-import Media from "../components/media"
+import rehypeReact from 'rehype-react'
+import Case from '../components/case'
+import Callout from '../components/callout'
+import Panel from '../components/panel'
+import Button from '../components/button'
+import Map from '../components/map'
+import Head from '../components/head'
+import Media from '../components/media'
+import { PageTemplateQuery } from '../../types/graphql-types'
 
 const renderAst = new rehypeReact({
   createElement: React.createElement,
   components: {
-    "case": Case,
-    "callout": Callout,
-    "panel": Panel,
-    "button": Button,
-    "map": Map,
-    "media": Media,
+    case: Case,
+    callout: Callout,
+    panel: Panel,
+    button: Button,
+    map: Map,
+    media: Media,
   },
 }).Compiler
 
@@ -30,7 +31,7 @@ const Container = styled.article`
 const Header = styled.div`
   margin: 0 1rem;
   padding: 1rem 0;
-  border-bottom: 1px solid #E6E0ED;
+  border-bottom: 1px solid #e6e0ed;
   h1 {
     padding-top: 0;
   }
@@ -61,7 +62,7 @@ const Meta = styled.div`
   }
   ul {
     margin: 0;
-    padding: .5rem 0 1.5rem 1.2rem;
+    padding: 0.5rem 0 1.5rem 1.2rem;
     color: #999;
     line-height: 1.85;
   }
@@ -84,7 +85,7 @@ const Body = styled.div`
 `
 
 export const query = graphql`
-  query($path: String!) {
+  query PageTemplate($path: String!) {
     markdownRemark(fields: { slug: { eq: $path } }) {
       id
       htmlAst
@@ -108,13 +109,25 @@ export const query = graphql`
   }
 `
 
-const Component = ({ data }) => {
+type Props = {
+  data: PageTemplateQuery
+}
+
+const Component: React.FC<Props> = ({ data }) => {
   const { markdownRemark } = data
-  const { frontmatter, htmlAst, fields: { slug } } = markdownRemark
+  const {
+    frontmatter,
+    htmlAst,
+    fields: { slug },
+  } = markdownRemark
   const { title, lead, tags, category } = frontmatter
-  const categoryName = slug.match(/covid-19/) ? `COVID-19 Support` :
-    (slug.match(/proposals/) ? 'Proposals' :
-    (category === null ? 'Services' : category))
+  const categoryName = slug.match(/covid-19/)
+    ? `COVID-19 Support`
+    : slug.match(/proposals/)
+    ? 'Proposals'
+    : category === null
+    ? 'Services'
+    : category
 
   return (
     <Layout>
@@ -128,14 +141,16 @@ const Component = ({ data }) => {
           </div>
         </Header>
         <Body>
-          {tags !== null && <Meta>
-            <p>Tags:</p>
-            <ul>
-              {tags.map(tag => (
-                <li key={tag}>{tag}</li>
-              ))}
-            </ul>
-          </Meta>}
+          {tags !== null && (
+            <Meta>
+              <p>Tags:</p>
+              <ul>
+                {tags.map(tag => (
+                  <li key={tag}>{tag}</li>
+                ))}
+              </ul>
+            </Meta>
+          )}
           {renderAst(htmlAst)}
         </Body>
       </Container>

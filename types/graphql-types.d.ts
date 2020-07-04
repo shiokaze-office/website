@@ -695,6 +695,7 @@ export type FileFieldsEnum =
   | 'childMarkdownRemark___frontmatter___title'
   | 'childMarkdownRemark___frontmatter___category'
   | 'childMarkdownRemark___frontmatter___lead'
+  | 'childMarkdownRemark___frontmatter___tags'
   | 'childMarkdownRemark___frontmatter___featuredImage___sourceInstanceName'
   | 'childMarkdownRemark___frontmatter___featuredImage___absolutePath'
   | 'childMarkdownRemark___frontmatter___featuredImage___relativePath'
@@ -731,7 +732,6 @@ export type FileFieldsEnum =
   | 'childMarkdownRemark___frontmatter___featuredImage___publicURL'
   | 'childMarkdownRemark___frontmatter___featuredImage___id'
   | 'childMarkdownRemark___frontmatter___featuredImage___children'
-  | 'childMarkdownRemark___frontmatter___tags'
   | 'childMarkdownRemark___frontmatter___date'
   | 'childMarkdownRemark___excerpt'
   | 'childMarkdownRemark___rawMarkdownBody'
@@ -1502,6 +1502,7 @@ export type MarkdownRemarkFieldsEnum =
   | 'frontmatter___title'
   | 'frontmatter___category'
   | 'frontmatter___lead'
+  | 'frontmatter___tags'
   | 'frontmatter___featuredImage___sourceInstanceName'
   | 'frontmatter___featuredImage___absolutePath'
   | 'frontmatter___featuredImage___relativePath'
@@ -1563,7 +1564,6 @@ export type MarkdownRemarkFieldsEnum =
   | 'frontmatter___featuredImage___childMarkdownRemark___timeToRead'
   | 'frontmatter___featuredImage___childMarkdownRemark___tableOfContents'
   | 'frontmatter___featuredImage___childMarkdownRemark___children'
-  | 'frontmatter___tags'
   | 'frontmatter___date'
   | 'excerpt'
   | 'rawMarkdownBody'
@@ -1693,8 +1693,8 @@ export type MarkdownRemarkFrontmatter = {
   title?: Maybe<Scalars['String']>;
   category?: Maybe<Scalars['String']>;
   lead?: Maybe<Scalars['String']>;
-  featuredImage?: Maybe<File>;
   tags?: Maybe<Array<Maybe<Scalars['String']>>>;
+  featuredImage?: Maybe<File>;
   date?: Maybe<Scalars['Date']>;
 };
 
@@ -1710,8 +1710,8 @@ export type MarkdownRemarkFrontmatterFilterInput = {
   title?: Maybe<StringQueryOperatorInput>;
   category?: Maybe<StringQueryOperatorInput>;
   lead?: Maybe<StringQueryOperatorInput>;
-  featuredImage?: Maybe<FileFilterInput>;
   tags?: Maybe<StringQueryOperatorInput>;
+  featuredImage?: Maybe<FileFilterInput>;
   date?: Maybe<DateQueryOperatorInput>;
 };
 
@@ -3112,13 +3112,24 @@ export type IndexPageQueryVariables = {};
 export type IndexPageQuery = { file?: Maybe<{ childImageSharp?: Maybe<{ fluid?: Maybe<GatsbyImageSharpFluidFragment> }> }>, pages: { edges: Array<{ node: (
         Pick<MarkdownRemark, 'id' | 'timeToRead' | 'excerpt'>
         & { fields?: Maybe<Pick<MarkdownRemarkFields, 'slug'>>, frontmatter?: Maybe<(
-          Pick<MarkdownRemarkFrontmatter, 'title' | 'lead'>
+          Pick<MarkdownRemarkFrontmatter, 'title' | 'lead' | 'tags'>
           & { featuredImage?: Maybe<{ childImageSharp?: Maybe<{ fluid?: Maybe<GatsbyImageSharpFluidFragment> }> }> }
         )> }
       ) }> }, posts: { edges: Array<{ node: (
         Pick<MarkdownRemark, 'id' | 'timeToRead' | 'excerpt'>
         & { fields?: Maybe<Pick<MarkdownRemarkFields, 'slug'>>, frontmatter?: Maybe<(
           Pick<MarkdownRemarkFrontmatter, 'date' | 'title' | 'lead'>
+          & { featuredImage?: Maybe<{ childImageSharp?: Maybe<{ fluid?: Maybe<GatsbyImageSharpFluidFragment> }> }> }
+        )> }
+      ) }> } };
+
+export type ProposalsPageQueryVariables = {};
+
+
+export type ProposalsPageQuery = { proposals: { edges: Array<{ node: (
+        Pick<MarkdownRemark, 'id' | 'timeToRead' | 'excerpt'>
+        & { fields?: Maybe<Pick<MarkdownRemarkFields, 'slug'>>, frontmatter?: Maybe<(
+          Pick<MarkdownRemarkFrontmatter, 'date' | 'title' | 'lead' | 'tags'>
           & { featuredImage?: Maybe<{ childImageSharp?: Maybe<{ fluid?: Maybe<GatsbyImageSharpFluidFragment> }> }> }
         )> }
       ) }> } };

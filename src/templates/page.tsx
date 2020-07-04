@@ -22,7 +22,6 @@ const renderAst = new rehypeReact({
     callout: Callout,
     panel: Panel,
     button: Button,
-    map: Map,
     media: Media,
   },
 }).Compiler
@@ -60,6 +59,7 @@ const Component: React.FC<Props> = ({
       <Head title={title} description={lead} keywords={tags} />
       <Container>
         <Header titleName={categoryName} title={title} descName="Intro" desc={lead} />
+        {slug === '/office' && <Map>しおかぜ事務所</Map>}
         <Body>
           <TableOfContents>
             <p className="title">目次</p>

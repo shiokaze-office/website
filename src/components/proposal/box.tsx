@@ -1,5 +1,6 @@
 import React from 'react'
 import { Link } from 'gatsby'
+import Img from 'gatsby-image'
 import styled from 'styled-components'
 
 type Props = {
@@ -9,11 +10,21 @@ type Props = {
 const Component: React.FC<Props> = ({ attributes, children }) => {
   return (
     <StyledLink to={attributes.node.fields.slug}>
+      {attributes.node.frontmatter.featuredImage && (
+        <FeaturedImage>
+          <Img
+            fluid={
+              attributes.node.frontmatter.featuredImage.childImageSharp
+                .fluid
+            }
+          />
+        </FeaturedImage>
+      )}
       <div>
-        {attributes.node.frontmatter.date}<span>{attributes.node.timeToRead} min read</span>
+        {attributes.node.frontmatter.tags.join(', ')}<span>{attributes.node.timeToRead} min read</span>
       </div>
       <h3>{attributes.node.frontmatter.title}</h3>
-      <p>{attributes.node.excerpt}</p>
+      <p>{attributes.node.frontmatter.lead}</p>
     </StyledLink>
   )
 }
@@ -35,7 +46,6 @@ const StyledLink = styled(Link)`
     margin-bottom: var(--gutter);
     font-size: 0.85rem;
     font-family: 'Noto Sans JP', sans-serif;
-    font-weight: bold;
   }
   span {
     font-weight: normal;
@@ -50,6 +60,13 @@ const StyledLink = styled(Link)`
   }
   p {
     margin-top: 1rem;
+  }
+`
+const FeaturedImage = styled.p`
+  margin: 1rem 0 2rem;
+  max-height: 300px;
+  img {
+    max-height: 300px;
   }
 `
 

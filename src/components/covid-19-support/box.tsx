@@ -3,17 +3,16 @@ import { Link } from 'gatsby'
 import styled from 'styled-components'
 
 type Props = {
+  num: number
   attributes: object
 }
 
-const Component: React.FC<Props> = ({ attributes, children }) => {
+const Component: React.FC<Props> = ({ num, attributes, children }) => {
   return (
     <StyledLink to={attributes.node.fields.slug}>
-      <div>
-        {attributes.node.frontmatter.date}<span>{attributes.node.timeToRead} min read</span>
-      </div>
+      <div>{num}</div>
       <h3>{attributes.node.frontmatter.title}</h3>
-      <p>{attributes.node.excerpt}</p>
+      <p>{attributes.node.frontmatter.lead}</p>
     </StyledLink>
   )
 }
@@ -42,7 +41,6 @@ const StyledLink = styled(Link)`
   }
   span:before {
     content: '-';
-    padding-left: 0.5rem;
     padding-right: 0.5rem;
   }
   h3 {

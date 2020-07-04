@@ -3,6 +3,8 @@ import { Link, graphql } from 'gatsby'
 import Layout from '../components/layout'
 import Head from '../components/head'
 import Box from '../components/box'
+import ProposalBox from '../components/proposal/box'
+import Covid19SupportBox from '../components/covid-19-support/box'
 import styled from 'styled-components'
 import Img from 'gatsby-image'
 import { IndexPageQuery } from '../../types/graphql-types'
@@ -28,27 +30,25 @@ const Component: React.FC<Props> = ({ data }) => {
       <FV>
         <FVSub>頼れる街の法律家</FVSub>
         <h1>安心できる老後へ</h1>
-        <Img fluid={file.childImageSharp.fluid} />
+        <Img className="top-eyecatch" fluid={file.childImageSharp.fluid} />
         <FVText>
           しおかぜ事務所は、<em>成年後見</em>、<em>遺言</em>、<em>事務委任</em>
           、<em>信託</em>
           などを利用して、安心できる老後へサポートする行政書士事務所です
         </FVText>
       </FV>
+
       <Container>
         <Header>
-        <h2>新型コロナ対応支援</h2>
-        <p>
-          新型コロナウイルスによって影響を受けている方々に向けて、各省庁や地方自治体が支援を行って支援を
-          「個人事業者・企業」と「個人」に分けてまとめました。
-        </p>
+          <h2>新型コロナ対応支援</h2>
+          <p>
+            新型コロナウイルスによって影響を受けている方々に向けて、各省庁や地方自治体が支援を行って支援を
+            「個人事業者・企業」と「個人」に分けてまとめました。
+          </p>
         </Header>
         <Body>
-          {covid.map(entry => (
-            <Link key={entry.node.id} to={entry.node.fields.slug}>
-              <h3>{entry.node.frontmatter.title}</h3>
-              <p>{entry.node.frontmatter.lead}</p>
-            </Link>
+          {covid.map((entry, i) => (
+            <Covid19SupportBox key={entry.node.id} num={('00'+(1+i)).slice(-2)} attributes={entry} />
           ))}
         </Body>
       </Container>
@@ -60,22 +60,12 @@ const Component: React.FC<Props> = ({ data }) => {
         </Header>
         <Body2Col>
           {proposals.map(proposal => (
-            <Link key={proposal.node.id} to={proposal.node.fields.slug}>
-              {proposal.node.frontmatter.featuredImage && (
-                <FeaturedImage>
-                  <Img
-                    fluid={
-                      proposal.node.frontmatter.featuredImage.childImageSharp
-                        .fluid
-                    }
-                  />
-                </FeaturedImage>
-              )}
-              <h3>{proposal.node.frontmatter.title}</h3>
-              <p>{proposal.node.frontmatter.lead}</p>
-            </Link>
+            <ProposalBox key={proposal.node.id} attributes={proposal} />
           ))}
         </Body2Col>
+        <Footer>
+          <Link to="/proposals">ご提案の一覧へ</Link>
+        </Footer>
       </Container>
 
       <Container>
@@ -100,7 +90,7 @@ export const query = graphql`
   query IndexPage {
     file(relativePath: { eq: "images/top.png" }) {
       childImageSharp {
-        fluid(maxWidth: 1024) {
+        fluid(maxWidth: 600) {
           ...GatsbyImageSharpFluid
         }
       }
@@ -120,9 +110,10 @@ export const query = graphql`
           frontmatter {
             title
             lead
+            tags
             featuredImage {
               childImageSharp {
-                fluid(maxWidth: 800) {
+                fluid(maxWidth: 600) {
                   ...GatsbyImageSharpFluid
                 }
               }
@@ -150,7 +141,7 @@ export const query = graphql`
             lead
             featuredImage {
               childImageSharp {
-                fluid(maxWidth: 800) {
+                fluid(maxWidth: 600) {
                   ...GatsbyImageSharpFluid
                 }
               }
@@ -169,18 +160,22 @@ const FV = styled.div`
     padding: 0;
   }
   picture {
-    max-width: 860px;
+    max-width: 800px;
     margin: 0 auto 2rem;
+  }
+  .top-eyecatch {
+    max-width: 800px;
+    margin: 0 auto 2.5rem;
   }
 `
 const FVSub = styled.p`
   text-align: center;
-  margin: 0;
-  padding: 1.2rem 0 0;
+  margin: 3rem 0 -1rem;
+  padding: 0 0 0;
   font-family: 'Noto Serif JP', serif;
   color: #999;
   letter-spacing: 0.5rem;
-  font-size: 1rem;
+  font-size: .9rem;
 `
 const FVText = styled.p`
   max-width: 640px;
@@ -210,14 +205,6 @@ const Footer = styled.div`
     display: block;
     text-align: center;
     font-weight: bold;
-  }
-`
-const FeaturedImage = styled.p`
-  margin: 1rem 0 2rem;
-  max-height: 300px;
-  img {
-    max-height: 300px;
-    border-radius: 0.5rem;
   }
 `
 

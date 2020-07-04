@@ -1,0 +1,38 @@
+:root {
+  --t0: 4.5rem;
+  --t1: 4rem;
+  --t2: 2.5rem;
+  --t3: 2rem;
+  --p0: 1.687rem;
+  --p1: 1.25rem;
+  --p2: 1rem;
+  --p3: 0.75rem;
+  --gutter: 3.125rem;
+  --simple-translate-main-text: #0c0c0d;
+  --simple-translate-sub-text: #737373;
+  --simple-translate-line: #ededf0;
+  --simple-translate-button: #d7d7db;
+  --simple-translate-highlight: #5595ff;
+  --simple-translate-main-bg: #ffffff;
+}
+
+@media screen and (min-width:480px) {
+  html {
+    font-size: 11px;
+  }
+}
+@media screen and (min-width:768px) and ( max-width:1024px) {
+  html {
+    font-size: 13px;
+  }
+}
+@media screen and (min-width:1024px) and ( max-width:1680px) {
+  html {
+    font-size: 17px;
+  }
+}
+@media screen and (min-width:1680px) {
+  html {
+    font-size: 20px;
+  }
+}

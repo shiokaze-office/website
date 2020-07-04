@@ -2,7 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 
 const Case = styled.div`
-  padding: 0 0 0 2.2rem;
+  padding: 0 0 0.5rem 2.2rem;
   position: relative;
   overflow: hidden;
 `
@@ -33,7 +33,7 @@ const Bar = styled.span`
 
 const Title = styled.p`
   font-weight: bold;
-  padding-bottom: 0.2rem;
+  padding: 0.5rem 0 0.2rem;
 `
 
 const Content = styled.div`

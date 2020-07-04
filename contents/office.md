@@ -5,7 +5,6 @@ lead: |-
   屋号の「しおかぜ」は、事務所が海まで目と鼻の先に位置し、年中潮風が吹いている環境から付けられています。
   事務所周辺は、近所の散歩スポットでもあります。
 ---
-<map>しおかぜ事務所</map>
 
 ## 行政書士 しおかぜ事務所
 
@@ -41,4 +40,4 @@ lead: |-
 
 ## お問い合わせ
 
-<iframe src="https://docs.google.com/forms/d/e/1FAIpQLSfQNI2nAEvKfKxmx8We5KT10foX48iAH18bsh0182Ew4N-J3g/viewform?embedded=true" width="760" height="980" frameborder="0" marginheight="0" marginwidth="0">読み込んでいます…</iframe>
+<iframe src="https://docs.google.com/forms/d/e/1FAIpQLSfQNI2nAEvKfKxmx8We5KT10foX48iAH18bsh0182Ew4N-J3g/viewform?embedded=true" width="100%" height="980" frameborder="0" marginheight="0" marginwidth="0">読み込んでいます…</iframe>

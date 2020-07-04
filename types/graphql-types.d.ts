@@ -3085,7 +3085,10 @@ export type HeadQuery = { site?: Maybe<{ siteMetadata?: Maybe<Pick<SiteSiteMetad
 export type FooterQueryVariables = {};
 
 
-export type FooterQuery = { site?: Maybe<{ siteMetadata?: Maybe<Pick<SiteSiteMetadata, 'title'>> }>, allMarkdownRemark: { edges: Array<{ node: (
+export type FooterQuery = { site?: Maybe<{ siteMetadata?: Maybe<Pick<SiteSiteMetadata, 'title'>> }>, pages: { edges: Array<{ node: (
+        Pick<MarkdownRemark, 'id'>
+        & { fields?: Maybe<Pick<MarkdownRemarkFields, 'slug'>>, frontmatter?: Maybe<Pick<MarkdownRemarkFrontmatter, 'title'>> }
+      ) }> }, posts: { edges: Array<{ node: (
         Pick<MarkdownRemark, 'id'>
         & { fields?: Maybe<Pick<MarkdownRemarkFields, 'slug'>>, frontmatter?: Maybe<Pick<MarkdownRemarkFrontmatter, 'title'>> }
       ) }> } };
@@ -3098,7 +3101,7 @@ export type HeaderQuery = { site?: Maybe<{ siteMetadata?: Maybe<Pick<SiteSiteMet
 export type BlogPageQueryVariables = {};
 
 
-export type BlogPageQuery = { allMarkdownRemark: { edges: Array<{ node: (
+export type BlogPageQuery = { blog: { edges: Array<{ node: (
         Pick<MarkdownRemark, 'id' | 'timeToRead' | 'excerpt'>
         & { fields?: Maybe<Pick<MarkdownRemarkFields, 'slug'>>, frontmatter?: Maybe<Pick<MarkdownRemarkFrontmatter, 'date' | 'title' | 'tags'>> }
       ) }> } };
@@ -3106,10 +3109,27 @@ export type BlogPageQuery = { allMarkdownRemark: { edges: Array<{ node: (
 export type IndexPageQueryVariables = {};
 
 
-export type IndexPageQuery = { file?: Maybe<{ childImageSharp?: Maybe<{ fluid?: Maybe<GatsbyImageSharpFluidFragment> }> }>, allMarkdownRemark: { edges: Array<{ node: (
+export type IndexPageQuery = { file?: Maybe<{ childImageSharp?: Maybe<{ fluid?: Maybe<GatsbyImageSharpFluidFragment> }> }>, pages: { edges: Array<{ node: (
+        Pick<MarkdownRemark, 'id' | 'timeToRead' | 'excerpt'>
+        & { fields?: Maybe<Pick<MarkdownRemarkFields, 'slug'>>, frontmatter?: Maybe<(
+          Pick<MarkdownRemarkFrontmatter, 'title' | 'lead' | 'tags'>
+          & { featuredImage?: Maybe<{ childImageSharp?: Maybe<{ fluid?: Maybe<GatsbyImageSharpFluidFragment> }> }> }
+        )> }
+      ) }> }, posts: { edges: Array<{ node: (
         Pick<MarkdownRemark, 'id' | 'timeToRead' | 'excerpt'>
         & { fields?: Maybe<Pick<MarkdownRemarkFields, 'slug'>>, frontmatter?: Maybe<(
           Pick<MarkdownRemarkFrontmatter, 'date' | 'title' | 'lead'>
+          & { featuredImage?: Maybe<{ childImageSharp?: Maybe<{ fluid?: Maybe<GatsbyImageSharpFluidFragment> }> }> }
+        )> }
+      ) }> } };
+
+export type ProposalsPageQueryVariables = {};
+
+
+export type ProposalsPageQuery = { proposals: { edges: Array<{ node: (
+        Pick<MarkdownRemark, 'id' | 'timeToRead' | 'excerpt'>
+        & { fields?: Maybe<Pick<MarkdownRemarkFields, 'slug'>>, frontmatter?: Maybe<(
+          Pick<MarkdownRemarkFrontmatter, 'date' | 'title' | 'lead' | 'tags'>
           & { featuredImage?: Maybe<{ childImageSharp?: Maybe<{ fluid?: Maybe<GatsbyImageSharpFluidFragment> }> }> }
         )> }
       ) }> } };
@@ -3120,7 +3140,7 @@ export type PageTemplateQueryVariables = {
 
 
 export type PageTemplateQuery = { markdownRemark?: Maybe<(
-    Pick<MarkdownRemark, 'id' | 'htmlAst' | 'timeToRead' | 'tableOfContents'>
+    Pick<MarkdownRemark, 'htmlAst' | 'tableOfContents'>
     & { fields?: Maybe<Pick<MarkdownRemarkFields, 'slug'>>, frontmatter?: Maybe<Pick<MarkdownRemarkFrontmatter, 'title' | 'category' | 'lead' | 'tags'>> }
   )> };
 

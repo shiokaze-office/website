@@ -4,27 +4,27 @@ import styled from 'styled-components'
 import Layout from '../components/layout'
 import Head from '../components/head'
 import Button from '../components/button'
-import Box from '../components/box'
+import Box from '../components/proposal/box'
 import Intro from '../components/intro'
-import { BlogPageQuery } from '../../types/graphql-types'
+import { ProposalsPageQuery } from '../../types/graphql-types'
 
 type Props = {
-  data: BlogPageQuery
+  data: ProposalsPageQuery
 }
 
 const Component: React.FC<Props> = ({ data }) => {
-  const posts = data.blog.edges
-  const title = `ブログ`
-  const desc = `日常業務でのちょっとした気づきなどを中心に書きます`
+  const posts = data.proposals.edges
+  const title = `私たちからのご提案`
+  const desc = `老後の生活に不安や不便を感じるすべての方へ、お客様にあったご提案をします。`
 
   return (
     <Layout>
       <Head title={title} description={desc} />
       <Container>
-        <Intro titleName="Blog" title={title} descName="Description" desc={desc} />
+        <Intro titleName="Proposals" title={title} descName="Description" desc={desc} />
         <Body>
           {posts.map(post => (
-            <Box  key={post.node.id} attributes={post} />
+            <Box key={post.node.id} attributes={post} />
           ))}
         </Body>
       </Container>
@@ -33,10 +33,10 @@ const Component: React.FC<Props> = ({ data }) => {
 }
 
 export const query = graphql`
-  query BlogPage {
-    blog: allMarkdownRemark(
+  query ProposalsPage {
+    proposals: allMarkdownRemark(
       sort: { order: DESC, fields: [frontmatter___date] }
-      filter: { fields: { slug: { regex: "/blog/" } } }
+      filter: { fields: { slug: { regex: "/proposals/" } } }
       limit: 15
     ) {
       edges {
@@ -50,7 +50,15 @@ export const query = graphql`
           frontmatter {
             date(formatString: "YYYY年MM月DD日")
             title
+            lead
             tags
+            featuredImage {
+              childImageSharp {
+                fluid(maxWidth: 600) {
+                  ...GatsbyImageSharpFluid
+                }
+              }
+            }
           }
         }
       }
@@ -86,7 +94,7 @@ const Body = styled.div`
   margin-top: 1.875rem;
   border-top: 1px solid rgb(0, 0, 0);
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(2, 1fr);
 `
 const Card = styled.div``
 

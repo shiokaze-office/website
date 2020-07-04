@@ -5,14 +5,13 @@ import Marker from './marker'
 
 const Wrapper = styled.div`
   text-align: center;
-  width: 100vw;
+  width: 100%;
   position: relative;
-  left: 50%;
-  transform: translateX(-50%);
   margin-bottom: 1rem;
+  overflow: hidden;
 `
 const GoogleMapWrapper = styled.div`
-  width: 100vw;
+  width: 100%;
   height: 50vh;
 `
 

@@ -2,14 +2,11 @@ import React from 'react'
 import { Link, useStaticQuery, graphql } from 'gatsby'
 import styled from 'styled-components'
 import logo from './shiokaze.svg'
+import Button from '../button'
 import { HeaderQuery } from '../../../types/graphql-types'
 
-const Logo = styled.p`
-  padding: 0;
-`
-
 const Component: React.FC = () => {
-  const data = useStaticQuery<HeaderQuery>(graphql`
+  const { site: { siteMetadata: { title } } } = useStaticQuery<HeaderQuery>(graphql`
     query Header {
       site {
         siteMetadata {
@@ -18,63 +15,71 @@ const Component: React.FC = () => {
       }
     }
   `)
-  const title = data.site.siteMetadata.title
 
   return (
-    <header>
-      <nav className="navbar" role="navigation" aria-label="main navigation">
-        <div className="navbar-brand">
-          <Logo className="logo">
-            <Link to="/">
-              <img className="logomark" src={logo} alt={title} />
-            </Link>
-          </Logo>
-        </div>
-
-        <div className="navbar-menu">
-          <div className="navbar-start">
-            <Link className="navbar-item" to="/will">
-              遺言
-            </Link>
-            <Link className="navbar-item" to="/inheritance">
-              相続手続き
-            </Link>
-            <Link className="navbar-item" to="/guardianship">
-              任意後見契約
-            </Link>
-            <Link className="navbar-item" to="/entrusted-business">
-              事務委任契約
-            </Link>
-            <Link className="navbar-item" to="/family-trust">
-              家族信託
-            </Link>
-            <Link className="navbar-item" to="/blog">
-              ブログ
-            </Link>
-          </div>
-
-          <div className="navbar-end">
-            <div className="navbar-item">
-              <div className="buttons">
-                <Link className="button is-outlined" to="/about">
-                  <span role="img" aria-label="Woman Office Worker">
-                    👩‍💼
-                  </span>{' '}
-                  行政書士紹介
-                </Link>
-                <Link className="button is-outlined" to="/office">
-                  <span role="img" aria-label="Office Building">
-                    🏢
-                  </span>{' '}
-                  事務所案内
-                </Link>
-              </div>
-            </div>
-          </div>
-        </div>
-      </nav>
-    </header>
+    <Header>
+        <Logo>
+          <Link to="/"> <img src={logo} alt={title} /> </Link>
+        </Logo>
+        <Nav>
+          <Link to="/will">遺言</Link>
+          <Link to="/inheritance">相続手続き</Link>
+          <Link to="/guardianship">任意後見契約</Link>
+          <Link to="/entrusted-business">事務委任契約</Link>
+          <Link to="/family-trust">家族信託</Link>
+          <Link to="/blog">ブログ</Link>
+        </Nav>
+        <About>
+          <Button href="/about">行政書士紹介</Button>
+          <Button href="/office">事務所案内</Button>
+        </About>
+    </Header>
   )
 }
+
+const Header = styled.header`
+  display: grid;
+  grid-template-columns: 22rem 1fr 22rem;
+  margin: 0 var(--gutter);
+  padding-top: 2.5rem;
+  padding-bottom: 1.25rem;
+  align-items: end;
+  border-bottom: 1px solid #000;
+`
+const Logo = styled.p`
+  padding: 0;
+  margin: 0;
+  img {
+    margin: 0;
+    width: 18rem;
+    &:hover {
+      opacity: 0.8;
+    }
+  }
+  a {
+    display: block;
+  }
+`
+const Nav = styled.nav`
+  margin: 0;
+  text-align: center;
+  a {
+    display: inline-block;
+    padding: 0 .5rem 1rem;
+    &:hover {
+      opacity: 0.8;
+    }
+  }
+`
+const About = styled.nav`
+  text-align: right;
+  a {
+    margin-left: 1rem;
+    margin-bottom: .5rem;
+  }
+  p {
+    display: inline;
+  }
+`
 
 export default Component

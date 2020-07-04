@@ -10,6 +10,9 @@ import Button from '../components/button'
 import Map from '../components/map'
 import Head from '../components/head'
 import Media from '../components/media'
+import Header from '../components/article/header'
+import Body from '../components/article/body'
+import Footer from '../components/article/footer'
 import { PageTemplateQuery } from '../../types/graphql-types'
 
 const renderAst = new rehypeReact({
@@ -24,103 +27,26 @@ const renderAst = new rehypeReact({
   },
 }).Compiler
 
-const Container = styled.article`
-  margin: 0 0 3rem;
-`
-
-const Header = styled.div`
-  margin: 0 1rem;
-  padding: 1rem 0;
-  border-bottom: 1px solid #e6e0ed;
-  h1 {
-    padding-top: 0;
-  }
-  .container {
-    margin-top: 0;
-  }
-`
-
-const Category = styled.article`
-  margin: 0;
-  padding: 0;
-  font-weight: bold;
-  color: #999;
-`
-
-const Meta = styled.div`
-  position: absolute;
-  top: 1rem;
-  right: -300px;
-  width: 260px;
-  color: #ddd;
-  margin: 0;
-  padding: 0;
-  p {
-    font-weight: bold;
-    margin: 0;
-    padding: 0;
-  }
-  ul {
-    margin: 0;
-    padding: 0.5rem 0 1.5rem 1.2rem;
-    color: #999;
-    line-height: 1.85;
-  }
-  li {
-    padding: 0;
-    font-size: 1rem;
-  }
-`
-
-const Body = styled.div`
-  position: relative;
-  margin: 0 auto;
-  width: 760px;
-  h2 {
-    padding-top: 2rem;
-  }
-  h3 {
-    padding-top: 1.2rem;
-  }
-`
-
-export const query = graphql`
-  query PageTemplate($path: String!) {
-    markdownRemark(fields: { slug: { eq: $path } }) {
-      id
-      htmlAst
-      timeToRead
-      fields {
-        slug
-      }
-      frontmatter {
-        title
-        category
-        lead
-        tags
-      }
-      tableOfContents(
-        absolute: true
-        pathToSlugField: "frontmatter.path"
-        heading: "only show toc from this heading onwards"
-        maxDepth: 2
-      )
-    }
-  }
-`
 
 type Props = {
   data: PageTemplateQuery
 }
 
-const Component: React.FC<Props> = ({ data }) => {
-  const { markdownRemark } = data
-  const {
-    frontmatter,
-    htmlAst,
-    fields: { slug },
-  } = markdownRemark
-  const { title, lead, tags, category } = frontmatter
+const Component: React.FC<Props> = ({
+    data: {
+      markdownRemark: {
+        htmlAst,
+        fields: { slug },
+        frontmatter: {
+          title,
+          category,
+          lead,
+          tags
+        },
+        tableOfContents
+      }
+    }
+  }) => {
   const categoryName = slug.match(/covid-19/)
     ? `COVID-19 Support`
     : slug.match(/proposals/)
@@ -133,29 +59,67 @@ const Component: React.FC<Props> = ({ data }) => {
     <Layout>
       <Head title={title} description={lead} keywords={tags} />
       <Container>
-        <Header>
-          <div className="container">
-            <Category>{categoryName}</Category>
-            <h1>{title}</h1>
-            <p>{lead}</p>
-          </div>
-        </Header>
+        <Header titleName={categoryName} title={title} descName="Intro" desc={lead} />
         <Body>
-          {tags !== null && (
-            <Meta>
-              <p>Tags:</p>
-              <ul>
-                {tags.map(tag => (
-                  <li key={tag}>{tag}</li>
-                ))}
-              </ul>
-            </Meta>
-          )}
+          <TableOfContents>
+            <p className="title">目次</p>
+            <div className="body" dangerouslySetInnerHTML={{ __html: tableOfContents }} />
+          </TableOfContents>
           {renderAst(htmlAst)}
         </Body>
+        <Footer tags={tags} />
       </Container>
     </Layout>
   )
 }
+
+export const query = graphql`
+  query PageTemplate($path: String!) {
+    markdownRemark(fields: { slug: { eq: $path } }) {
+      htmlAst
+      fields {
+        slug
+      }
+      frontmatter {
+        title
+        category
+        lead
+        tags
+      }
+      tableOfContents
+    }
+  }
+`
+
+const Container = styled.article`
+  margin: 0 0 3rem;
+`
+const TableOfContents = styled.nav`
+  grid-column: 3 / 3;
+  color: #ddd;
+  margin: 2rem 0 0;
+  padding: 0;
+  .title {
+    color: #666;
+    font-size: 1.5rem;
+    padding: 0 0 1rem;
+    margin: 0;
+  }
+  p {
+    font-size: 1rem;
+    padding: 0 0 .5rem;
+  }
+  ul {
+    list-style-type: none;
+    padding: 0;
+    font-size: 1rem;
+  }
+  ul ul {
+    padding-left: 1rem;
+  }
+  li {
+    padding: 0 0 .5rem;
+  }
+`
 
 export default Component

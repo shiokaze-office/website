@@ -1,5 +1,6 @@
 import React, { ReactNode } from 'react'
-import '../../styles/main.scss'
+import '../../styles/variables.css'
+import '../../styles/base.css'
 import Header from './header'
 import Footer from './footer'
 

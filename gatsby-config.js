@@ -7,7 +7,6 @@ module.exports = {
     author: `shiokazenet`,
   },
   plugins: [
-    `gatsby-plugin-sass`,
     'gatsby-plugin-react-helmet',
     'gatsby-transformer-sharp',
     'gatsby-plugin-sharp',

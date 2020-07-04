@@ -3,31 +3,64 @@ import { Link, graphql } from 'gatsby'
 import styled from 'styled-components'
 import Layout from '../components/layout'
 import Head from '../components/head'
+import Button from '../components/button'
+import Box from '../components/box'
+import Intro from '../components/intro'
 import { BlogPageQuery } from '../../types/graphql-types'
+
+type Props = {
+  data: BlogPageQuery
+}
+
+const Component: React.FC<Props> = ({ data }) => {
+  const posts = data.blog.edges
+  const title = `ブログ`
+  const desc = `日常業務でのちょっとした気づきなどを中心に書きます`
+
+  return (
+    <Layout>
+      <Head title={title} description={desc} />
+      <Container>
+        <Intro titleName="Blog" title={title} descName="Description" desc={desc} />
+        <Body>
+          {posts.map(post => (
+            <Box  key={post.node.id} attributes={post} />
+          ))}
+        </Body>
+      </Container>
+    </Layout>
+  )
+}
+
+export const query = graphql`
+  query BlogPage {
+    blog: allMarkdownRemark(
+      sort: { order: DESC, fields: [frontmatter___date] }
+      filter: { fields: { slug: { regex: "/blog/" } } }
+      limit: 15
+    ) {
+      edges {
+        node {
+          id
+          timeToRead
+          excerpt(truncate: true, pruneLength: 100)
+          fields {
+            slug
+          }
+          frontmatter {
+            date(formatString: "YYYY年MM月DD日")
+            title
+            tags
+          }
+        }
+      }
+    }
+  }
+`
 
 const Container = styled.article`
   margin: 0 0 3rem;
 `
-
-const Header = styled.div`
-  margin: 0 1rem;
-  padding: 1rem 0;
-  border-bottom: 1px solid #e6e0ed;
-  h1 {
-    padding-top: 0;
-  }
-  .container {
-    margin-top: 0;
-  }
-`
-
-const Category = styled.article`
-  margin: 0;
-  padding: 0;
-  font-weight: bold;
-  color: #999;
-`
-
 const PostMeta = styled.ul`
   margin: -0.5rem 0 1rem;
   padding: 0;
@@ -49,97 +82,12 @@ const PostMeta = styled.ul`
     padding-right: 0.5rem;
   }
 `
-
 const Body = styled.div`
-  position: relative;
-  margin: 0;
-  h2 {
-    padding-top: 2rem;
-  }
-  h3 {
-    padding-top: 1.2rem;
-  }
+  margin-top: 1.875rem;
+  border-top: 1px solid rgb(0, 0, 0);
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
 `
-
 const Card = styled.div``
-
-export const query = graphql`
-  query BlogPage {
-    allMarkdownRemark(
-      sort: { order: DESC, fields: [frontmatter___date] }
-      filter: { fields: { slug: { regex: "/blog/" } } }
-    ) {
-      edges {
-        node {
-          id
-          timeToRead
-          excerpt(truncate: true, pruneLength: 100)
-          fields {
-            slug
-          }
-          frontmatter {
-            date(formatString: "YYYY年MM月DD日")
-            title
-            tags
-          }
-        }
-      }
-    }
-  }
-`
-
-type Props = {
-  data: BlogPageQuery
-}
-
-const Component: React.FC<Props> = ({
-  data: {
-    allMarkdownRemark: { edges },
-  },
-}) => {
-  const posts = edges.filter(edge => !!edge.node.frontmatter.date)
-  const title = `ブログ`
-  const description = `日常業務でのちょっとした気づきなどを中心に書きます`
-
-  return (
-    <Layout>
-      <Head title={title} description={description} />
-      <Container>
-        <Header>
-          <div className="container">
-            <Category>Blog</Category>
-            <h1>{title}</h1>
-            <p>{description}</p>
-          </div>
-        </Header>
-        <Body>
-          <div className="container">
-            {posts.map(post => (
-              <Card key={post.node.id}>
-                <h3 className="post-title">
-                  <Link to={post.node.fields.slug}>
-                    {post.node.frontmatter.title}
-                  </Link>
-                </h3>
-                <PostMeta>
-                  <li>{post.node.frontmatter.date}</li>
-                  <li>
-                    <span>{post.node.timeToRead} min read</span>
-                  </li>
-                </PostMeta>
-                <p className="post-excerpt">{post.node.excerpt}</p>
-                <p className="post-permalink">
-                  <Link className="button" to={post.node.fields.slug}>
-                    続きを読む
-                  </Link>
-                </p>
-              </Card>
-            ))}
-          </div>
-        </Body>
-      </Container>
-    </Layout>
-  )
-}
 
 export default Component

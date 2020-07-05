@@ -56,17 +56,25 @@ const StyledLink = styled(Link)`
     padding-right: 0.5rem;
   }
   h3 {
-    font-size: 2rem;
+    font-size: var(--t3);
   }
   p {
     margin-top: 1rem;
   }
+  @media screen and (max-width:480px) {
+    border-right: 0;
+  }
 `
-const FeaturedImage = styled.p`
-  margin: 1rem 0 2rem;
+const FeaturedImage = styled.div`
+  margin: var(--p2) 0 var(--t3);
   max-height: 300px;
   img {
     max-height: 300px;
+  }
+  @media screen and (max-width:480px) {
+    margin: 0;
+    padding: 0;
+    border-right: 0;
   }
 `
 

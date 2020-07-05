@@ -45,6 +45,9 @@ const Header = styled.header`
   padding-bottom: 1.25rem;
   align-items: end;
   border-bottom: 1px solid #000;
+  @media screen and (max-width:480px) {
+    grid-template-columns: 1fr;
+  }
 `
 const Logo = styled.p`
   padding: 0;

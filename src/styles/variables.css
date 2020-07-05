@@ -16,9 +16,14 @@
   --simple-translate-main-bg: #ffffff;
 }
 
-@media screen and (min-width:480px) {
+@media screen and (max-width:480px) {
   html {
-    font-size: 11px;
+    font-size: 15px;
+  }
+  :root {
+    --gutter: 1.5rem;
+    --t1: 2.8rem;
+    --t3: 1.6rem;
   }
 }
 @media screen and (min-width:768px) and ( max-width:1024px) {

@@ -120,6 +120,9 @@ const TableOfContents = styled.nav`
   li {
     padding: 0 0 .5rem;
   }
+  @media screen and (max-width:480px) {
+    display: none;
+  }
 `
 
 export default Component

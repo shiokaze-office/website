@@ -154,14 +154,14 @@ export const query = graphql`
 `
 
 const FV = styled.div`
-  padding: 0 0 2rem;
+  padding: 0 var(--gutter) 2rem;
   h1 {
     text-align: center;
     padding: 0;
   }
   picture {
     max-width: 800px;
-    margin: 0 auto 2rem;
+    margin: 0;
   }
   .top-eyecatch {
     max-width: 800px;
@@ -171,7 +171,7 @@ const FV = styled.div`
 const FVSub = styled.p`
   text-align: center;
   margin: 3rem 0 -1rem;
-  padding: 0 0 0;
+  padding: 0;
   font-family: 'Noto Serif JP', serif;
   color: #999;
   letter-spacing: 0.5rem;
@@ -193,6 +193,13 @@ const Body = styled.div`
   border-top: 1px solid rgb(0, 0, 0);
   display: grid;
   grid-template-columns: repeat(3, 1fr);
+  @media screen and (max-width:480px) {
+    grid-template-columns: 1fr;
+    border-left: 1px solid rgb(0, 0, 0);
+    border-right: 1px solid rgb(0, 0, 0);
+    margin-left: var(--gutter);
+    margin-right: var(--gutter);
+  }
 `
 const Body2Col = styled(Body)`
   grid-template-columns: repeat(2, 1fr);
@@ -205,6 +212,9 @@ const Footer = styled.div`
     display: block;
     text-align: center;
     font-weight: bold;
+  }
+  @media screen and (max-width:480px) {
+    border-bottom: 0;
   }
 `
 

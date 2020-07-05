@@ -6,7 +6,6 @@ html {
   font-kerning: normal;
   -moz-osx-font-smoothing: grayscale;
   font-family: Inter, Helvetica, sans-serif;
-  font-size: 1.11111vw;
   word-break: break-word;
   line-height: 1.15;
 }
@@ -28,7 +27,7 @@ header, footer {
 h1 {
   color: #555;
   padding: 1.2rem 0 .7rem;
-  font-size: 3rem;
+  font-size: var(--t1);
 }
 h2 {
   color: #333;

@@ -130,6 +130,10 @@ const Footer = styled.footer`
   padding: 1.25rem var(--gutter) 2rem;
   border-top: 1px solid #000;
   align-items: start;
+  @media screen and (max-width:480px) {
+    border: none;
+    grid-template-columns: 1fr;
+  }
 `
 const Logo = styled.p`
   grid-column: 1 / 2;
@@ -143,6 +147,9 @@ const Logo = styled.p`
     &:hover {
       opacity: 0.8;
     }
+  }
+  @media screen and (max-width:480px) {
+    text-align: center;
   }
 `
 const Sitemap = styled.ul`
@@ -167,6 +174,9 @@ const Sitemap = styled.ul`
         padding .5rem 0 0;
       }
     }
+  }
+  @media screen and (max-width:480px) {
+    display: none;
   }
 `
 const Copy = styled.small`

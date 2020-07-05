@@ -44,10 +44,13 @@ const StyledLink = styled(Link)`
     padding-right: 0.5rem;
   }
   h3 {
-    font-size: 2rem;
+    font-size: var(--t3);
   }
   p {
     margin-top: 1rem;
+  }
+  @media screen and (max-width:480px) {
+    border-right: 0;
   }
 `
 

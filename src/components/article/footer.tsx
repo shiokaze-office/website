@@ -29,6 +29,9 @@ const Container = styled.div`
   display: grid;
   grid-template-columns: 22rem 1fr 22rem;
   margin: 4rem var(--gutter);
+  @media screen and (max-width:480px) {
+    grid-template-columns: 1fr;
+  }
 `
 const Meta = styled.div`
   grid-column: 2 / 3;
@@ -57,6 +60,9 @@ const Meta = styled.div`
     margin: 0 0 0 1rem;
     padding: 0;
     display: inline-block;
+  }
+  @media screen and (max-width:480px) {
+    grid-column: 1 / 3;
   }
 `
 

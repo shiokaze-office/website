@@ -30,6 +30,10 @@ const Container = styled.div`
   h3 {
     padding-top: 1.2rem;
   }
+  @media screen and (max-width:480px) {
+    grid-template-columns: 1fr;
+    margin: 0;
+  }
 `
 
 export default Component

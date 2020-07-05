@@ -36,10 +36,13 @@ const Label = styled.div`
   color: #ccc;
   font-weight: bold;
   font-family: 'Noto Sans JP', sans-serif;
+  @media screen and (max-width:480px) {
+    display: none;
+  }
 `
 const Title = styled.div`
   h1 {
-    font-size: 4rem;
+    font-size: var(--t1);
     margin: 0 auto;
     padding: 0 0 5rem;
     max-width: 53.75rem;
@@ -54,6 +57,9 @@ const Desc = styled.div`
     max-width: 960px;
     margin: 0 auto;
     padding: 0 var(--gutter);
+  }
+  @media screen and (max-width:480px) {
+    grid-template-columns: 1fr;
   }
 `
 

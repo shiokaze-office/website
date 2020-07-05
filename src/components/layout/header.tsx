@@ -40,21 +40,21 @@ const Component: React.FC = () => {
         </About>
 
         <Burger>
-          <button onClick={() => setOpen(!open)} aria-expanded="false" aria-controls="navigation" aria-label="Navigation" aria-haspopup="true">
+          <button onClick={() => setOpen(!open)} aria-expanded="{open}" aria-controls="navigation" aria-label="Navigation" aria-haspopup="true">
             <svg viewBox="0 0 40 40" fill="none">
               <circle cx="20" cy="20" r="19.5" stroke="currentColor"></circle>
               {open === false &&
                 <path fill="currentColor" d="M12 16v-2h17v2zM12 21v-2h17v2zM12 26v-2h17v2z"></path>
               }
               {open === true &&
-                <path d="M14 14l13 12m-13 0l13-12" stroke="currentColor" stroke-width="2"></path>
+                <path d="M14 14l13 12m-13 0l13-12" stroke="currentColor" strokeWidth="2"></path>
               }
             </svg>
           </button>
         </Burger>
 
         <Nav4Mob open={open}>
-          <div class="job">
+          <div className="job">
             <Link to="/will">遺言</Link>
             <Link to="/inheritance">相続手続き</Link>
             <Link to="/guardianship">任意後見契約</Link>
@@ -62,7 +62,7 @@ const Component: React.FC = () => {
             <Link to="/family-trust">家族信託</Link>
             <Link to="/blog">ブログ</Link>
           </div>
-          <div class="info">
+          <div className="info">
             <Button href="/about">行政書士紹介</Button>
             <Button href="/office">事務所案内</Button>
           </div>
@@ -165,10 +165,11 @@ const Nav4Mob = styled.div`
   bottom: -1px;
   left: 0;
   width: 100%;
-  background-color: #fff;
+  max-height: ${({ open }) => (open ? "calc(0rem + 100vh)" : "0")};
+  background: #fff;
   z-index: 4;
-  max-height: calc(0rem + 100vh);
-  transition: max-height 350ms ease 0s;
+  -webkit-transition: ${({ open }) => (open ? "max-height 350ms ease 0s" : "background 350ms")};
+  transition: ${({ open }) => (open ? "max-height 350ms ease 0s" : "background 350ms")};
   overflow-y: auto;
   .job {
     padding-bottom: var(--gutter);
@@ -176,6 +177,10 @@ const Nav4Mob = styled.div`
       display: block;
       padding: var(--gutter);
       border-bottom: 1px solid #000;
+      background: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTEiIGhlaWdodD0iMjAiIHZpZXdCb3g9IjAgMCAxMSAyMCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTEgMUwxMCAxMEwxIDE5IiBzdHJva2U9ImJsYWNrIi8+Cjwvc3ZnPgo=) no-repeat;
+      background-position: right var(--gutter) bottom var(--gutter);
+      background-size: 0.75rem 1rem;
+      transition: background 400ms cubic-bezier(.25,1,1,1);
     }
   }
   .info {
@@ -186,6 +191,7 @@ const Nav4Mob = styled.div`
       margin-left: var(--gutter);
     }
   }
+
   @media screen and (max-width:480px) {
     display: ${({ open }) => (open ? "block" : "none")};
     transform: ${({ open }) => (open ? "translateY(100%)" : "translateY(0)")};
@@ -194,10 +200,14 @@ const Nav4Mob = styled.div`
 const Nav4MobLayer = styled.div`
   display: ${({ open }) => (open ? "block" : "none")};
   position: fixed;
-  inset: 0px;
+  top: 0;
+  left: 0;
+  inset: 0;
   background: rgba(0, 0, 0, 0.5) none repeat scroll 0% 0%;
-  z-index: 3;
+  z-index: 2;
   transition: background 350ms ease 0s;
+  width: 100vw;
+  height: 100vh;
 `
 
 export default Component

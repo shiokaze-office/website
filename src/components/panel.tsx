@@ -10,9 +10,12 @@ const Panel = styled.div`
   border-top: 2px solid #cec0d9;
   text-align: center;
   color: #cec0d9;
+  @media screen and (max-width:480px) {
+    width: 90%;
+  }
 `
 const Text = styled.span`
-  font-size: 2rem;
+  font-size: var(--t3);
   font-family: 'Noto Sans JP', sans-serif;
   display: block;
   font-weight: bold;
@@ -37,9 +40,12 @@ const Number = styled.span`
   display: inline-block;
   line-height: 1.5;
   letter-spacing: -0.3rem;
+  @media screen and (max-width:480px) {
+    font-size: 6rem;
+  }
 `
 const Raw = styled.span`
-  font-size: 4rem;
+  font-size: var(--t1);
   font-weight: bold;
   display: inline-block;
   line-height: 1.2;

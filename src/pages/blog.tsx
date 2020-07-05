@@ -87,6 +87,13 @@ const Body = styled.div`
   border-top: 1px solid rgb(0, 0, 0);
   display: grid;
   grid-template-columns: repeat(3, 1fr);
+  @media screen and (max-width:480px) {
+    grid-template-columns: 1fr;
+    border-left: 1px solid rgb(0, 0, 0);
+    border-right: 1px solid rgb(0, 0, 0);
+    margin-left: var(--gutter);
+    margin-right: var(--gutter);
+  }
 `
 const Card = styled.div``
 

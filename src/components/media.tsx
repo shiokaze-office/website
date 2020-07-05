@@ -24,6 +24,16 @@ const Component: React.FC<Props> = ({ href }) => {
       color: #999;
       font-weight: bold;
     }
+    iframe {
+      width: 100%;
+      height: 500px;
+    }
+    @media screen and (max-width:480px) {
+      width: 100%;
+      iframe {
+        height: 200px;
+      }
+    }
   `
   const matched = href.match(/\?v=(\w+)/)
 
@@ -31,8 +41,6 @@ const Component: React.FC<Props> = ({ href }) => {
     <Container>
       {matched && (
         <iframe
-          width="100%"
-          height="600px"
           src={`https://www.youtube.com/embed/${matched[1]}`}
           title={href}
           frameBorder="0"

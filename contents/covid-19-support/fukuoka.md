@@ -22,7 +22,7 @@ tags:
 - 申請期間：令和３年３月１５日から５月３１日まで
 - 制度の概要や申請方法などは[こちら](https://www.pref.fukuoka.lg.jp/contents/ichijishienkin.html)
 
-[申請はこちら](https://www.ichijishienkin.pref.fukuoka.lg.jp/s/RegisterEmail)
+<button href="https://www.ichijishienkin.pref.fukuoka.lg.jp/s/RegisterEmail" size="large" align="center">申請はこちら</button>
 
 ## 売上が減少した事業者への支援金
 
@@ -38,7 +38,7 @@ tags:
 - 申請期間：令和３年３月１０日から６月１４日まで
 - 制度の概要や申請方法などは[こちら](https://fukuoka-jigyoushashien.jp/)
 
-[申請はこちら](https://fukuoka-jigyoushashien.jp/check.html)
+<button href="https://fukuoka-jigyoushashien.jp/check.html" size="large" align="center">申請はこちら</button>
 
 ## 感染症対策シティ促進支援金
 
@@ -54,7 +54,7 @@ tags:
 - 申請期間：令和３年３月１０日から６月３０日まで
 - 制度の概要や申請方法などは[こちら](https://fukuoka-kansenshotaioucity.jp/)
 
-[申請はこちら](https://fukuoka-kansenshotaioucity.jp/shienkin_shinsei/)
+<button href="https://fukuoka-kansenshotaioucity.jp/shienkin_shinsei/" size="large" align="center">申請はこちら</button>
 
 ## 福岡市⽂化・エンターテインメントのハイブリッド開催⽀援⾦
 
@@ -84,7 +84,7 @@ tags:
 - 申請期間：令和３年１月２１日から令和３年４月３０日
 - 制度の概要や申請方法などは[こちら](https://va.apollon.nta.co.jp/fukuokacity-hotel2/files/yoko.pdf)
 
-[申請はこちら](https://va.apollon.nta.co.jp/fukuokacity-hotel2/)
+<button href="https://va.apollon.nta.co.jp/fukuokacity-hotel2/" size="large" align="center">申請はこちら</button>
 
 ## 地域を支える商店街支援事業
 

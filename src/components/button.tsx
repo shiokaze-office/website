@@ -43,7 +43,7 @@ const Component: React.FC<Props> = ({ href, bare, size, align, children }) => {
     font-size: 0.7rem;
   `
   const Button = styled.p`
-    text-align: ${size === 'large' ? 'center' : align};
+    text-align: center;
     .button { ${buttonClass} }
     .large { ${largeClass} }
     .small { ${smallClass} }

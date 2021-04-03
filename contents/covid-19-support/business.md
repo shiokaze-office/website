@@ -1,80 +1,58 @@
 ---
-title: 個人事業者・企業向け新型コロナ対応支援まとめ
+title: 事業者向け　新型コロナ対応支援まとめ
 lead: |-
     新型コロナウイルスにより影響を受けている個人事業者や企業が受けられる支援や対策をまとめました。
-    日本にはたくさんの行政支援がありますが、待っているだけでは届きません。自ら動きましょう！
+    日本にはたくさんの行政支援がありますが、自分で動かなければ、支援の手はなかなか届きません。事業者のみなさん、頑張りましょう！
 tags:
   - 新型コロナウィルス対応支援
   - 個人事業者
   - 企業
 ---
-## 持続化給付金
+## 一時支援金
 
 もらえる／経済産業省
 
-<panel text="個人事業主" number="100" unit="万円" note="最大"></panel>
+<panel text="個人事業者等" number="30" unit="万円" note="最大"></panel>
 
-<panel text="法人" number="200" unit="万円" note="最大"></panel>
+<panel text="中小法人" number="60" unit="万円" note="最大"></panel>
 
-<media href="https://www.youtube.com/watch?v=r2h035U4lcI"></media>
+- 対象者：緊急事態宣言に伴う飲食店の時短営業や不要不急の外出・移動の自粛により、売上が50％以上減少した事業者等
+- 申請期間：令和３年３月８日から５月３１日
+- 制度の概要や申請方法などは[こちら](https://www.meti.go.jp/covid-19/ichiji_shien/index.html)
+- 一時支援金の詳細は[こちら](https://www.meti.go.jp/covid-19/ichiji_shien/pdf/summary.pdf?0322)
 
-- 対象者：ひと月の売上が前年の同月と比べて50%以上減少している事業者
-- 申請期間：令和２年５月１日より
-- 制度の概要や申請方法などは[こちら](https://www.jizokuka-kyufu.jp/doc/pdf/r2_application_guidance_proprietor.pdf)
-
-[申請はこちら](https://www.jizokuka-kyufu.jp/)
+当事務所でも事前確認を行っています。[詳しくはこちら](https://shiokaze.net/covid-19-support/support4-1)
 
 ## 雇用調整助成金
 
 もらえる／厚生労働省・都道府県労働局・ハローワーク
 
-<panel text="対象労働者１人１日" number="8,330" unit="円" note="上限"></panel>
+<panel text="対象労働者１人１日" number="15,000" unit="円" note="上限"></panel>
 
-- 対象者：コロナの影響を受けても従業員の雇用継続を頑張る事業主
-- 対象となる休業期間：令和２年４月１日～令和２年６月３０日
-- 制度の概要や申請方法などは[こちら](https://www.mhlw.go.jp/content/000620879.pdf)
+- 制度概要：新型コロナの影響により雇用調整（休業）を実施する事業主に対し、休業手当などの一部を助成する制度です。
+- 対象期間：令和２年４月１日から令和３年４月３０日
+- 制度の概要や申請方法などは[こちら](https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/koyou_roudou/koyou/kyufukin/pageL07.html)
 
-## 小学校等休業対応助成金
+## 両立支援等助成金　#(新型コロナウイルス感染症対応特例 )
 
 もらえる／厚生労働省・都道府県労働局
 
-<panel text="対象労働者１人１日" number="8,330" unit="円" note="上限"></panel>
+<panel text="対象労働者１人当たり" number="5万" unit="円"></panel>
 
-- 対象者：コロナによる休校等で子供の世話をする必要がある労働者に有給休暇を与えた事業主
+- 対象者：小学校等の臨時休業等により子どもの世話をする労働者のために有給休暇制度及び両立支援制度を整備し、有給休暇の利用者が生じた事業主
 - 対象期間：令和２年２月２７日から令和２年６月３０
-- 制度の概要や申請方法などは[こちら](https://www.mhlw.go.jp/content/000622469.pdf)
-
-## 働き方改革推進支援助成金　（テレワークコース）
-
-もらえる／厚生労働省・都道府県労働局
-
-<panel text="成果目標の達成状況により" number="150" unit="万円" note="最大"></panel>
-
-- 対象者：新たにテレワークを導入した中小企業事業主等
-- 制度の概要や申請方法などは[こちら](https://www.mhlw.go.jp/content/11909000/000622080.pdf)
-
-## 働き方改革推進支援助成金　（コロナ対策テレワークコース）
-
-もらえる／厚生労働省・都道府県労働局
-
-<panel text="成果目標の達成状況により" number="150" unit="万円" note="最大"></panel>
-
-- 対象者：コロナ対策としてテレワークを導入した中小企業事業主等
-- 対象期間：令和２年２月１７日から令和２年５月３１
-- 制度の概要や申請方法などは[こちら](https://www.mhlw.go.jp/content/11909000/000625872.pdf)
+- 制度の概要は[こちら](https://www.mhlw.go.jp/content/000756789.pdf)
 
 ## 新型コロナ特例リスケジュール
 
 猶予／中小企業庁
 
 対象者：新型コロナの影響による資金繰りに悩む中小企業と個人事業主
-制度の概要や申請方法などは[こちら](https://www.chusho.meti.go.jp/keiei/saisei/2020/200406saisei_tokurei.pdf)
+制度の概要や申請方法などは[こちら](https://www.chusho.meti.go.jp/keiei/saisei/2020/200406saisei.html)
 
-## 無利子無担保融資
+## 新型コロナウイルス感染症特別貸付
 
-金利引き下げ／中小企業庁
+無担保貸付／日本政策金融公庫
 
-<panel text="実質的に" raw="無利子<br>無担保"></panel>
-
-- 対象者：新型コロナの影響による資金繰りに悩む中小企業と個人事業主
-- 制度の概要：[新型コロナウイルス感染症特別貸付](https://seido-navi.mirasapo-plus.go.jp/supports/149) 、 [危機対応融資](https://seido-navi.mirasapo-plus.go.jp/supports/282) 、 [特別利子補給制度](https://seido-navi.mirasapo-plus.go.jp/supports/150) 、[新型コロナウイルス対策マル経融資](https://seido-navi.mirasapo-plus.go.jp/supports/151) を併用することで実質的な無利子化が実現します。
+- 対象者：新型コロナウイルス感染症の影響により、一時的に、売上の減少など業況悪化をきたしているが、中長期的には、その業況が回復し、かつ、発展することが見込まれる中小企業者
+- 制度の概要は[こちら](https://www.jfc.go.jp/n/finance/search/covid_19_t.html)

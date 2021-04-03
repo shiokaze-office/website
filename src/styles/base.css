@@ -97,5 +97,5 @@ footer li {
 }
 a {
   text-decoration: none;
-  color: #000;
+  color: var(--simple-translate-highlight);
 }

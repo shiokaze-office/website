@@ -71,7 +71,6 @@ const Component: React.FC = () => {
             <li> <Link to="/will">遺言</Link> </li>
             <li> <Link to="/inheritance">相続手続き</Link> </li>
             <li> <Link to="/guardianship">任意後見契約</Link> </li>
-            <li> <Link to="/family-trust">家族信託</Link> </li>
             <li> <Link to="/notarial-deed">公正証書作成</Link> </li>
           </ul>
         </li>

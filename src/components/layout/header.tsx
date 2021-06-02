@@ -30,7 +30,6 @@ const Component: React.FC = () => {
           <Link to="/inheritance">相続手続き</Link>
           <Link to="/guardianship">任意後見契約</Link>
           <Link to="/entrusted-business">事務委任契約</Link>
-          <Link to="/family-trust">家族信託</Link>
           <Link to="/blog">ブログ</Link>
         </Nav>
 
@@ -59,7 +58,6 @@ const Component: React.FC = () => {
             <Link to="/inheritance">相続手続き</Link>
             <Link to="/guardianship">任意後見契約</Link>
             <Link to="/entrusted-business">事務委任契約</Link>
-            <Link to="/family-trust">家族信託</Link>
             <Link to="/blog">ブログ</Link>
           </div>
           <div className="info">

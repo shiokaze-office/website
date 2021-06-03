@@ -27,12 +27,14 @@ module.exports = {
         color: `#CEC0D9`,
       },
     },
+    /*
     {
       resolve: 'gatsby-plugin-graphql-codegen',
       options: {
         fileName: `types/graphql-types.d.ts`,
       },
     },
+    */
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
@@ -66,6 +68,7 @@ module.exports = {
             resolve: `gatsby-remark-images`,
             options: {
               maxWidth: 860,
+              quality: 85,
               withWebp: true,
               linkImagesToOriginal: false,
               loading: 'eager',

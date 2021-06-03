@@ -25,9 +25,6 @@ const StyledLink = styled(Link)`
   &:hover {
     background-color: #f8f8f8;
   }
-  &:last-child {
-    border-right: none;
-  }
   div {
     margin: 0;
     padding: 0;
@@ -35,6 +32,7 @@ const StyledLink = styled(Link)`
     font-size: 0.85rem;
     font-family: 'Noto Sans JP', sans-serif;
     font-weight: bold;
+    color: #000;
   }
   span {
     font-weight: normal;
@@ -48,6 +46,7 @@ const StyledLink = styled(Link)`
   }
   p {
     margin-top: 1rem;
+    color: #000;
   }
   @media screen and (max-width:480px) {
     border-right: 0;

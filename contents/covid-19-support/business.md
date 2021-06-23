@@ -61,7 +61,7 @@ tags:
 - 制度の概要や申請方法などは[こちら](https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/koyou_roudou/koyou/kyufukin/pageL07.html)
 
 ## 両立支援等助成金　
-#(新型コロナウイルス感染症対応特例 )
+(新型コロナウイルス感染症対応特例 )
 
 もらえる／厚生労働省・都道府県労働局
 
